@@ -69,8 +69,11 @@ export default function DashboardClient() {
       <nav className="bg-white shadow">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
-            <div className="flex items-center">
+            <div className="flex items-center gap-6">
               <h1 className="text-xl font-semibold">Dashboard</h1>
+              <a href="/flashcards" className="text-indigo-600 hover:text-indigo-500">
+                Flashcards
+              </a>
             </div>
             <div className="flex items-center space-x-4">
               <span className="text-gray-700">Welcome, {user.name}</span>
