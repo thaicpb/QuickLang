@@ -1,7 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import FacebookLoginButton from './FacebookLoginButton';
+import FacebookDebug from './FacebookDebug';
 
 export default function LoginForm() {
   const router = useRouter();
@@ -33,10 +35,8 @@ export default function LoginForm() {
       }
 
       if (data.success) {
-        if (typeof window !== 'undefined') {
-          localStorage.setItem('token', data.token);
-          localStorage.setItem('user', JSON.stringify(data.user));
-        }
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('user', JSON.stringify(data.user));
         router.push('/dashboard');
       }
     } catch (err) {
@@ -108,12 +108,26 @@ export default function LoginForm() {
             </button>
           </div>
 
+          <div className="relative">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t border-gray-300" />
+            </div>
+            <div className="relative flex justify-center text-sm">
+              <span className="px-2 bg-gray-50 text-gray-500">Or continue with</span>
+            </div>
+          </div>
+
+          <div>
+            <FacebookLoginButton />
+          </div>
+
           <div className="text-sm text-center text-gray-600">
             <p>Demo accounts:</p>
             <p>Username: admin / Password: admin123</p>
             <p>Username: user / Password: user123</p>
           </div>
         </form>
+        <FacebookDebug />
       </div>
     </div>
   );
