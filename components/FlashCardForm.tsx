@@ -2,18 +2,23 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { FlashCard as FlashCardType } from '@/lib/types';
 
-export default function FlashCardForm() {
+interface FlashCardFormProps {
+  existingCard?: FlashCardType;
+}
+
+export default function FlashCardForm({ existingCard }: FlashCardFormProps) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [formData, setFormData] = useState({
-    word: '',
-    imageUrl: '',
-    meaning: '',
-    example: '',
-    category: '',
-    difficulty: 'medium' as 'easy' | 'medium' | 'hard'
+    word: existingCard?.word || '',
+    imageUrl: existingCard?.imageUrl || '',
+    meaning: existingCard?.meaning || '',
+    example: existingCard?.example || '',
+    category: existingCard?.category || '',
+    difficulty: existingCard?.difficulty || ('medium' as 'easy' | 'medium' | 'hard')
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -22,8 +27,11 @@ export default function FlashCardForm() {
     setLoading(true);
 
     try {
-      const response = await fetch('/api/flashcards', {
-        method: 'POST',
+      const url = existingCard ? `/api/flashcards/${existingCard.id}` : '/api/flashcards';
+      const method = existingCard ? 'PUT' : 'POST';
+      
+      const response = await fetch(url, {
+        method,
         headers: {
           'Content-Type': 'application/json',
         },
@@ -32,7 +40,7 @@ export default function FlashCardForm() {
 
       if (!response.ok) {
         const data = await response.json();
-        throw new Error(data.error || 'Failed to create flashcard');
+        throw new Error(data.error || `Failed to ${existingCard ? 'update' : 'create'} flashcard`);
       }
 
       router.push('/flashcards');
@@ -167,7 +175,7 @@ export default function FlashCardForm() {
           disabled={loading}
           className="flex-1 bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          {loading ? 'Creating...' : 'Create Flashcard'}
+          {loading ? (existingCard ? 'Updating...' : 'Creating...') : (existingCard ? 'Update Flashcard' : 'Create Flashcard')}
         </button>
         <button
           type="button"

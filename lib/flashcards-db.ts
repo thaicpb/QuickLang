@@ -1,88 +1,121 @@
 import { FlashCard } from './types';
+import pool from './db';
+import { initializeDatabase } from './init-db';
 
-let flashCards: FlashCard[] = [
-  {
-    id: '1',
-    word: 'Serendipity',
-    imageUrl: 'https://images.unsplash.com/photo-1513151233558-d860c5398176?w=400',
-    meaning: 'The occurrence of finding pleasant things by chance',
-    example: 'Finding that coffee shop was pure serendipity - it became my favorite place to work.',
-    category: 'Advanced Vocabulary',
-    createdAt: new Date('2024-01-01'),
-    reviewCount: 0,
-    difficulty: 'hard'
-  },
-  {
-    id: '2',
-    word: 'Ephemeral',
-    imageUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=400',
-    meaning: 'Lasting for a very short time',
-    example: 'The beauty of cherry blossoms is ephemeral, lasting only a few weeks each spring.',
-    category: 'Advanced Vocabulary',
-    createdAt: new Date('2024-01-02'),
-    reviewCount: 0,
-    difficulty: 'medium'
-  },
-  {
-    id: '3',
-    word: 'Resilient',
-    imageUrl: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400',
-    meaning: 'Able to recover quickly from difficult conditions',
-    example: 'Despite many setbacks, she remained resilient and achieved her goals.',
-    category: 'Personal Development',
-    createdAt: new Date('2024-01-03'),
-    reviewCount: 0,
-    difficulty: 'easy'
+let dbInitialized = false;
+
+async function ensureDbInitialized() {
+  if (!dbInitialized) {
+    await initializeDatabase();
+    dbInitialized = true;
   }
-];
+}
 
 export const flashCardsDB = {
   getAll: async (): Promise<FlashCard[]> => {
-    return [...flashCards].sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
+    await ensureDbInitialized();
+    const result = await pool.query(
+      'SELECT * FROM flashcards ORDER BY created_at DESC'
+    );
+    return result.rows.map(row => ({
+      id: row.id,
+      word: row.word,
+      imageUrl: row.image_url,
+      meaning: row.meaning,
+      example: row.example,
+      category: row.category,
+      difficulty: row.difficulty,
+      createdAt: new Date(row.created_at),
+      lastReviewed: row.last_reviewed ? new Date(row.last_reviewed) : undefined,
+      reviewCount: row.review_count
+    }));
   },
 
   getById: async (id: string): Promise<FlashCard | null> => {
-    return flashCards.find(card => card.id === id) || null;
+    await ensureDbInitialized();
+    const result = await pool.query(
+      'SELECT * FROM flashcards WHERE id = $1',
+      [id]
+    );
+    if (result.rows.length === 0) return null;
+    
+    const row = result.rows[0];
+    return {
+      id: row.id,
+      word: row.word,
+      imageUrl: row.image_url,
+      meaning: row.meaning,
+      example: row.example,
+      category: row.category,
+      difficulty: row.difficulty,
+      createdAt: new Date(row.created_at),
+      lastReviewed: row.last_reviewed ? new Date(row.last_reviewed) : undefined,
+      reviewCount: row.review_count
+    };
   },
 
   create: async (data: Omit<FlashCard, 'id' | 'createdAt' | 'reviewCount'>): Promise<FlashCard> => {
-    const newCard: FlashCard = {
+    await ensureDbInitialized();
+    const id = Date.now().toString();
+    const createdAt = new Date();
+    
+    await pool.query(
+      'INSERT INTO flashcards (id, word, image_url, meaning, example, category, difficulty, created_at, review_count) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)',
+      [id, data.word, data.imageUrl || null, data.meaning, data.example, data.category || null, data.difficulty, createdAt, 0]
+    );
+    
+    return {
       ...data,
-      id: Date.now().toString(),
-      createdAt: new Date(),
+      id,
+      createdAt,
       reviewCount: 0
     };
-    flashCards.push(newCard);
-    return newCard;
   },
 
   update: async (id: string, data: Partial<FlashCard>): Promise<FlashCard | null> => {
-    const index = flashCards.findIndex(card => card.id === id);
-    if (index === -1) return null;
+    await ensureDbInitialized();
+    const existing = await flashCardsDB.getById(id);
+    if (!existing) return null;
     
-    flashCards[index] = {
-      ...flashCards[index],
-      ...data,
-      id: flashCards[index].id,
-      createdAt: flashCards[index].createdAt
-    };
-    return flashCards[index];
+    await pool.query(
+      'UPDATE flashcards SET word = $2, image_url = $3, meaning = $4, example = $5, category = $6, difficulty = $7 WHERE id = $1',
+      [id, data.word || existing.word, data.imageUrl || existing.imageUrl || null, data.meaning || existing.meaning, data.example || existing.example, data.category || existing.category || null, data.difficulty || existing.difficulty]
+    );
+    
+    return await flashCardsDB.getById(id);
   },
 
   delete: async (id: string): Promise<boolean> => {
-    const index = flashCards.findIndex(card => card.id === id);
-    if (index === -1) return false;
-    
-    flashCards.splice(index, 1);
-    return true;
+    await ensureDbInitialized();
+    const result = await pool.query(
+      'DELETE FROM flashcards WHERE id = $1',
+      [id]
+    );
+    return result.rowCount > 0;
   },
 
   incrementReviewCount: async (id: string): Promise<FlashCard | null> => {
-    const card = flashCards.find(c => c.id === id);
-    if (!card) return null;
+    await ensureDbInitialized();
+    const lastReviewed = new Date();
+    const result = await pool.query(
+      'UPDATE flashcards SET review_count = review_count + 1, last_reviewed = $2 WHERE id = $1 RETURNING *',
+      [id, lastReviewed]
+    );
     
-    card.reviewCount++;
-    card.lastReviewed = new Date();
-    return card;
+    if (result.rows.length === 0) return null;
+    
+    const row = result.rows[0];
+    return {
+      id: row.id,
+      word: row.word,
+      imageUrl: row.image_url,
+      meaning: row.meaning,
+      example: row.example,
+      category: row.category,
+      difficulty: row.difficulty,
+      createdAt: new Date(row.created_at),
+      lastReviewed: new Date(row.last_reviewed),
+      reviewCount: row.review_count
+    };
   }
 };
