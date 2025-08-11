@@ -1,42 +1,44 @@
-import { NextResponse } from 'next/server';
+import {NextResponse} from 'next/server'
 
 const MOCK_USERS = [
-  { username: 'admin', password: 'admin123', id: 1, name: 'Administrator' },
-  { username: 'user', password: 'user123', id: 2, name: 'Regular User' }
-];
+  {
+    username: 'admin', password: 'admin123', id: 1, name: 'Administrator',
+  },
+  {
+    username: 'user', password: 'user123', id: 2, name: 'Regular User',
+  },
+]
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json();
-    const { username, password } = body;
+    const body = await request.json()
+    const {username, password} = body
 
     if (!username || !password) {
       return NextResponse.json(
-        { error: 'Username and password are required' },
-        { status: 400 }
-      );
+        {error: 'Username and password are required'},
+        {status: 400},
+      )
     }
 
-    const user = MOCK_USERS.find(
-      u => u.username === username && u.password === password
-    );
+    const user = MOCK_USERS.find(u => u.username === username && u.password === password)
 
     if (!user) {
       return NextResponse.json(
-        { error: 'Invalid username or password' },
-        { status: 401 }
-      );
+        {error: 'Invalid username or password'},
+        {status: 401},
+      )
     }
 
-    const { password: _, ...userWithoutPassword } = user;
+    const {password: _, ...userWithoutPassword} = user
 
-    const token = Buffer.from(`${user.id}:${Date.now()}`).toString('base64');
-    
+    const token = Buffer.from(`${user.id}:${Date.now()}`).toString('base64')
+
     const response = NextResponse.json({
       success: true,
       user: userWithoutPassword,
-      token
-    });
+      token,
+    })
 
     response.cookies.set('token', token, {
       httpOnly: true,
@@ -44,14 +46,13 @@ export async function POST(request: Request) {
       sameSite: 'strict',
       maxAge: 60 * 60 * 24 * 7, // 7 days
       path: '/',
-    });
+    })
 
-    return response;
-
-  } catch (error) {
+    return response
+  } catch {
     return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
-    );
+      {error: 'Internal server error'},
+      {status: 500},
+    )
   }
 }
