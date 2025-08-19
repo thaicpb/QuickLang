@@ -6,7 +6,7 @@ export async function GET(
   { params }: { params: { id: string } }
 ) {
   try {
-    const card = await flashCardsDB.getById(params.id);
+    const card = await flashCardsDB.getById(parseInt(params.id));
     
     if (!card) {
       return NextResponse.json(
@@ -30,7 +30,7 @@ export async function PUT(
 ) {
   try {
     const body = await request.json();
-    const updatedCard = await flashCardsDB.update(params.id, body);
+    const updatedCard = await flashCardsDB.update(parseInt(params.id), body);
 
     if (!updatedCard) {
       return NextResponse.json(
@@ -53,7 +53,7 @@ export async function DELETE(
   { params }: { params: { id: string } }
 ) {
   try {
-    const deleted = await flashCardsDB.delete(params.id);
+    const deleted = await flashCardsDB.delete(parseInt(params.id));
 
     if (!deleted) {
       return NextResponse.json(

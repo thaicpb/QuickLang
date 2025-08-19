@@ -1,13 +1,5 @@
 import { NextResponse } from 'next/server';
-import { Pool } from 'pg';
-
-const pool = new Pool({
-  host: 'localhost',
-  port: 5433,
-  database: 'quicklang',
-  user: 'postgres',
-  password: 'quicklang123',
-});
+import pool from '@/lib/db';
 
 export async function GET() {
   try {
@@ -20,7 +12,14 @@ export async function GET() {
       ORDER BY f.created_at ASC
     `);
     
-    return NextResponse.json(result.rows);
+    // Map database field names to camelCase for frontend
+    const folders = result.rows.map(row => ({
+      ...row,
+      flashcardCount: parseInt(row.flashcard_count) || 0,
+      flashcard_count: undefined
+    }));
+    
+    return NextResponse.json(folders);
   } catch (error) {
     console.error('Failed to fetch folders:', error);
     return NextResponse.json(

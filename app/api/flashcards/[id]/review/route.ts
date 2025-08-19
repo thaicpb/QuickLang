@@ -6,7 +6,7 @@ export async function POST(
   { params }: { params: { id: string } }
 ) {
   try {
-    const card = await flashCardsDB.incrementReviewCount(params.id);
+    const card = await flashCardsDB.incrementReviewCount(parseInt(params.id));
     
     if (!card) {
       return NextResponse.json(

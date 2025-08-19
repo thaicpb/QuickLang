@@ -1,5 +1,5 @@
 export interface FlashCard {
-  id: string;
+  id: number;
   word: string;
   imageUrl?: string;
   meaning: string;
