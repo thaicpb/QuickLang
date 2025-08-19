@@ -69,6 +69,12 @@ export default function FlashCardsPage() {
           <h1 className="text-3xl font-bold text-gray-900">My Flashcards</h1>
           <div className="flex gap-4">
             <Link
+              href="/quiz"
+              className="bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700"
+            >
+              Take Quiz
+            </Link>
+            <Link
               href="/flashcards/study"
               className="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700"
             >
