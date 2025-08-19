@@ -121,26 +121,42 @@ export default function StudyPage() {
         <div className="flex justify-between items-center">
           <button
             onClick={goToPrevious}
-            className="bg-white text-gray-700 px-6 py-3 rounded-lg shadow hover:shadow-md transition-shadow border border-gray-200"
+            className="bg-white text-gray-700 px-6 py-3 rounded-lg shadow hover:shadow-md transition-shadow border border-gray-200 flex-shrink-0"
           >
             ← Previous
           </button>
 
-          <div className="flex gap-2">
-            {flashCards.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`w-2 h-2 rounded-full transition-colors ${
-                  index === currentIndex ? 'bg-indigo-600' : 'bg-gray-300'
-                }`}
-              />
-            ))}
+          <div className="flex gap-1 overflow-x-auto max-w-xs mx-4 py-2 px-2">
+            {flashCards.length <= 20 ? (
+              // Show all dots for small number of cards
+              flashCards.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentIndex(index)}
+                  className={`w-2 h-2 rounded-full transition-colors flex-shrink-0 ${
+                    index === currentIndex ? 'bg-indigo-600' : 'bg-gray-300'
+                  }`}
+                />
+              ))
+            ) : (
+              // Show condensed view for many cards
+              <div className="flex items-center gap-1">
+                <span className="text-xs text-gray-500 whitespace-nowrap">
+                  {currentIndex + 1} / {flashCards.length}
+                </span>
+                <div className="w-20 bg-gray-200 rounded-full h-1 mx-2">
+                  <div 
+                    className="bg-indigo-600 h-1 rounded-full transition-all duration-300"
+                    style={{ width: `${((currentIndex + 1) / flashCards.length) * 100}%` }}
+                  />
+                </div>
+              </div>
+            )}
           </div>
 
           <button
             onClick={goToNext}
-            className="bg-white text-gray-700 px-6 py-3 rounded-lg shadow hover:shadow-md transition-shadow border border-gray-200"
+            className="bg-white text-gray-700 px-6 py-3 rounded-lg shadow hover:shadow-md transition-shadow border border-gray-200 flex-shrink-0"
           >
             Next →
           </button>
