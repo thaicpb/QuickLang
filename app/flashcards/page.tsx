@@ -105,6 +105,12 @@ export default function FlashCardsPage() {
           </div>
           <div className="flex gap-4">
             <Link
+              href="/flashcards/import"
+              className="bg-orange-600 text-white px-4 py-2 rounded-md hover:bg-orange-700"
+            >
+              Import CSV
+            </Link>
+            <Link
               href={folderId ? `/quiz?folder_id=${folderId}` : '/quiz'}
               className="bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700"
             >
