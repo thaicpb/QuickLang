@@ -6,6 +6,7 @@ CREATE TABLE IF NOT EXISTS flashcards (
     meaning TEXT NOT NULL,
     example TEXT NOT NULL,
     category VARCHAR(100),
+    language VARCHAR(50) DEFAULT 'english',
     difficulty VARCHAR(20) CHECK (difficulty IN ('easy', 'medium', 'hard')),
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     last_reviewed TIMESTAMP WITH TIME ZONE,

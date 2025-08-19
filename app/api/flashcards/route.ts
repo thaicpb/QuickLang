@@ -1,10 +1,19 @@
 import { NextResponse } from 'next/server';
 import { flashCardsDB } from '@/lib/flashcards-db';
 
-export async function GET() {
+export async function GET(request: Request) {
   try {
+    const { searchParams } = new URL(request.url);
+    const folderId = searchParams.get('folder_id');
+    
     const flashCards = await flashCardsDB.getAll();
-    return NextResponse.json(flashCards);
+    
+    // Filter by folder_id if specified
+    const filteredCards = folderId 
+      ? flashCards.filter(card => card.folderId === parseInt(folderId))
+      : flashCards;
+    
+    return NextResponse.json(filteredCards);
   } catch (error) {
     return NextResponse.json(
       { error: 'Failed to fetch flashcards' },
@@ -16,7 +25,7 @@ export async function GET() {
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { word, imageUrl, meaning, example, category, difficulty } = body;
+    const { word, imageUrl, meaning, example, category, difficulty, folderId } = body;
 
     if (!word || !meaning || !example) {
       return NextResponse.json(
@@ -32,6 +41,7 @@ export async function POST(request: Request) {
       example,
       category,
       difficulty: difficulty || 'medium',
+      folderId: folderId || 3, // Default to General folder
       lastReviewed: undefined
     });
 

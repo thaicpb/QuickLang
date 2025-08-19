@@ -24,8 +24,13 @@ export async function GET(request: Request) {
     const count = parseInt(searchParams.get('count') || '10');
     const category = searchParams.get('category') || undefined;
     const difficulty = searchParams.get('difficulty') || undefined;
+    const folderId = searchParams.get('folder_id') || undefined;
 
     let allCards = await flashCardsDB.getAll();
+    
+    if (folderId) {
+      allCards = allCards.filter(card => card.folderId === parseInt(folderId));
+    }
     
     if (category) {
       allCards = allCards.filter(card => card.category === category);

@@ -46,7 +46,10 @@ export default function QuizPage() {
   const fetchQuiz = async () => {
     try {
       setLoading(true);
-      const response = await fetch('/api/quiz?count=10');
+      const urlParams = new URLSearchParams(window.location.search);
+      const folderId = urlParams.get('folder_id');
+      const folderParam = folderId ? `&folder_id=${folderId}` : '';
+      const response = await fetch(`/api/quiz?count=10${folderParam}`);
       if (!response.ok) {
         throw new Error('Failed to load quiz');
       }
@@ -104,6 +107,7 @@ export default function QuizPage() {
     setShowFinalResult(false);
     fetchQuiz();
   };
+
 
   if (loading) {
     return (

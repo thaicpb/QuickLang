@@ -2,26 +2,47 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { FlashCard as FlashCardType } from '@/lib/types';
+import { useSearchParams } from 'next/navigation';
+import { FlashCard as FlashCardType, Folder } from '@/lib/types';
 
 export default function FlashCardsPage() {
   const [flashCards, setFlashCards] = useState<FlashCardType[]>([]);
+  const [currentFolder, setCurrentFolder] = useState<Folder | null>(null);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState<'all' | 'easy' | 'medium' | 'hard'>('all');
+  const searchParams = useSearchParams();
+  const folderId = searchParams.get('folder_id');
 
   useEffect(() => {
     fetchFlashCards();
-  }, []);
+    if (folderId) {
+      fetchFolder();
+    }
+  }, [folderId]);
 
   const fetchFlashCards = async () => {
     try {
-      const response = await fetch('/api/flashcards');
+      const url = folderId 
+        ? `/api/flashcards?folder_id=${folderId}` 
+        : '/api/flashcards';
+      const response = await fetch(url);
       const data = await response.json();
       setFlashCards(data);
     } catch (error) {
       console.error('Failed to fetch flashcards:', error);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const fetchFolder = async () => {
+    if (!folderId) return;
+    try {
+      const response = await fetch(`/api/folders/${folderId}`);
+      const data = await response.json();
+      setCurrentFolder(data);
+    } catch (error) {
+      console.error('Failed to fetch folder:', error);
     }
   };
 
@@ -66,10 +87,25 @@ export default function FlashCardsPage() {
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex justify-between items-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">My Flashcards</h1>
+          <div>
+            <div className="flex items-center gap-4 mb-2">
+              <Link 
+                href="/folders" 
+                className="text-indigo-600 hover:text-indigo-800"
+              >
+                ← Back to Folders
+              </Link>
+            </div>
+            <h1 className="text-3xl font-bold text-gray-900">
+              {currentFolder ? currentFolder.name : 'All Flashcards'}
+            </h1>
+            {currentFolder?.description && (
+              <p className="text-gray-600 mt-1">{currentFolder.description}</p>
+            )}
+          </div>
           <div className="flex gap-4">
             <Link
-              href="/quiz"
+              href={folderId ? `/quiz?folder_id=${folderId}` : '/quiz'}
               className="bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700"
             >
               Take Quiz
@@ -81,7 +117,7 @@ export default function FlashCardsPage() {
               Study Mode
             </Link>
             <Link
-              href="/flashcards/new"
+              href={`/flashcards/new${folderId ? `?folder_id=${folderId}` : ''}`}
               className="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700"
             >
               Add New Card
@@ -89,31 +125,34 @@ export default function FlashCardsPage() {
           </div>
         </div>
 
-        <div className="mb-6 flex gap-2">
-          <button
-            onClick={() => setFilter('all')}
-            className={`px-4 py-2 rounded-md ${filter === 'all' ? 'bg-indigo-600 text-white' : 'bg-white text-gray-700 border'}`}
-          >
-            All ({flashCards.length})
-          </button>
-          <button
-            onClick={() => setFilter('easy')}
-            className={`px-4 py-2 rounded-md ${filter === 'easy' ? 'bg-green-600 text-white' : 'bg-white text-gray-700 border'}`}
-          >
-            Easy ({flashCards.filter(c => c.difficulty === 'easy').length})
-          </button>
-          <button
-            onClick={() => setFilter('medium')}
-            className={`px-4 py-2 rounded-md ${filter === 'medium' ? 'bg-yellow-600 text-white' : 'bg-white text-gray-700 border'}`}
-          >
-            Medium ({flashCards.filter(c => c.difficulty === 'medium').length})
-          </button>
-          <button
-            onClick={() => setFilter('hard')}
-            className={`px-4 py-2 rounded-md ${filter === 'hard' ? 'bg-red-600 text-white' : 'bg-white text-gray-700 border'}`}
-          >
-            Hard ({flashCards.filter(c => c.difficulty === 'hard').length})
-          </button>
+        <div className="mb-6">
+          <div className="flex gap-2">
+            <span className="px-3 py-2 text-gray-700 font-medium">Difficulty:</span>
+            <button
+              onClick={() => setFilter('all')}
+              className={`px-4 py-2 rounded-md ${filter === 'all' ? 'bg-indigo-600 text-white' : 'bg-white text-gray-700 border'}`}
+            >
+              All ({flashCards.length})
+            </button>
+            <button
+              onClick={() => setFilter('easy')}
+              className={`px-4 py-2 rounded-md ${filter === 'easy' ? 'bg-green-600 text-white' : 'bg-white text-gray-700 border'}`}
+            >
+              Easy ({flashCards.filter(c => c.difficulty === 'easy').length})
+            </button>
+            <button
+              onClick={() => setFilter('medium')}
+              className={`px-4 py-2 rounded-md ${filter === 'medium' ? 'bg-yellow-600 text-white' : 'bg-white text-gray-700 border'}`}
+            >
+              Medium ({flashCards.filter(c => c.difficulty === 'medium').length})
+            </button>
+            <button
+              onClick={() => setFilter('hard')}
+              className={`px-4 py-2 rounded-md ${filter === 'hard' ? 'bg-red-600 text-white' : 'bg-white text-gray-700 border'}`}
+            >
+              Hard ({flashCards.filter(c => c.difficulty === 'hard').length})
+            </button>
+          </div>
         </div>
 
         {filteredCards.length === 0 ? (

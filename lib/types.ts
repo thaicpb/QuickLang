@@ -5,6 +5,7 @@ export interface FlashCard {
   meaning: string;
   example: string;
   category?: string;
+  folderId?: number;
   createdAt: Date;
   lastReviewed?: Date;
   reviewCount: number;
@@ -17,5 +18,15 @@ export interface FlashCardFormData {
   meaning: string;
   example: string;
   category?: string;
+  folderId?: number;
   difficulty: 'easy' | 'medium' | 'hard';
+}
+
+export interface Folder {
+  id: number;
+  name: string;
+  description?: string;
+  color: string;
+  createdAt: Date;
+  flashcardCount?: number;
 }
