@@ -53,7 +53,15 @@ export default function FoldersPage() {
   };
 
   const handleDeleteFolder = async (id: number) => {
-    if (!confirm('Bạn có chắc chắn muốn xóa thư mục này không?')) return;
+    const folder = folders.find(f => f.id === id);
+    const flashcardCount = folder?.flashcardCount || 0;
+    
+    let confirmMessage = 'Bạn có chắc chắn muốn xóa thư mục này không?';
+    if (flashcardCount > 0) {
+      confirmMessage = `Thư mục này chứa ${flashcardCount} thẻ ghi nhớ. Xóa thư mục sẽ xóa TẤT CẢ các thẻ bên trong. Bạn có chắc chắn muốn tiếp tục?`;
+    }
+    
+    if (!confirm(confirmMessage)) return;
 
     try {
       const response = await fetch(`/api/folders/${id}`, {
@@ -62,12 +70,17 @@ export default function FoldersPage() {
 
       if (response.ok) {
         setFolders(folders.filter(folder => folder.id !== id));
+        const result = await response.json();
+        if (flashcardCount > 0) {
+          alert(`Đã xóa thành công thư mục và ${flashcardCount} thẻ ghi nhớ`);
+        }
       } else {
         const error = await response.json();
         alert(error.error);
       }
     } catch (error) {
       console.error('Failed to delete folder:', error);
+      alert('Có lỗi xảy ra khi xóa thư mục');
     }
   };
 

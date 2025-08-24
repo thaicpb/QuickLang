@@ -75,32 +75,44 @@ export async function DELETE(
   try {
     const folderId = params.id;
     
-    // Check if folder has flashcards
-    const flashcardsCheck = await pool.query(
-      'SELECT COUNT(*) FROM flashcards WHERE folder_id = $1',
-      [folderId]
-    );
+    // Start a transaction to ensure data consistency
+    const client = await pool.connect();
     
-    if (parseInt(flashcardsCheck.rows[0].count) > 0) {
-      return NextResponse.json(
-        { error: 'Không thể xóa thư mục có chứa thẻ ghi nhớ. Vui lòng di chuyển hoặc xóa thẻ ghi nhớ trước.' },
-        { status: 400 }
+    try {
+      await client.query('BEGIN');
+      
+      // First delete all flashcards in this folder
+      await client.query(
+        'DELETE FROM flashcards WHERE folder_id = $1',
+        [folderId]
       );
-    }
-    
-    const result = await pool.query(
-      'DELETE FROM folders WHERE id = $1 RETURNING *',
-      [folderId]
-    );
-
-    if (result.rows.length === 0) {
-      return NextResponse.json(
-        { error: 'Thư mục không tìm thấy' },
-        { status: 404 }
+      
+      // Then delete the folder itself
+      const result = await client.query(
+        'DELETE FROM folders WHERE id = $1 RETURNING *',
+        [folderId]
       );
-    }
 
-    return NextResponse.json({ message: 'Xóa thư mục thành công' });
+      if (result.rows.length === 0) {
+        await client.query('ROLLBACK');
+        return NextResponse.json(
+          { error: 'Thư mục không tìm thấy' },
+          { status: 404 }
+        );
+      }
+      
+      await client.query('COMMIT');
+      
+      return NextResponse.json({ 
+        message: 'Xóa thư mục và tất cả thẻ ghi nhớ thành công',
+        deletedFolder: result.rows[0]
+      });
+    } catch (error) {
+      await client.query('ROLLBACK');
+      throw error;
+    } finally {
+      client.release();
+    }
   } catch (error) {
     console.error('Failed to delete folder:', error);
     return NextResponse.json(
