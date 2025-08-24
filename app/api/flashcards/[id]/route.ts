@@ -10,7 +10,7 @@ export async function GET(
     
     if (!card) {
       return NextResponse.json(
-        { error: 'Flashcard not found' },
+        { error: 'Thẻ ghi nhớ không tìm thấy' },
         { status: 404 }
       );
     }
@@ -18,7 +18,7 @@ export async function GET(
     return NextResponse.json(card);
   } catch (error) {
     return NextResponse.json(
-      { error: 'Failed to fetch flashcard' },
+      { error: 'Không thể lấy thẻ ghi nhớ' },
       { status: 500 }
     );
   }
@@ -34,7 +34,7 @@ export async function PUT(
 
     if (!updatedCard) {
       return NextResponse.json(
-        { error: 'Flashcard not found' },
+        { error: 'Thẻ ghi nhớ không tìm thấy' },
         { status: 404 }
       );
     }
@@ -42,7 +42,7 @@ export async function PUT(
     return NextResponse.json(updatedCard);
   } catch (error) {
     return NextResponse.json(
-      { error: 'Failed to update flashcard' },
+      { error: 'Không thể cập nhật thẻ ghi nhớ' },
       { status: 500 }
     );
   }
@@ -57,7 +57,7 @@ export async function DELETE(
 
     if (!deleted) {
       return NextResponse.json(
-        { error: 'Flashcard not found' },
+        { error: 'Thẻ ghi nhớ không tìm thấy' },
         { status: 404 }
       );
     }
@@ -65,7 +65,7 @@ export async function DELETE(
     return NextResponse.json({ success: true });
   } catch (error) {
     return NextResponse.json(
-      { error: 'Failed to delete flashcard' },
+      { error: 'Không thể xóa thẻ ghi nhớ' },
       { status: 500 }
     );
   }

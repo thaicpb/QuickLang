@@ -55,7 +55,7 @@ export default function DashboardClient() {
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="text-gray-500">Loading...</div>
+        <div className="text-gray-500">Đang tải...</div>
       </div>
     );
   }
@@ -70,18 +70,18 @@ export default function DashboardClient() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center gap-6">
-              <h1 className="text-xl font-semibold">Dashboard</h1>
+              <h1 className="text-xl font-semibold">Bảng điều khiển</h1>
               <a href="/flashcards" className="text-indigo-600 hover:text-indigo-500">
-                Flashcards
+                Thẻ học
               </a>
             </div>
             <div className="flex items-center space-x-4">
-              <span className="text-gray-700">Welcome, {user.name}</span>
+              <span className="text-gray-700">Xin chào, {user.name}</span>
               <button
                 onClick={handleLogout}
                 className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm font-medium"
               >
-                Logout
+                Đăng xuất
               </button>
             </div>
           </div>
@@ -93,10 +93,10 @@ export default function DashboardClient() {
           <div className="border-4 border-dashed border-gray-200 rounded-lg h-96 flex items-center justify-center">
             <div className="text-center">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                Welcome to Dashboard
+                Chào mừng đến bảng điều khiển
               </h2>
               <p className="text-gray-600">
-                You are successfully logged in as {user.username}
+                Bạn đã đăng nhập thành công với tên {user.username}
               </p>
             </div>
           </div>

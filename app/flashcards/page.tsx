@@ -47,7 +47,7 @@ export default function FlashCardsPage() {
   };
 
   const handleDelete = async (id: string) => {
-    if (!confirm('Are you sure you want to delete this flashcard?')) return;
+    if (!confirm('Bạn có chắc chắn muốn xóa thẻ học này không?')) return;
 
     try {
       const response = await fetch(`/api/flashcards/${id}`, {
@@ -78,7 +78,7 @@ export default function FlashCardsPage() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="text-gray-500">Loading flashcards...</div>
+        <div className="text-gray-500">Đang tải thẻ học...</div>
       </div>
     );
   }
@@ -93,11 +93,11 @@ export default function FlashCardsPage() {
                 href="/folders" 
                 className="text-indigo-600 hover:text-indigo-800"
               >
-                ← Back to Folders
+                ← Quay lại Thư mục
               </Link>
             </div>
             <h1 className="text-3xl font-bold text-gray-900">
-              {currentFolder ? currentFolder.name : 'All Flashcards'}
+              {currentFolder ? currentFolder.name : 'Tất cả Thẻ học'}
             </h1>
             {currentFolder?.description && (
               <p className="text-gray-600 mt-1">{currentFolder.description}</p>
@@ -108,67 +108,67 @@ export default function FlashCardsPage() {
               href="/flashcards/import"
               className="bg-orange-600 text-white px-4 py-2 rounded-md hover:bg-orange-700"
             >
-              Import CSV
+              Nhập CSV
             </Link>
             <Link
               href={folderId ? `/quiz?folder_id=${folderId}` : '/quiz'}
               className="bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700"
             >
-              Take Quiz
+              Làm Bài kiểm tra
             </Link>
             <Link
               href="/flashcards/study"
               className="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700"
             >
-              Study Mode
+              Chế độ học
             </Link>
             <Link
               href={`/flashcards/new${folderId ? `?folder_id=${folderId}` : ''}`}
               className="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700"
             >
-              Add New Card
+              Thêm Thẻ mới
             </Link>
           </div>
         </div>
 
         <div className="mb-6">
           <div className="flex gap-2">
-            <span className="px-3 py-2 text-gray-700 font-medium">Difficulty:</span>
+            <span className="px-3 py-2 text-gray-700 font-medium">Độ khó:</span>
             <button
               onClick={() => setFilter('all')}
               className={`px-4 py-2 rounded-md ${filter === 'all' ? 'bg-indigo-600 text-white' : 'bg-white text-gray-700 border'}`}
             >
-              All ({flashCards.length})
+              Tất cả ({flashCards.length})
             </button>
             <button
               onClick={() => setFilter('easy')}
               className={`px-4 py-2 rounded-md ${filter === 'easy' ? 'bg-green-600 text-white' : 'bg-white text-gray-700 border'}`}
             >
-              Easy ({flashCards.filter(c => c.difficulty === 'easy').length})
+              Dễ ({flashCards.filter(c => c.difficulty === 'easy').length})
             </button>
             <button
               onClick={() => setFilter('medium')}
               className={`px-4 py-2 rounded-md ${filter === 'medium' ? 'bg-yellow-600 text-white' : 'bg-white text-gray-700 border'}`}
             >
-              Medium ({flashCards.filter(c => c.difficulty === 'medium').length})
+              Trung bình ({flashCards.filter(c => c.difficulty === 'medium').length})
             </button>
             <button
               onClick={() => setFilter('hard')}
               className={`px-4 py-2 rounded-md ${filter === 'hard' ? 'bg-red-600 text-white' : 'bg-white text-gray-700 border'}`}
             >
-              Hard ({flashCards.filter(c => c.difficulty === 'hard').length})
+              Khó ({flashCards.filter(c => c.difficulty === 'hard').length})
             </button>
           </div>
         </div>
 
         {filteredCards.length === 0 ? (
           <div className="text-center py-12">
-            <p className="text-gray-500 mb-4">No flashcards found.</p>
+            <p className="text-gray-500 mb-4">Không tìm thấy thẻ học nào.</p>
             <Link
               href="/flashcards/new"
               className="text-indigo-600 hover:text-indigo-500"
             >
-              Create your first flashcard
+              Tạo thẻ học đầu tiên của bạn
             </Link>
           </div>
         ) : (
@@ -193,25 +193,25 @@ export default function FlashCardsPage() {
                 <p className="text-gray-600 mb-4 line-clamp-2">{card.meaning}</p>
                 
                 {card.category && (
-                  <p className="text-sm text-gray-500 mb-4">Category: {card.category}</p>
+                  <p className="text-sm text-gray-500 mb-4">Danh mục: {card.category}</p>
                 )}
                 
                 <div className="flex justify-between items-center">
                   <span className="text-sm text-gray-500">
-                    Reviews: {card.reviewCount}
+                    Ôn tập: {card.reviewCount}
                   </span>
                   <div className="flex gap-2">
                     <Link
                       href={`/flashcards/${card.id}/edit`}
                       className="text-indigo-600 hover:text-indigo-500 text-sm"
                     >
-                      Edit
+                      Sửa
                     </Link>
                     <button
                       onClick={() => handleDelete(card.id)}
                       className="text-red-600 hover:text-red-500 text-sm"
                     >
-                      Delete
+                      Xóa
                     </button>
                   </div>
                 </div>

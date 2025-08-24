@@ -59,7 +59,7 @@ export default function FlashCard({ card, onReview }: FlashCardProps) {
             </div>
             
             <div className="text-center text-sm text-gray-500">
-              Click to flip
+              Nhấn để xem mặt sau
             </div>
           </div>
         </div>
@@ -70,24 +70,24 @@ export default function FlashCard({ card, onReview }: FlashCardProps) {
             <div className="flex justify-between items-start mb-6">
               <h3 className="text-2xl font-bold">{card.word}</h3>
               <span className="text-sm opacity-75">
-                Reviews: {card.reviewCount}
+                Số lần ôn tập: {card.reviewCount}
               </span>
             </div>
             
             <div className="flex-1 space-y-6">
               <div>
-                <h4 className="text-sm font-medium opacity-75 mb-2">Meaning:</h4>
+                <h4 className="text-sm font-medium opacity-75 mb-2">Nghĩa:</h4>
                 <p className="text-lg">{card.meaning}</p>
               </div>
               
               <div>
-                <h4 className="text-sm font-medium opacity-75 mb-2">Example:</h4>
+                <h4 className="text-sm font-medium opacity-75 mb-2">Ví dụ:</h4>
                 <p className="italic">{card.example}</p>
               </div>
             </div>
             
             <div className="text-center text-sm opacity-75">
-              Click to flip back
+              Nhấn để quay lại mặt trước
             </div>
           </div>
         </div>

@@ -15,7 +15,7 @@ export async function GET(
     
     if (result.rows.length === 0) {
       return NextResponse.json(
-        { error: 'Folder not found' },
+        { error: 'Thư mục không tìm thấy' },
         { status: 404 }
       );
     }
@@ -24,7 +24,7 @@ export async function GET(
   } catch (error) {
     console.error('Failed to fetch folder:', error);
     return NextResponse.json(
-      { error: 'Failed to fetch folder' },
+      { error: 'Không thể lấy thư mục' },
       { status: 500 }
     );
   }
@@ -41,7 +41,7 @@ export async function PUT(
 
     if (!name) {
       return NextResponse.json(
-        { error: 'Folder name is required' },
+        { error: 'Tên thư mục là bắt buộc' },
         { status: 400 }
       );
     }
@@ -53,7 +53,7 @@ export async function PUT(
 
     if (result.rows.length === 0) {
       return NextResponse.json(
-        { error: 'Folder not found' },
+        { error: 'Thư mục không tìm thấy' },
         { status: 404 }
       );
     }
@@ -62,7 +62,7 @@ export async function PUT(
   } catch (error) {
     console.error('Failed to update folder:', error);
     return NextResponse.json(
-      { error: 'Failed to update folder' },
+      { error: 'Không thể cập nhật thư mục' },
       { status: 500 }
     );
   }
@@ -83,7 +83,7 @@ export async function DELETE(
     
     if (parseInt(flashcardsCheck.rows[0].count) > 0) {
       return NextResponse.json(
-        { error: 'Cannot delete folder that contains flashcards. Please move or delete flashcards first.' },
+        { error: 'Không thể xóa thư mục có chứa thẻ ghi nhớ. Vui lòng di chuyển hoặc xóa thẻ ghi nhớ trước.' },
         { status: 400 }
       );
     }
@@ -95,16 +95,16 @@ export async function DELETE(
 
     if (result.rows.length === 0) {
       return NextResponse.json(
-        { error: 'Folder not found' },
+        { error: 'Thư mục không tìm thấy' },
         { status: 404 }
       );
     }
 
-    return NextResponse.json({ message: 'Folder deleted successfully' });
+    return NextResponse.json({ message: 'Xóa thư mục thành công' });
   } catch (error) {
     console.error('Failed to delete folder:', error);
     return NextResponse.json(
-      { error: 'Failed to delete folder' },
+      { error: 'Không thể xóa thư mục' },
       { status: 500 }
     );
   }

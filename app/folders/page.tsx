@@ -53,7 +53,7 @@ export default function FoldersPage() {
   };
 
   const handleDeleteFolder = async (id: number) => {
-    if (!confirm('Are you sure you want to delete this folder?')) return;
+    if (!confirm('Bạn có chắc chắn muốn xóa thư mục này không?')) return;
 
     try {
       const response = await fetch(`/api/folders/${id}`, {
@@ -72,20 +72,20 @@ export default function FoldersPage() {
   };
 
   const colorOptions = [
-    { value: '#6366f1', name: 'Indigo', class: 'bg-indigo-500' },
-    { value: '#10b981', name: 'Green', class: 'bg-green-500' },
-    { value: '#f59e0b', name: 'Yellow', class: 'bg-yellow-500' },
-    { value: '#ef4444', name: 'Red', class: 'bg-red-500' },
-    { value: '#8b5cf6', name: 'Purple', class: 'bg-purple-500' },
-    { value: '#06b6d4', name: 'Cyan', class: 'bg-cyan-500' },
-    { value: '#f97316', name: 'Orange', class: 'bg-orange-500' },
-    { value: '#84cc16', name: 'Lime', class: 'bg-lime-500' },
+    { value: '#6366f1', name: 'Chàm', class: 'bg-indigo-500' },
+    { value: '#10b981', name: 'Xanh lá', class: 'bg-green-500' },
+    { value: '#f59e0b', name: 'Vàng', class: 'bg-yellow-500' },
+    { value: '#ef4444', name: 'Đỏ', class: 'bg-red-500' },
+    { value: '#8b5cf6', name: 'Tím', class: 'bg-purple-500' },
+    { value: '#06b6d4', name: 'Xanh cyan', class: 'bg-cyan-500' },
+    { value: '#f97316', name: 'Cam', class: 'bg-orange-500' },
+    { value: '#84cc16', name: 'Xanh chanh', class: 'bg-lime-500' },
   ];
 
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="text-gray-500">Loading folders...</div>
+        <div className="text-gray-500">Đang tải thư mục...</div>
       </div>
     );
   }
@@ -95,21 +95,21 @@ export default function FoldersPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex justify-between items-center mb-8">
           <div>
-            <h1 className="text-3xl font-bold text-gray-900">My Flashcard Collections</h1>
-            <p className="text-gray-600 mt-2">Organize your flashcards into folders</p>
+            <h1 className="text-3xl font-bold text-gray-900">Bộ sưu tập Thẻ học của tôi</h1>
+            <p className="text-gray-600 mt-2">Sắp xếp thẻ học của bạn vào các thư mục</p>
           </div>
           <div className="flex gap-4">
             <button
               onClick={() => setShowCreateForm(true)}
               className="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700"
             >
-              + New Folder
+              + Thư mục Mới
             </button>
             <Link
               href="/flashcards"
               className="bg-gray-600 text-white px-4 py-2 rounded-md hover:bg-gray-700"
             >
-              View All Cards
+              Xem Tất cả Thẻ
             </Link>
           </div>
         </div>
@@ -117,36 +117,36 @@ export default function FoldersPage() {
         {showCreateForm && (
           <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center z-50">
             <div className="bg-white rounded-lg p-6 w-full max-w-md">
-              <h2 className="text-xl font-bold mb-4">Create New Folder</h2>
+              <h2 className="text-xl font-bold mb-4">Tạo Thư mục Mới</h2>
               <form onSubmit={handleCreateFolder}>
                 <div className="mb-4">
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Folder Name *
+                    Tên Thư mục *
                   </label>
                   <input
                     type="text"
                     value={newFolder.name}
                     onChange={(e) => setNewFolder({...newFolder, name: e.target.value})}
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-                    placeholder="e.g., Spanish Vocabulary"
+                    placeholder="Ví dụ: Từ vựng tiếng Anh"
                     required
                   />
                 </div>
                 <div className="mb-4">
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Description
+                    Mô tả
                   </label>
                   <textarea
                     value={newFolder.description}
                     onChange={(e) => setNewFolder({...newFolder, description: e.target.value})}
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-                    placeholder="Optional description..."
+                    placeholder="Mô tả tùy chọn..."
                     rows={3}
                   />
                 </div>
                 <div className="mb-6">
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Color
+                    Màu sắc
                   </label>
                   <div className="grid grid-cols-4 gap-2">
                     {colorOptions.map((color) => (
@@ -167,14 +167,14 @@ export default function FoldersPage() {
                     type="submit"
                     className="flex-1 bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700"
                   >
-                    Create Folder
+                    Tạo Thư mục
                   </button>
                   <button
                     type="button"
                     onClick={() => setShowCreateForm(false)}
                     className="flex-1 bg-gray-300 text-gray-700 py-2 px-4 rounded-md hover:bg-gray-400"
                   >
-                    Cancel
+                    Hủy
                   </button>
                 </div>
               </form>
@@ -184,12 +184,12 @@ export default function FoldersPage() {
 
         {folders.length === 0 ? (
           <div className="text-center py-12">
-            <p className="text-gray-500 mb-4">No folders found.</p>
+            <p className="text-gray-500 mb-4">Không tìm thấy thư mục nào.</p>
             <button
               onClick={() => setShowCreateForm(true)}
               className="text-indigo-600 hover:text-indigo-500"
             >
-              Create your first folder
+              Tạo thư mục đầu tiên của bạn
             </button>
           </div>
         ) : (
@@ -203,7 +203,7 @@ export default function FoldersPage() {
                   <div className="text-white text-center">
                     <div className="text-4xl mb-2">📁</div>
                     <div className="text-sm opacity-90">
-                      {folder.flashcardCount || 0} cards
+                      {folder.flashcardCount || 0} thẻ
                     </div>
                   </div>
                 </div>
@@ -223,18 +223,18 @@ export default function FoldersPage() {
                       href={`/flashcards?folder_id=${folder.id}`}
                       className="flex-1 bg-indigo-600 text-white text-center px-3 py-2 rounded-md hover:bg-indigo-700 text-sm"
                     >
-                      View Cards
+                      Xem Thẻ
                     </Link>
                     <Link
                       href={`/quiz?folder_id=${folder.id}`}
                       className="bg-green-600 text-white px-3 py-2 rounded-md hover:bg-green-700 text-sm"
                     >
-                      Quiz
+                      Bài kiểm tra
                     </Link>
                     <button
                       onClick={() => handleDeleteFolder(folder.id)}
                       className="bg-red-600 text-white px-3 py-2 rounded-md hover:bg-red-700 text-sm"
-                      title="Delete folder"
+                      title="Xóa thư mục"
                     >
                       🗑️
                     </button>

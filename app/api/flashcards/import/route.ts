@@ -20,14 +20,14 @@ export async function POST(request: NextRequest) {
 
     if (!file) {
       return NextResponse.json(
-        { error: 'No file provided' },
+        { error: 'Chưa cung cấp tập tin' },
         { status: 400 }
       );
     }
 
     if (file.type !== 'text/csv' && !file.name.endsWith('.csv')) {
       return NextResponse.json(
-        { error: 'File must be a CSV file' },
+        { error: 'Tập tin phải là tập tin CSV' },
         { status: 400 }
       );
     }
@@ -43,7 +43,7 @@ export async function POST(request: NextRequest) {
     if (results.errors.length > 0) {
       return NextResponse.json(
         { 
-          error: 'CSV parsing error', 
+          error: 'Lỗi phân tích tập tin CSV', 
           details: results.errors.map(err => err.message) 
         },
         { status: 400 }
@@ -58,13 +58,13 @@ export async function POST(request: NextRequest) {
       const lineNumber = index + 2; // +2 because index starts at 0 and we have header row
 
       if (!row.word || !row.meaning || !row.example) {
-        errors.push(`Line ${lineNumber}: Missing required fields (word, meaning, example)`);
+        errors.push(`Dòng ${lineNumber}: Thiếu các trường bắt buộc (từ vựng, nghĩa, ví dụ)`);
         return;
       }
 
       // Validate difficulty if provided
       if (row.difficulty && !['easy', 'medium', 'hard'].includes(row.difficulty)) {
-        errors.push(`Line ${lineNumber}: Invalid difficulty level. Must be 'easy', 'medium', or 'hard'`);
+        errors.push(`Dòng ${lineNumber}: Mức độ khó không hợp lệ. Phải là 'dễ', 'trung bình', hoặc 'khó'`);
         return;
       }
 
@@ -74,7 +74,7 @@ export async function POST(request: NextRequest) {
     if (errors.length > 0) {
       return NextResponse.json(
         { 
-          error: 'Validation failed', 
+          error: 'Xác thực thất bại', 
           details: errors 
         },
         { status: 400 }
@@ -83,7 +83,7 @@ export async function POST(request: NextRequest) {
 
     if (validRows.length === 0) {
       return NextResponse.json(
-        { error: 'No valid data rows found in CSV' },
+        { error: 'Không tìm thấy dòng dữ liệu hợp lệ trong CSV' },
         { status: 400 }
       );
     }
@@ -107,7 +107,7 @@ export async function POST(request: NextRequest) {
         imported.push(flashcard);
       } catch (error) {
         const lineNumber = index + 2;
-        importErrors.push(`Line ${lineNumber}: Failed to create flashcard - ${error instanceof Error ? error.message : 'Unknown error'}`);
+        importErrors.push(`Dòng ${lineNumber}: Không thể tạo thẻ ghi nhớ - ${error instanceof Error ? error.message : 'Lỗi không xác định'}`);
       }
     }
 
@@ -122,7 +122,7 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error('Import error:', error);
     return NextResponse.json(
-      { error: 'Failed to import CSV file' },
+      { error: 'Không thể nhập tập tin CSV' },
       { status: 500 }
     );
   }

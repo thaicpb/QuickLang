@@ -16,7 +16,7 @@ export async function GET(request: Request) {
     return NextResponse.json(filteredCards);
   } catch (error) {
     return NextResponse.json(
-      { error: 'Failed to fetch flashcards' },
+      { error: 'Không thể lấy danh sách thẻ ghi nhớ' },
       { status: 500 }
     );
   }
@@ -29,7 +29,7 @@ export async function POST(request: Request) {
 
     if (!word || !meaning || !example) {
       return NextResponse.json(
-        { error: 'Word, meaning, and example are required' },
+        { error: 'Từ vựng, nghĩa và ví dụ là bắt buộc' },
         { status: 400 }
       );
     }
@@ -48,7 +48,7 @@ export async function POST(request: Request) {
     return NextResponse.json(newCard, { status: 201 });
   } catch (error) {
     return NextResponse.json(
-      { error: 'Failed to create flashcard' },
+      { error: 'Không thể tạo thẻ ghi nhớ' },
       { status: 500 }
     );
   }

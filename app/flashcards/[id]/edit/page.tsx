@@ -20,12 +20,12 @@ export default function EditFlashCardPage() {
     try {
       const response = await fetch(`/api/flashcards/${params.id}`);
       if (!response.ok) {
-        throw new Error('Flashcard not found');
+        throw new Error('Không tìm thấy thẻ học');
       }
       const data = await response.json();
       setCard(data);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to fetch flashcard');
+      setError(err instanceof Error ? err.message : 'Không thể lấy thông tin thẻ học');
     } finally {
       setLoading(false);
     }
@@ -34,7 +34,7 @@ export default function EditFlashCardPage() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="text-gray-500">Loading flashcard...</div>
+        <div className="text-gray-500">Đang tải thẻ học...</div>
       </div>
     );
   }
@@ -48,7 +48,7 @@ export default function EditFlashCardPage() {
             onClick={() => router.push('/flashcards')}
             className="text-indigo-600 hover:text-indigo-500"
           >
-            Back to Flashcards
+            Quay lại Thẻ học
           </button>
         </div>
       </div>
@@ -63,9 +63,9 @@ export default function EditFlashCardPage() {
             onClick={() => router.push('/flashcards')}
             className="text-indigo-600 hover:text-indigo-500 mb-4"
           >
-            ← Back to Flashcards
+            ← Quay lại Thẻ học
           </button>
-          <h1 className="text-3xl font-bold text-gray-900">Edit Flashcard</h1>
+          <h1 className="text-3xl font-bold text-gray-900">Sửa Thẻ học</h1>
         </div>
 
         <div className="bg-white rounded-lg shadow-md p-6">

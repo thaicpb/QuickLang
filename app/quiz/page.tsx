@@ -51,12 +51,12 @@ export default function QuizPage() {
       const folderParam = folderId ? `&folder_id=${folderId}` : '';
       const response = await fetch(`/api/quiz?count=10${folderParam}`);
       if (!response.ok) {
-        throw new Error('Failed to load quiz');
+        throw new Error('Không thể tải bài kiểm tra');
       }
       const data = await response.json();
       setQuizData(data);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'An error occurred');
+      setError(err instanceof Error ? err.message : 'Đã xảy ra lỗi');
     } finally {
       setLoading(false);
     }
@@ -112,7 +112,7 @@ export default function QuizPage() {
   if (loading) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-        <div className="text-xl">Loading quiz...</div>
+        <div className="text-xl">Đang tải bài kiểm tra...</div>
       </div>
     );
   }
@@ -121,13 +121,13 @@ export default function QuizPage() {
     return (
       <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
         <div className="bg-white rounded-lg shadow-lg p-8">
-          <h2 className="text-2xl font-bold text-red-600 mb-4">Error</h2>
-          <p className="text-gray-700 mb-4">{error || 'Failed to load quiz'}</p>
+          <h2 className="text-2xl font-bold text-red-600 mb-4">Lỗi</h2>
+          <p className="text-gray-700 mb-4">{error || 'Không thể tải bài kiểm tra'}</p>
           <button
             onClick={fetchQuiz}
             className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700"
           >
-            Try Again
+            Thử lại
           </button>
         </div>
       </div>
@@ -141,28 +141,28 @@ export default function QuizPage() {
       <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 p-8">
         <div className="max-w-2xl mx-auto">
           <div className="bg-white rounded-xl shadow-lg p-8">
-            <h1 className="text-3xl font-bold text-center mb-8">Quiz Complete! 🎉</h1>
+            <h1 className="text-3xl font-bold text-center mb-8">Hoàn thành Bài kiểm tra! 🎉</h1>
             
             <div className="text-center mb-8">
               <div className="text-6xl font-bold text-blue-600 mb-2">
                 {score}/{quizData.total}
               </div>
               <div className="text-2xl text-gray-600">
-                {percentage}% Correct
+                {percentage}% Chính xác
               </div>
               <div className="mt-4">
                 {percentage >= 80 ? (
-                  <span className="text-green-600 text-xl">Excellent work! 🌟</span>
+                  <span className="text-green-600 text-xl">Xuất sắc! 🌟</span>
                 ) : percentage >= 60 ? (
-                  <span className="text-yellow-600 text-xl">Good job! Keep practicing 📚</span>
+                  <span className="text-yellow-600 text-xl">Làm tốt! Tiếp tục luyện tập 📚</span>
                 ) : (
-                  <span className="text-orange-600 text-xl">Keep learning! You'll get better 💪</span>
+                  <span className="text-orange-600 text-xl">Tiếp tục học! Bạn sẽ tiến bộ 💪</span>
                 )}
               </div>
             </div>
 
             <div className="space-y-4 mb-8">
-              <h3 className="text-xl font-semibold">Review Your Answers:</h3>
+              <h3 className="text-xl font-semibold">Kiểm tra Câu trả lời của Bạn:</h3>
               {quizData.questions.map((question, index) => {
                 const answer = answers[index];
                 return (
@@ -171,13 +171,13 @@ export default function QuizPage() {
                       <div className="flex-1">
                         <p className="font-medium">Q{index + 1}: {question.question}</p>
                         <p className="text-sm text-gray-600 mt-1">
-                          Your answer: <span className={answer?.correct ? 'text-green-600' : 'text-red-600'}>
+                          Câu trả lời của bạn: <span className={answer?.correct ? 'text-green-600' : 'text-red-600'}>
                             {answer?.selected}
                           </span>
                         </p>
                         {!answer?.correct && (
                           <p className="text-sm text-green-600 mt-1">
-                            Correct answer: {question.correctAnswer} - {question.correctMeaning}
+                            Câu trả lời đúng: {question.correctAnswer} - {question.correctMeaning}
                           </p>
                         )}
                       </div>
@@ -199,13 +199,13 @@ export default function QuizPage() {
                 onClick={handleRestartQuiz}
                 className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors"
               >
-                Take Another Quiz
+                Làm Bài kiểm tra Khác
               </button>
               <Link
                 href="/flashcards"
                 className="bg-gray-600 text-white px-8 py-3 rounded-lg hover:bg-gray-700 transition-colors inline-block"
               >
-                Study Flashcards
+                Học Thẻ học
               </Link>
             </div>
           </div>
@@ -222,12 +222,12 @@ export default function QuizPage() {
       <div className="max-w-3xl mx-auto">
         <div className="mb-6">
           <div className="flex justify-between items-center mb-2">
-            <h1 className="text-2xl font-bold">Language Quiz</h1>
+            <h1 className="text-2xl font-bold">Bài kiểm tra Ngôn ngữ</h1>
             <Link
               href="/flashcards"
               className="text-blue-600 hover:text-blue-800"
             >
-              Back to Flashcards
+              Quay lại Thẻ học
             </Link>
           </div>
           <div className="bg-white rounded-full h-4 overflow-hidden">
@@ -237,7 +237,7 @@ export default function QuizPage() {
             />
           </div>
           <div className="text-sm text-gray-600 mt-2">
-            Question {currentQuestionIndex + 1} of {quizData.total}
+            Câu hỏi {currentQuestionIndex + 1} / {quizData.total}
           </div>
         </div>
 
@@ -256,7 +256,7 @@ export default function QuizPage() {
             )}
 
             <div className="bg-gray-50 rounded-lg p-4 mb-6">
-              <p className="text-sm text-gray-600 mb-1">Example:</p>
+              <p className="text-sm text-gray-600 mb-1">Ví dụ:</p>
               <p className="italic">{currentQuestion.example}</p>
             </div>
 
@@ -321,11 +321,11 @@ export default function QuizPage() {
                 : 'bg-red-100 text-red-800'
             }`}>
               {selectedAnswer === currentQuestion.correctAnswer ? (
-                <p className="font-semibold">Correct! Well done! 🎉</p>
+                <p className="font-semibold">Đúng rồi! Làm tốt! 🎉</p>
               ) : (
                 <div>
-                  <p className="font-semibold mb-2">Not quite right.</p>
-                  <p>The correct answer is: <strong>{currentQuestion.correctAnswer}</strong> - {currentQuestion.correctMeaning}</p>
+                  <p className="font-semibold mb-2">Chưa chính xác lắm.</p>
+                  <p>Câu trả lời đúng là: <strong>{currentQuestion.correctAnswer}</strong> - {currentQuestion.correctMeaning}</p>
                 </div>
               )}
             </div>
@@ -333,7 +333,7 @@ export default function QuizPage() {
 
           <div className="flex justify-between items-center">
             <div className="text-lg font-medium">
-              Score: {score}/{currentQuestionIndex + (showResult ? 1 : 0)}
+              Điểm: {score}/{currentQuestionIndex + (showResult ? 1 : 0)}
             </div>
             
             {!showResult ? (
@@ -346,14 +346,14 @@ export default function QuizPage() {
                     : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                 }`}
               >
-                Submit Answer
+                Gửi Câu trả lời
               </button>
             ) : (
               <button
                 onClick={handleNextQuestion}
                 className="bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors"
               >
-                {currentQuestionIndex < quizData.total - 1 ? 'Next Question' : 'View Results'}
+                {currentQuestionIndex < quizData.total - 1 ? 'Câu tiếp theo' : 'Xem Kết quả'}
               </button>
             )}
           </div>

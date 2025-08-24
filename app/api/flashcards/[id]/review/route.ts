@@ -10,7 +10,7 @@ export async function POST(
     
     if (!card) {
       return NextResponse.json(
-        { error: 'Flashcard not found' },
+        { error: 'Thẻ ghi nhớ không tìm thấy' },
         { status: 404 }
       );
     }
@@ -18,7 +18,7 @@ export async function POST(
     return NextResponse.json(card);
   } catch (error) {
     return NextResponse.json(
-      { error: 'Failed to update review count' },
+      { error: 'Không thể cập nhật số lần ôn tập' },
       { status: 500 }
     );
   }

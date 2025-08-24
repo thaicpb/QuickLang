@@ -42,7 +42,7 @@ export async function GET(request: Request) {
 
     if (allCards.length < 4) {
       return NextResponse.json(
-        { error: 'Not enough flashcards to create quiz (minimum 4 required)' },
+        { error: 'Không đủ thẻ ghi nhớ để tạo bài kiểm tra (tối thiểu 4 thẻ)' },
         { status: 400 }
       );
     }
@@ -83,7 +83,7 @@ export async function GET(request: Request) {
   } catch (error) {
     console.error('Quiz generation error:', error);
     return NextResponse.json(
-      { error: 'Failed to generate quiz' },
+      { error: 'Không thể tạo bài kiểm tra' },
       { status: 500 }
     );
   }

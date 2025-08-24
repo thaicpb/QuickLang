@@ -29,7 +29,7 @@ export default function LoginForm() {
       const data = await response.json();
 
       if (!response.ok) {
-        setError(data.error || 'Login failed');
+        setError(data.error || 'Đăng nhập thất bại');
         setLoading(false);
         return;
       }
@@ -40,7 +40,7 @@ export default function LoginForm() {
         router.push('/dashboard');
       }
     } catch (err) {
-      setError('An error occurred. Please try again.');
+      setError('Có lỗi xảy ra. Vui lòng thử lại.');
       setLoading(false);
     }
   };
@@ -50,7 +50,7 @@ export default function LoginForm() {
       <div className="max-w-md w-full space-y-8">
         <div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Sign in to your account
+            Đăng nhập vào tài khoản
           </h2>
         </div>
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
@@ -58,7 +58,7 @@ export default function LoginForm() {
           <div className="rounded-md shadow-sm -space-y-px">
             <div>
               <label htmlFor="username" className="sr-only">
-                Username
+                Tên đăng nhập
               </label>
               <input
                 id="username"
@@ -66,14 +66,14 @@ export default function LoginForm() {
                 type="text"
                 required
                 className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                placeholder="Username"
+                placeholder="Tên đăng nhập"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
               />
             </div>
             <div>
               <label htmlFor="password" className="sr-only">
-                Password
+                Mật khẩu
               </label>
               <input
                 id="password"
@@ -81,7 +81,7 @@ export default function LoginForm() {
                 type="password"
                 required
                 className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                placeholder="Password"
+                placeholder="Mật khẩu"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
@@ -104,7 +104,7 @@ export default function LoginForm() {
               disabled={loading}
               className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {loading ? 'Signing in...' : 'Sign in'}
+              {loading ? 'Đang đăng nhập...' : 'Đăng nhập'}
             </button>
           </div>
 
@@ -113,7 +113,7 @@ export default function LoginForm() {
               <div className="w-full border-t border-gray-300" />
             </div>
             <div className="relative flex justify-center text-sm">
-              <span className="px-2 bg-gray-50 text-gray-500">Or continue with</span>
+              <span className="px-2 bg-gray-50 text-gray-500">Hoặc đăng nhập bằng</span>
             </div>
           </div>
 
@@ -122,9 +122,9 @@ export default function LoginForm() {
           </div>
 
           <div className="text-sm text-center text-gray-600">
-            <p>Demo accounts:</p>
-            <p>Username: admin / Password: admin123</p>
-            <p>Username: user / Password: user123</p>
+            <p>Tài khoản thử nghiệm:</p>
+            <p>Tên đăng nhập: admin / Mật khẩu: admin123</p>
+            <p>Tên đăng nhập: user / Mật khẩu: user123</p>
           </div>
         </form>
         <FacebookDebug />

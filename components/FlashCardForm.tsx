@@ -46,7 +46,7 @@ export default function FlashCardForm({ existingCard }: FlashCardFormProps) {
       router.push('/flashcards');
       router.refresh();
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'An error occurred');
+      setError(err instanceof Error ? err.message : 'Có lỗi xảy ra');
     } finally {
       setLoading(false);
     }
@@ -63,7 +63,7 @@ export default function FlashCardForm({ existingCard }: FlashCardFormProps) {
     <form onSubmit={handleSubmit} className="space-y-6 max-w-2xl mx-auto">
       <div>
         <label htmlFor="word" className="block text-sm font-medium text-gray-700">
-          Word *
+          Từ/Cụm từ *
         </label>
         <input
           type="text"
@@ -73,13 +73,13 @@ export default function FlashCardForm({ existingCard }: FlashCardFormProps) {
           value={formData.word}
           onChange={handleChange}
           className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border"
-          placeholder="Enter the word to learn"
+          placeholder="Nhập từ cần học"
         />
       </div>
 
       <div>
         <label htmlFor="imageUrl" className="block text-sm font-medium text-gray-700">
-          Image URL (optional)
+          URL hình ảnh (tùy chọn)
         </label>
         <input
           type="url"
@@ -99,7 +99,7 @@ export default function FlashCardForm({ existingCard }: FlashCardFormProps) {
 
       <div>
         <label htmlFor="meaning" className="block text-sm font-medium text-gray-700">
-          Meaning *
+          Nghĩa *
         </label>
         <textarea
           name="meaning"
@@ -109,13 +109,13 @@ export default function FlashCardForm({ existingCard }: FlashCardFormProps) {
           value={formData.meaning}
           onChange={handleChange}
           className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border"
-          placeholder="Enter the meaning or definition"
+          placeholder="Nhập nghĩa hoặc định nghĩa"
         />
       </div>
 
       <div>
         <label htmlFor="example" className="block text-sm font-medium text-gray-700">
-          Example *
+          Câu ví dụ *
         </label>
         <textarea
           name="example"
@@ -125,14 +125,14 @@ export default function FlashCardForm({ existingCard }: FlashCardFormProps) {
           value={formData.example}
           onChange={handleChange}
           className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border"
-          placeholder="Enter an example sentence"
+          placeholder="Nhập câu ví dụ"
         />
       </div>
 
       <div className="grid grid-cols-2 gap-4">
         <div>
           <label htmlFor="category" className="block text-sm font-medium text-gray-700">
-            Category (optional)
+            Danh mục (tùy chọn)
           </label>
           <input
             type="text"
@@ -141,13 +141,13 @@ export default function FlashCardForm({ existingCard }: FlashCardFormProps) {
             value={formData.category}
             onChange={handleChange}
             className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border"
-            placeholder="e.g., Vocabulary, Grammar"
+            placeholder="Ví dụ: Từ vựng, Ngữ pháp"
           />
         </div>
 
         <div>
           <label htmlFor="difficulty" className="block text-sm font-medium text-gray-700">
-            Difficulty
+            Độ khó
           </label>
           <select
             name="difficulty"
@@ -156,9 +156,9 @@ export default function FlashCardForm({ existingCard }: FlashCardFormProps) {
             onChange={handleChange}
             className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border"
           >
-            <option value="easy">Easy</option>
-            <option value="medium">Medium</option>
-            <option value="hard">Hard</option>
+            <option value="easy">Dễ</option>
+            <option value="medium">Trung bình</option>
+            <option value="hard">Khó</option>
           </select>
         </div>
       </div>
@@ -175,14 +175,14 @@ export default function FlashCardForm({ existingCard }: FlashCardFormProps) {
           disabled={loading}
           className="flex-1 bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          {loading ? (existingCard ? 'Updating...' : 'Creating...') : (existingCard ? 'Update Flashcard' : 'Create Flashcard')}
+          {loading ? (existingCard ? 'Đang cập nhật...' : 'Đang tạo...') : (existingCard ? 'Cập nhật thẻ học' : 'Tạo thẻ học')}
         </button>
         <button
           type="button"
           onClick={() => router.push('/flashcards')}
           className="flex-1 bg-gray-200 text-gray-700 py-2 px-4 rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
         >
-          Cancel
+          Hủy
         </button>
       </div>
     </form>

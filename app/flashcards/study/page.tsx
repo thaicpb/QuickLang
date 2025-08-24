@@ -64,7 +64,7 @@ export default function StudyPage() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="text-gray-500">Loading flashcards...</div>
+        <div className="text-gray-500">Đang tải thẻ học...</div>
       </div>
     );
   }
@@ -73,12 +73,12 @@ export default function StudyPage() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <p className="text-gray-500 mb-4">No flashcards available to study.</p>
+          <p className="text-gray-500 mb-4">Không có thẻ học nào để học.</p>
           <Link
             href="/flashcards/new"
             className="text-indigo-600 hover:text-indigo-500"
           >
-            Create your first flashcard
+            Tạo thẻ học đầu tiên của bạn
           </Link>
         </div>
       </div>
@@ -95,12 +95,12 @@ export default function StudyPage() {
             href="/flashcards"
             className="text-indigo-600 hover:text-indigo-500"
           >
-            ← Back to Flashcards
+            ← Quay lại Thẻ học
           </Link>
           
           <div className="flex items-center gap-4">
             <span className="text-gray-600">
-              Card {currentIndex + 1} of {flashCards.length}
+              Thẻ {currentIndex + 1} / {flashCards.length}
             </span>
             
             <select
@@ -108,8 +108,8 @@ export default function StudyPage() {
               onChange={(e) => setStudyMode(e.target.value as 'sequential' | 'random')}
               className="rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border"
             >
-              <option value="sequential">Sequential</option>
-              <option value="random">Random</option>
+              <option value="sequential">Tuần tự</option>
+              <option value="random">Ngẫu nhiên</option>
             </select>
           </div>
         </div>
@@ -123,7 +123,7 @@ export default function StudyPage() {
             onClick={goToPrevious}
             className="bg-white text-gray-700 px-6 py-3 rounded-lg shadow hover:shadow-md transition-shadow border border-gray-200 flex-shrink-0"
           >
-            ← Previous
+            ← Trước
           </button>
 
           <div className="flex gap-1 overflow-x-auto max-w-xs mx-4 py-2 px-2">
@@ -158,13 +158,13 @@ export default function StudyPage() {
             onClick={goToNext}
             className="bg-white text-gray-700 px-6 py-3 rounded-lg shadow hover:shadow-md transition-shadow border border-gray-200 flex-shrink-0"
           >
-            Next →
+            Tiếp →
           </button>
         </div>
 
         <div className="mt-8 text-center">
           <p className="text-sm text-gray-600">
-            Tip: Click on the card to flip and see the meaning and example
+            Mẹo: Nhấp vào thẻ để lật và xem nghĩa và ví dụ
           </p>
         </div>
       </div>

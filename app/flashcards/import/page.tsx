@@ -42,7 +42,7 @@ export default function ImportFlashcardsPage() {
         setError('');
         setResult(null);
       } else {
-        setError('Please select a valid CSV file');
+        setError('Vui lòng chọn một tệp CSV hợp lệ');
         setFile(null);
       }
     }
@@ -51,7 +51,7 @@ export default function ImportFlashcardsPage() {
   const handleImport = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!file) {
-      setError('Please select a CSV file');
+      setError('Vui lòng chọn một tệp CSV');
       return;
     }
 
@@ -83,7 +83,7 @@ export default function ImportFlashcardsPage() {
         setError(data.error + (data.details ? '\n' + data.details.join('\n') : ''));
       }
     } catch (error) {
-      setError('Failed to upload file. Please try again.');
+      setError('Không thể tải lên tệp. Vui lòng thử lại.');
       console.error('Upload error:', error);
     } finally {
       setIsUploading(false);
@@ -115,19 +115,19 @@ beautiful,đẹp,"She is very beautiful",adjectives,medium,`;
               href="/flashcards" 
               className="text-indigo-600 hover:text-indigo-500"
             >
-              ← Back to Flashcards
+              ← Quay lại Thẻ học
             </Link>
           </div>
-          <h1 className="text-3xl font-bold text-gray-900">Import Flashcards</h1>
-          <p className="text-gray-600 mt-2">Import flashcards from a CSV file</p>
+          <h1 className="text-3xl font-bold text-gray-900">Nhập Thẻ học</h1>
+          <p className="text-gray-600 mt-2">Nhập thẻ học từ tệp CSV</p>
         </div>
 
         <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">CSV Format Requirements</h2>
+          <h2 className="text-xl font-semibold text-gray-900 mb-4">Yêu cầu Định dạng CSV</h2>
           <div className="space-y-3 text-sm text-gray-600 mb-4">
-            <p><strong>Required columns:</strong> word, meaning, example</p>
-            <p><strong>Optional columns:</strong> category, difficulty (easy/medium/hard), folder_id</p>
-            <p><strong>Note:</strong> First row should contain column headers</p>
+            <p><strong>Cột bắt buộc:</strong> word, meaning, example</p>
+            <p><strong>Cột tùy chọn:</strong> category, difficulty (easy/medium/hard), folder_id</p>
+            <p><strong>Lưu ý:</strong> Hàng đầu tiên phải chứa tiêu đề cột</p>
           </div>
           
           <button
@@ -135,7 +135,7 @@ beautiful,đẹp,"She is very beautiful",adjectives,medium,`;
             onClick={downloadTemplate}
             className="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
           >
-            📥 Download Template CSV
+            📥 Tải xuống CSV Mẫu
           </button>
         </div>
 
@@ -143,7 +143,7 @@ beautiful,đẹp,"She is very beautiful",adjectives,medium,`;
           <form onSubmit={handleImport} className="space-y-6">
             <div>
               <label htmlFor="csvFile" className="block text-sm font-medium text-gray-700 mb-2">
-                Select CSV File *
+                Chọn Tệp CSV *
               </label>
               <input
                 type="file"
@@ -155,14 +155,14 @@ beautiful,đẹp,"She is very beautiful",adjectives,medium,`;
               />
               {file && (
                 <p className="text-sm text-gray-500 mt-1">
-                  Selected: {file.name} ({(file.size / 1024).toFixed(2)} KB)
+                  Đã chọn: {file.name} ({(file.size / 1024).toFixed(2)} KB)
                 </p>
               )}
             </div>
 
             <div>
               <label htmlFor="folder" className="block text-sm font-medium text-gray-700 mb-2">
-                Default Folder (optional)
+                Thư mục Mặc định (tùy chọn)
               </label>
               <select
                 id="folder"
@@ -170,7 +170,7 @@ beautiful,đẹp,"She is very beautiful",adjectives,medium,`;
                 onChange={(e) => setFolderId(e.target.value)}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
               >
-                <option value="">No folder (or use folder_id from CSV)</option>
+                <option value="">Không có thư mục (hoặc sử dụng folder_id từ CSV)</option>
                 {folders.map(folder => (
                   <option key={folder.id} value={folder.id}>
                     {folder.name}
@@ -178,7 +178,7 @@ beautiful,đẹp,"She is very beautiful",adjectives,medium,`;
                 ))}
               </select>
               <p className="text-xs text-gray-500 mt-1">
-                This folder will be used for cards without a folder_id in the CSV
+                Thư mục này sẽ được sử dụng cho các thẻ không có folder_id trong CSV
               </p>
             </div>
 
@@ -187,14 +187,14 @@ beautiful,đẹp,"She is very beautiful",adjectives,medium,`;
               disabled={!file || isUploading}
               className="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 disabled:bg-gray-400 disabled:cursor-not-allowed"
             >
-              {isUploading ? 'Importing...' : 'Import Flashcards'}
+              {isUploading ? 'Đang nhập...' : 'Nhập Thẻ học'}
             </button>
           </form>
 
           {error && (
             <div className="mt-6 bg-red-50 border border-red-200 rounded-md p-4">
               <div className="text-red-800 text-sm">
-                <p className="font-medium">Import failed:</p>
+                <p className="font-medium">Nhập thất bại:</p>
                 <pre className="mt-2 whitespace-pre-wrap">{error}</pre>
               </div>
             </div>
@@ -203,18 +203,18 @@ beautiful,đẹp,"She is very beautiful",adjectives,medium,`;
           {result && (
             <div className="mt-6 bg-green-50 border border-green-200 rounded-md p-4">
               <div className="text-green-800">
-                <p className="font-medium">Import completed successfully!</p>
+                <p className="font-medium">Nhập thành công!</p>
                 <ul className="mt-2 text-sm">
-                  <li>• Total rows processed: {result.total}</li>
-                  <li>• Successfully imported: {result.imported}</li>
+                  <li>• Tổng hàng đã xử lý: {result.total}</li>
+                  <li>• Đã nhập thành công: {result.imported}</li>
                   {result.errors && result.errors.length > 0 && (
-                    <li>• Failed imports: {result.errors.length}</li>
+                    <li>• Nhập thất bại: {result.errors.length}</li>
                   )}
                 </ul>
                 
                 {result.errors && result.errors.length > 0 && (
                   <div className="mt-4">
-                    <p className="font-medium text-red-800">Errors:</p>
+                    <p className="font-medium text-red-800">Lỗi:</p>
                     <div className="mt-2 text-sm text-red-700 bg-red-50 p-2 rounded border">
                       {result.errors.map((err, index) => (
                         <div key={index}>• {err}</div>
@@ -228,14 +228,14 @@ beautiful,đẹp,"She is very beautiful",adjectives,medium,`;
                     href="/flashcards"
                     className="inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700"
                   >
-                    View Imported Cards
+                    Xem Thẻ Đã nhập
                   </Link>
                   {folderId && (
                     <Link
                       href={`/flashcards?folder_id=${folderId}`}
                       className="inline-flex items-center px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700"
                     >
-                      View in Folder
+                      Xem trong Thư mục
                     </Link>
                   )}
                 </div>

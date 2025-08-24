@@ -23,7 +23,7 @@ export async function GET() {
   } catch (error) {
     console.error('Failed to fetch folders:', error);
     return NextResponse.json(
-      { error: 'Failed to fetch folders' },
+      { error: 'Không thể lấy danh sách thư mục' },
       { status: 500 }
     );
   }
@@ -36,7 +36,7 @@ export async function POST(request: Request) {
 
     if (!name) {
       return NextResponse.json(
-        { error: 'Folder name is required' },
+        { error: 'Tên thư mục là bắt buộc' },
         { status: 400 }
       );
     }
@@ -50,7 +50,7 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error('Failed to create folder:', error);
     return NextResponse.json(
-      { error: 'Failed to create folder' },
+      { error: 'Không thể tạo thư mục' },
       { status: 500 }
     );
   }

@@ -12,7 +12,7 @@ export async function POST(request: Request) {
 
     if (!username || !password) {
       return NextResponse.json(
-        { error: 'Username and password are required' },
+        { error: 'Tên đăng nhập và mật khẩu là bắt buộc' },
         { status: 400 }
       );
     }
@@ -23,7 +23,7 @@ export async function POST(request: Request) {
 
     if (!user) {
       return NextResponse.json(
-        { error: 'Invalid username or password' },
+        { error: 'Tên đăng nhập hoặc mật khẩu không đúng' },
         { status: 401 }
       );
     }
@@ -50,7 +50,7 @@ export async function POST(request: Request) {
 
   } catch (error) {
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: 'Lỗi máy chủ nội bộ' },
       { status: 500 }
     );
   }
