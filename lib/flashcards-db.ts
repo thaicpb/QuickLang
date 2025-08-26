@@ -15,7 +15,7 @@ export const flashCardsDB = {
   getAll: async (): Promise<FlashCard[]> => {
     await ensureDbInitialized();
     const result = await pool.query(
-      'SELECT * FROM flashcards ORDER BY created_at DESC'
+      'SELECT * FROM flashcards ORDER BY created_at ASC'
     );
     return result.rows.map(row => ({
       id: row.id,
