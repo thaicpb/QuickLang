@@ -18,6 +18,7 @@ export async function POST(
 
     return NextResponse.json(card);
   } catch (error) {
+    console.error(error);
     return NextResponse.json(
       { error: 'Không thể cập nhật số lần ôn tập' },
       { status: 500 }

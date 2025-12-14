@@ -79,7 +79,6 @@ export default function FoldersPage() {
 
       if (response.ok) {
         setFolders(folders.filter(folder => folder.id !== id));
-        const result = await response.json();
         if (flashcardCount > 0) {
           alert(`Đã xóa thành công thư mục và ${flashcardCount} thẻ ghi nhớ`);
         }

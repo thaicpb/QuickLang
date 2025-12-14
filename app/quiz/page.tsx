@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
 interface QuizOption {
@@ -28,7 +27,6 @@ interface QuizData {
 }
 
 export default function QuizPage() {
-  const router = useRouter();
   const [quizData, setQuizData] = useState<QuizData | null>(null);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
@@ -261,6 +259,7 @@ export default function QuizPage() {
             
             {currentQuestion.imageUrl && (
               <div className="mb-4">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img 
                   src={currentQuestion.imageUrl} 
                   alt={currentQuestion.word}

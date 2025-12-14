@@ -14,6 +14,7 @@ export default function EditFlashCardPage() {
 
   useEffect(() => {
     fetchCard();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params.id]);
 
   const fetchCard = async () => {

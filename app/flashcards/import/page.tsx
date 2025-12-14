@@ -2,14 +2,14 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Folder } from '@/lib/types';
+import { Folder, FlashCard } from '@/lib/types';
 
 interface ImportResult {
   success: boolean;
   imported: number;
   total: number;
   errors?: string[];
-  flashcards?: any[];
+  flashcards?: FlashCard[];
 }
 
 export default function ImportFlashcardsPage() {

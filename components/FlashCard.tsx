@@ -49,6 +49,7 @@ export default function FlashCard({ card, onReview }: FlashCardProps) {
             
             <div className="flex-1 flex flex-col items-center justify-center">
               {card.imageUrl && (
+                // eslint-disable-next-line @next/next/no-img-element
                 <img
                   src={card.imageUrl}
                   alt={card.word}
