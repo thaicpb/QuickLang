@@ -1,26 +1,23 @@
 import { NextResponse } from 'next/server';
-import pool from '@/lib/db';
-import { initializeDatabase } from '@/lib/init-db';
+import prisma from '@/lib/prisma';
 
 export async function GET() {
   try {
-    const result = await pool.query(`
-      SELECT f.*, 
-             COUNT(fc.id) as flashcard_count
-      FROM folders f
-      LEFT JOIN flashcards fc ON f.id = fc.folder_id
-      GROUP BY f.id, f.name, f.description, f.color, f.created_at
-      ORDER BY f.created_at ASC
-    `);
+    const folders = await prisma.folder.findMany({
+      include: {
+        _count: { select: { flashcards: true } },
+      },
+      orderBy: { createdAt: 'asc' },
+    });
     
-    // Map database field names to camelCase for frontend
-    const folders = result.rows.map(row => ({
-      ...row,
-      flashcardCount: parseInt(row.flashcard_count) || 0,
-      flashcard_count: undefined
+    const mapped = folders.map(folder => ({
+      ...folder,
+      flashcardCount: folder._count.flashcards,
+      flashcard_count: undefined,
+      _count: undefined,
     }));
     
-    return NextResponse.json(folders);
+    return NextResponse.json(mapped);
   } catch (error) {
     console.error('Failed to fetch folders:', error);
     return NextResponse.json(
@@ -32,8 +29,6 @@ export async function GET() {
 
 export async function POST(request: Request) {
   try {
-    await initializeDatabase();
-
     const body = await request.json();
     const { name, description, color } = body;
 
@@ -44,12 +39,15 @@ export async function POST(request: Request) {
       );
     }
 
-    const result = await pool.query(
-      'INSERT INTO folders (name, description, color) VALUES ($1, $2, $3) RETURNING *',
-      [name, description || null, color || '#6366f1']
-    );
+    const result = await prisma.folder.create({
+      data: {
+        name,
+        description: description || null,
+        color: color || '#6366f1',
+      },
+    });
 
-    return NextResponse.json(result.rows[0], { status: 201 });
+    return NextResponse.json(result, { status: 201 });
   } catch (error) {
     console.error('Failed to create folder:', error);
     return NextResponse.json(

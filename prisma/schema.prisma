@@ -1,0 +1,42 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Difficulty {
+  easy
+  medium
+  hard
+}
+
+model Folder {
+  id          Int         @id @default(autoincrement())
+  name        String
+  description String?
+  color       String      @default("#6366f1")
+  createdAt   DateTime    @default(now()) @map("created_at")
+  flashcards  FlashCard[]
+
+  @@map("folders")
+}
+
+model FlashCard {
+  id           Int         @id @default(autoincrement())
+  word         String
+  imageUrl     String?     @map("image_url")
+  meaning      String
+  example      String
+  category     String?
+  folderId     Int?        @map("folder_id")
+  folder       Folder?     @relation(fields: [folderId], references: [id], onDelete: SetNull)
+  difficulty   Difficulty  @default(medium)
+  createdAt    DateTime    @default(now()) @map("created_at")
+  lastReviewed DateTime?   @map("last_reviewed")
+  reviewCount  Int         @default(0) @map("review_count")
+
+  @@map("flashcards")
+}
