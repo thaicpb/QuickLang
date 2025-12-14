@@ -3,10 +3,11 @@ import { flashCardsDB } from '@/lib/flashcards-db';
 
 export async function GET(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const card = await flashCardsDB.getById(parseInt(params.id));
+    const { id } = await params;
+    const card = await flashCardsDB.getById(parseInt(id));
     
     if (!card) {
       return NextResponse.json(
@@ -26,11 +27,12 @@ export async function GET(
 
 export async function PUT(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     const body = await request.json();
-    const updatedCard = await flashCardsDB.update(parseInt(params.id), body);
+    const updatedCard = await flashCardsDB.update(parseInt(id), body);
 
     if (!updatedCard) {
       return NextResponse.json(
@@ -50,10 +52,11 @@ export async function PUT(
 
 export async function DELETE(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const deleted = await flashCardsDB.delete(parseInt(params.id));
+    const { id } = await params;
+    const deleted = await flashCardsDB.delete(parseInt(id));
 
     if (!deleted) {
       return NextResponse.json(

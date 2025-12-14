@@ -1,6 +1,7 @@
 export interface FlashCard {
   id: number;
   word: string;
+  pronunciation?: string;
   imageUrl?: string;
   meaning: string;
   example: string;
@@ -14,6 +15,7 @@ export interface FlashCard {
 
 export interface FlashCardFormData {
   word: string;
+  pronunciation?: string;
   imageUrl?: string;
   meaning: string;
   example: string;

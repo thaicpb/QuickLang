@@ -14,6 +14,7 @@ export default function FlashCardForm({ existingCard }: FlashCardFormProps) {
   const [error, setError] = useState('');
   const [formData, setFormData] = useState({
     word: existingCard?.word || '',
+    pronunciation: existingCard?.pronunciation || '',
     imageUrl: existingCard?.imageUrl || '',
     meaning: existingCard?.meaning || '',
     example: existingCard?.example || '',
@@ -74,6 +75,21 @@ export default function FlashCardForm({ existingCard }: FlashCardFormProps) {
           onChange={handleChange}
           className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border"
           placeholder="Nhập từ cần học"
+        />
+      </div>
+
+      <div>
+        <label htmlFor="pronunciation" className="block text-sm font-medium text-gray-700">
+          Phiên âm / Cách đọc (tùy chọn)
+        </label>
+        <input
+          type="text"
+          name="pronunciation"
+          id="pronunciation"
+          value={formData.pronunciation}
+          onChange={handleChange}
+          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border"
+          placeholder="Ví dụ: /həˈləʊ/ hoặc hello"
         />
       </div>
 

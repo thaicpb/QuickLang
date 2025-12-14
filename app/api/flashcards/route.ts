@@ -25,7 +25,7 @@ export async function GET(request: Request) {
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { word, imageUrl, meaning, example, category, difficulty, folderId } = body;
+    const { word, pronunciation, imageUrl, meaning, example, category, difficulty, folderId } = body;
 
     if (!word || !meaning || !example) {
       return NextResponse.json(
@@ -36,6 +36,7 @@ export async function POST(request: Request) {
 
     const newCard = await flashCardsDB.create({
       word,
+      pronunciation,
       imageUrl,
       meaning,
       example,

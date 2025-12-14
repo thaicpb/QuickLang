@@ -55,7 +55,12 @@ export default function FlashCard({ card, onReview }: FlashCardProps) {
                   className="w-48 h-48 object-cover rounded-lg mb-6 shadow-md"
                 />
               )}
-              <h2 className="text-3xl font-bold text-gray-900">{card.word}</h2>
+              <div className="text-center">
+                <h2 className="text-3xl font-bold text-gray-900">{card.word}</h2>
+                {card.pronunciation && (
+                  <p className="text-sm text-gray-500 mt-1">{card.pronunciation}</p>
+                )}
+              </div>
             </div>
             
             <div className="text-center text-sm text-gray-500">
