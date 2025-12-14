@@ -4,8 +4,6 @@ import { initializeDatabase } from '@/lib/init-db';
 
 export async function GET() {
   try {
-    await initializeDatabase();
-
     const result = await pool.query(`
       SELECT f.*, 
              COUNT(fc.id) as flashcard_count
