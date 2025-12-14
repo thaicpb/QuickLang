@@ -27,6 +27,7 @@ model Folder {
 model FlashCard {
   id           Int         @id @default(autoincrement())
   word         String
+  pronunciation String?    @db.VarChar(255)
   imageUrl     String?     @map("image_url")
   meaning      String
   example      String

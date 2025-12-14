@@ -11,6 +11,7 @@ CREATE TABLE IF NOT EXISTS folders (
 CREATE TABLE IF NOT EXISTS flashcards (
     id SERIAL PRIMARY KEY,
     word VARCHAR(255) NOT NULL,
+    pronunciation VARCHAR(255),
     image_url TEXT,
     meaning TEXT NOT NULL,
     example TEXT NOT NULL,

@@ -19,6 +19,7 @@ export const flashCardsDB = {
     return prisma.flashCard.create({
       data: {
         word: data.word,
+        pronunciation: data.pronunciation || null,
         imageUrl: data.imageUrl || null,
         meaning: data.meaning,
         example: data.example,
@@ -38,6 +39,7 @@ export const flashCardsDB = {
       where: { id: Number(id) },
       data: {
         word: data.word ?? existing.word,
+        pronunciation: data.pronunciation ?? existing.pronunciation ?? null,
         imageUrl: data.imageUrl ?? existing.imageUrl ?? null,
         meaning: data.meaning ?? existing.meaning,
         example: data.example ?? existing.example,
