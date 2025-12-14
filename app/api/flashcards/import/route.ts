@@ -5,6 +5,7 @@ import { FlashCard } from '@/lib/types';
 
 interface CSVRow {
   word: string;
+  pronunciation?: string;
   meaning: string;
   example: string;
   category?: string;
@@ -96,6 +97,7 @@ export async function POST(request: NextRequest) {
       try {
         const flashcardData = {
           word: row.word,
+          pronunciation: row.pronunciation || null,
           meaning: row.meaning,
           example: row.example,
           category: row.category || null,
