@@ -1,881 +1,881 @@
-word,pronunciation,meaning,example,category,difficulty,folder_id
-男性,だんせい,đàn ông,.,,easy,5
-女性,じょせい,phụ nữ,.,,easy,5
-高齢,こうれい,cao tuổi,.,,easy,5
-年上,としうえ,hơn tuổi,.,,easy,5
-目上,めうえ,bề trên,.,,easy,5
-先輩,せんぱい,tiền bối,.,,easy,5
-後輩,こうはい,hậu bối,.,,easy,5
-上司,じょうし,cấp trên,.,,easy,5
-相手,あいて,người đối diện,.,,easy,5
-知り合い,しりあい,người quen,.,,easy,5
-友人,ゆうじん,bạn bè,.,,easy,5
-仲,なか,mối quan hệ,.,,easy,5
-生年月日,せいねんがっぴ,ngày tháng năm sinh,.,,easy,5
-誕生,たんじょう,ra đời,.,,easy,5
-年,とし,năm,.,,easy,5
-出身,しゅっしん,quê quán,.,,easy,5
-故郷,こきょう,cố hương,.,,easy,5
-成長,せいちょう,trưởng thành,.,,easy,5
-成人,せいじん,người trưởng thành,.,,easy,5
-合格,ごうかく,đỗ đại học,.,,easy,5
-進学,しんがく,vào đại học,.,,easy,5
-退学,たいがく,bỏ học,.,,easy,5
-就職,しゅうしょく,có việc làm,.,,easy,5
-退職,たいしょく,nghỉ việc,.,,easy,5
-失業,しつぎょう,thất nghiệp,.,,easy,5
-残業,ざんぎょう,làm thêm,.,,easy,5
-生活,せいかつ,cuộc sống,.,,easy,5
-通勤,つうきん,đi làm,.,,easy,5
-学歴,がくれき,bằng cấp,.,,easy,5
-給料,きゅうりょう,tiền lương,.,,easy,5
-面接,めんせつ,phỏng vấn,.,,easy,5
-休憩,きゅうけい,nghỉ ngơi,.,,easy,5
-観光,かんこう,tham quan,.,,easy,5
-帰国,きこく,về nước,.,,easy,5
-帰省,きせい,về quê,.,,easy,5
-帰宅,きたく,về nhà,.,,easy,5
-参加,さんか,tham gia,.,,easy,5
-出席,しゅっせき,có mặt,.,,easy,5
-欠席,けっせき,vắng mặt,.,,easy,5
-遅刻,ちこく,đến muộn,.,,easy,5
-化粧,けしょう,trang điểm,.,,easy,5
-計算,けいさん,tính toán,.,,easy,5
-計画,けいかく,kế hoạch,.,,easy,5
-成功,せいこう,thành công,.,,easy,5
-失敗,しっぱい,thất bại,.,,easy,5
-準備,じゅんび,chuẩn bị,.,,easy,5
-整理,せいり,chỉnh sửa,.,,easy,5
-注文,ちゅうもん,đặt hàng,.,,easy,5
-貯金,ちょきん,tiết kiệm,.,,easy,5
-徹夜,てつや,thức xuyên đêm,.,,easy,5
-引っ越し,ひっこし,chuyển nhà,.,,easy,5
-身長,しんちょう,chiều cao,.,,easy,5
-体重,たいじゅう,cân nặng,.,,easy,5
-けが,けが,vết thương,.,,easy,5
-会,かい,"hội, tiệc",.,,easy,5
-趣味,しゅみ,sở thích,.,,easy,5
-興味,きょうみ,hứng thú,.,,easy,5
-思い出,おもいで,nhớ lại,.,,easy,5
-冗談,じょうだん,đùa cợt,.,,easy,5
-目的,もくてき,mục đích,.,,easy,5
-約束,やくそく,lời hứa,.,,easy,5
-おしゃべり,おしゃべり,nói chuyện riêng,.,,easy,5
-遠慮,えんりょ,ngại ngần,.,,easy,5
-我慢,がまん,chịu đựng,.,,easy,5
-迷惑,めわく,làm phiền,.,,easy,5
-希望,きぼう,hi vọng,.,,easy,5
-夢,ゆめ,giấc mơ,.,,easy,5
-賛成,さんせい,đồng ý,.,,easy,5
-反対,はんたい,đối lập,.,,easy,5
-想像,そうぞう,tưởng tượng,.,,easy,5
-努力,どりょく,nỗ lực,.,,easy,5
-太陽,たいよう,mặt trời,.,,easy,5
-地球,ちきゅう,trái đất,.,,easy,5
-温度,おんど,nhiệt độ,.,,easy,5
-湿度,しつど,độ ẩm,.,,easy,5
-湿気,しっけ,hơi ẩm,.,,easy,5
-梅雨,つゆ,mùa mưa,.,,easy,5
-かび,かび,nấm mốc,.,,easy,5
-暖房,だんぼう,điều hòa ấm,.,,easy,5
-皮,かわ,da,.,,easy,5
-缶,かん,đồ hộp,.,,easy,5
-画面,がめん,màn hình,.,,easy,5
-番組,ばんぐみ,chương trình,.,,easy,5
-記事,きじ,ký sự,.,,easy,5
-近所,きんじょ,xung quanh,.,,easy,5
-警察,けいさつ,cảnh sát,.,,easy,5
-犯人,はんにん,tội phạm,.,,easy,5
-小銭,こぜに,tiền lẻ,.,,easy,5
-ごちそう,ごちそう,chiêu đãi,.,,easy,5
-作者,作者,tác giả,.,,easy,5
-作品,さくひん,tác phẩm,.,,easy,5
-制服,せいふく,đồng phục,.,,easy,5
-洗剤,せんざい,bột giặt,.,,easy,5
-底,そこ,đáy,.,,easy,5
-地下,ちか,ngầm,.,,easy,5
-寺,てら,chùa,.,,easy,5
-道路,どうろ,đường,.,,easy,5
-坂,さか,dốc,.,,easy,5
-煙,けむり,khói,.,,easy,5
-灰,はい,tàn,.,,easy,5
-判,はん,con dấu,.,,easy,5
-名刺,めいし,danh thiếp,.,,easy,5
-免許,めんきょ,giấy phép,.,,easy,5
-多く,おおく,nhiều,.,,easy,5
-前半,ぜんはん,phần đầu,.,,easy,5
-後半,こうはん,phần cuối,.,,easy,5
-最高,さいこう,cao nhất,.,,easy,5
-最低,さいてい,thấp nhất,.,,easy,5
-最初,さいしょ,đầu tiên,.,,easy,5
-最後,さいご,cuối cùng,.,,easy,5
-自動,じどう,tự động,.,,easy,5
-種類,しゅるい,loại,.,,easy,5
-性格,せいかく,tính cách,.,,easy,5
-性質,せいしつ,tính chất,.,,easy,5
-順番,じゅんばん,thứ tự,.,,easy,5
-番,ばん,lượt,.,,easy,5
-方法,ほうほう,phương pháp,.,,easy,5
-製品,せいひん,sản phẩm,.,,easy,5
-値上がり,ねあがり,tăng giá,.,,easy,5
-生,なま,tươi,.,,easy,5
-渇く,かわく,khát,.,,easy,5
-嗅ぐ,かぐ,ngửi,.,,easy,5
-叩く,たたく,"đánh, vỗ",.,,easy,5
-殴る,なぐる,đấm,.,,easy,5
-ける,ける,đá,.,,easy,5
-抱く,だく,ôm,.,,easy,5
-倒れる,たおれる,đổ,.,,easy,5
-倒す,たおす,làm đổ,.,,easy,5
-起きる,おきる,thức dậy,.,,easy,5
-起こす,おこす,đánh thức,.,,easy,5
-尋ねる,たずねる,hỏi,.,,easy,5
-呼ぶ,よぶ,gọi,.,,easy,5
-叫ぶ,さけぶ,gào to,.,,easy,5
-黙る,だまる,im lặng,.,,easy,5
-飼う,かう,nuôi,.,,easy,5
-数える,かぞえる,đếm,.,,easy,5
-乾く,かわく,khô,.,,easy,5
-乾かす,かわかす,làm khô,.,,easy,5
-畳む,たたむ,gấp,.,,easy,5
-誘う,さそう,"mời, rủ",.,,easy,5
-おごる,おごる,chiêu đãi,.,,easy,5
-預かる,あずかる,chăm sóc,.,,easy,5
-預ける,あずける,gửi,.,,easy,5
-決まる,きまる,được quyết định,.,,easy,5
-決める,きめる,quyết định,.,,easy,5
-写る,うつる,chụp được,.,,easy,5
-写す,うつす,chụp,.,,easy,5
-思い出す,おもいだす,nhớ lại,.,,easy,5
-教わる,おそわる,được dạy,.,,easy,5
-申し込む,もうしこむ,đăng ký,.,,easy,5
-断る,ことわる,từ chối,.,,easy,5
-見つかる,みつかる,được tìm thấy,.,,easy,5
-見つける,みつける,tìm thấy,.,,easy,5
-捕まる,つかまる,bị bắt,.,,easy,5
-捕まえる,つかまえる,bắt,.,,easy,5
-乗る,のる,leo lên,.,,easy,5
-乗せる,のせる,cho lên,.,,easy,5
-降りる,おりる,xuống,.,,easy,5
-降ろす,おろす,cho xuống,.,,easy,5
-直る,なおる,được sửa,.,,easy,5
-直す,なおす,sửa,.,,easy,5
-治る,なおる,hồi phục,.,,easy,5
-治す,なおす,cứu chữa,.,,easy,5
-亡くなる,なくなる,chết,.,,easy,5
-亡くす,なくす,mất,.,,easy,5
-生まれる,うまれる,được sinh ra,.,,easy,5
-生む,うむ,sinh,.,,easy,5
-出会う,であう,gặp (ngẫu nhiên),.,,easy,5
-訪ねる,たずねる,thăm,.,,easy,5
-付き合う,つきあう,"hẹn hò, giao tiếp",.,,easy,5
-効く,きく,có hiệu quả,.,,easy,5
-はやる,はやる,phổ biến,.,,easy,5
-経つ,たつ,qua,.,,easy,5
-間に合う,まにあう,làm cho kịp giờ,.,,easy,5
-間に合わせる,まにあわせる,kịp giờ,.,,easy,5
-通う,かよう,"đi làm, học",.,,easy,5
-込む,こむ,đông,.,,easy,5
-すれ違う,すれちあう,"vượt, lướt",.,,easy,5
-掛かる,かかる,được bao phủ,.,,easy,5
-掛ける,かける,bao phủ,.,,easy,5
-動く,うごく,hoạt động,.,,easy,5
-動かす,うごかす,di chuyển,.,,easy,5
-離れる,はなれる,tránh xa,.,,easy,5
-離す,はなす,tách ra,.,,easy,5
-ぶつかる,ぶつかる,bị đâm,.,,easy,5
-ぶつける,ぶつける,đâm,.,,easy,5
-こぼれる,こぼれる,bị tràn,.,,easy,5
-こぼす,こぼす,tràn,.,,easy,5
-ふく,ふく,lau,.,,easy,5
-片付く,かたづく,được dọn dẹp,.,,easy,5
-片付ける,かたづける,dọn dẹp,.,,easy,5
-包む,つつむ,bọc,.,,easy,5
-張る,はる,dán,.,,easy,5
-無くなる,なくなる,bị mất,.,,easy,5
-無くす,なくす,mất,.,,easy,5
-足りる,たりる,đủ,.,,easy,5
-残る,のこる,bị thừa,.,,easy,5
-残す,のこす,thừa,.,,easy,5
-腐る,くさる,thối,.,,easy,5
-むける,むける,bị lột,.,,easy,5
-むく,むく,lột,.,,easy,5
-滑る,すべる,trượt,.,,easy,5
-積もる,つもる,được tích tụ,.,,easy,5
-積む,つむ,"tích tụ, chất lại",.,,easy,5
-空く,あく,bị thủng,.,,easy,5
-空ける,あける,thủng,.,,easy,5
-下がる,さがる,bị giảm,.,,easy,5
-下げる,さげる,giảm,.,,easy,5
-冷える,ひえる,bị lạnh,.,,easy,5
-冷やす,ひやす,làm lạnh,.,,easy,5
-冷める,さめる,bị nguội,.,,easy,5
-冷ます,さます,làm nguội,.,,easy,5
-燃える,もえる,cháy,.,,easy,5
-燃やす,もやす,đốt,.,,easy,5
-沸く,わく,sôi,.,,easy,5
-沸かす,わかす,đun sôi,.,,easy,5
-鳴る,なる,kêu,.,,easy,5
-鳴らす,ならす,làm kêu,.,,easy,5
-役立つ,やくだつ,hữu ích,.,,easy,5
-役立てる,やくだてる,được sử dụng,.,,easy,5
-飾り,かざり,trang trí,.,,easy,5
-遊び,あそび,chơi,.,,easy,5
-集まり,あつまり,tập hợp,.,,easy,5
-教え,おしえ,dạy,.,,easy,5
-踊り,おどり,nhảy,.,,easy,5
-思い,おもい,"suy nghĩ, cảm giác",.,,easy,5
-考え,かんがえ,"nghĩ, ý tưởng",.,,easy,5
-片づけ,かたづけ,ngăn nắp,.,,easy,5
-手伝い,てつだい,giúp đỡ,.,,easy,5
-働き,はたらき,hoạt động,.,,easy,5
-決まり,きまり,luật lệ,.,,easy,5
-騒ぎ,さわぎ,"ồn ào, om xòm",.,,easy,5
-知らせ,しらせ,"tin tức, thông báo",.,,easy,5
-頼み,たのみ,yêu cầu,.,,easy,5
-疲れ,つかれ,"vất vả, mệt mỏi",.,,easy,5
-違い,ちがい,khác biệt,.,,easy,5
-始め,はじめ,khởi đầu,.,,easy,5
-続き,つづき,tiếp tục,.,,easy,5
-暮れ,くれ,cuối năm,.,,easy,5
-行き,いき,đi,.,,easy,5
-帰り,かえり,trở về,.,,easy,5
-急ぎ,いそぎ,"khẩn cấp, vội",.,,easy,5
-遅れ,おくれ,gián đoạn,.,,easy,5
-貸し,かし,cho mượn,.,,easy,5
-借り,かり,mượn,.,,easy,5
-勝ち,かち,thắng,.,,easy,5
-負け,まけ,thua,.,,easy,5
-迎え,むかえ,đón,.,,easy,5
-始まり,はじまり,bắt đầu,.,,easy,5
-終わり,おわり,kết thúc,.,,easy,5
-戻り,もどり,"trở về, trả lại",.,,easy,5
-別れ,わかれ,chia ly,.,,easy,5
-喜び,よろこび,hớn hở,.,,easy,5
-楽しみ,たのしみ,sung sướng,.,,easy,5
-笑い,わらい,cười,.,,easy,5
-驚き,おどろき,ngạc nhiên,.,,easy,5
-怒り,いかり,giận dữ,.,,easy,5
-悲しみ,かなしみ,buồn bã,.,,easy,5
-幸せな,しあわせな,hạnh phúc,.,,easy,5
-得意な,とくいな,"mạnh, giỏi",.,,easy,5
-苦手な,にがてな,"yếu, kém",.,,easy,5
-熱心な,ねっしんな,chăm chỉ,.,,easy,5
-夢中な,むちゅうな,chú tâm,.,,easy,5
-退屈な,たいくつな,chán,.,,easy,5
-健康な,けんこうな,khỏe khoắn,.,,easy,5
-苦しい,くるしい,cực khổ,.,,easy,5
-平気な,へいきな,bình thản,.,,easy,5
-悔しい,くやしい,cay cú,.,,easy,5
-うらやましい,うらやましい,ghen tỵ,.,,easy,5
-かゆい,かゆい,ngứa,.,,easy,5
-おとなしい,おとなしい,trầm lặng,.,,easy,5
-我慢強い,がまんづよい,chịu đựng giỏi,.,,easy,5
-正直な,しょうじきな,trung thực,.,,easy,5
-けちな,けちな,kẹt xỉ,.,,easy,5
-我儘な,わがままな,ích kỷ,.,,easy,5
-積極的な,せっきょくてきな,tích cực,.,,easy,5
-消極的な,しょうきょくてきな,tiêu cực,.,,easy,5
-満足な,まんぞくな,thỏa mãn,.,,easy,5
-不満な,ふまんな,bất mãn,.,,easy,5
-不安な,ふあんな,bất an,.,,easy,5
-大変な,たいへんな,tồi tệ,.,,easy,5
-無理な,むりな,vô lý,.,,easy,5
-不注意な,ふちゅういな,không chú ý,.,,easy,5
-楽な,らくな,thoải mái,.,,easy,5
-面倒な,めんどうな,phiền phức,.,,easy,5
-失礼な,しつれいな,thất lễ,.,,easy,5
-当然な,とうぜんな,đương nhiên,.,,easy,5
-意外な,いがいな,không ngờ đến,.,,easy,5
-結構な,けっこうな,"tốt, đủ",.,,easy,5
-派手な,はでな,lòe loẹt,.,,easy,5
-地味な,じみな,giản dị,.,,easy,5
-おしゃれな,おしゃれな,"thời trang, mốt",.,,easy,5
-変な,へんな,lạ,.,,easy,5
-不思議な,ふしぎな,thần bí,.,,easy,5
-ましな,ましな,tốt lên,.,,easy,5
-むだな,むだな,lãng phí,.,,easy,5
-自由な,じゆうな,tự do,.,,easy,5
-不自由な,ふじゆうな,"tàn tật, không tự do",.,,easy,5
-温まる,あたたまる,trở nên ấm hơn,.,,easy,5
-温める,あたためる,"ấm, nóng",.,,easy,5
-高まる,たかまる,cao lên,.,,easy,5
-高める,たかめる,làm cao lên,.,,easy,5
-強まる,つよまる,mạnh lên,.,,easy,5
-強める,つよめる,làm mạnh lên,.,,easy,5
-弱まる,よわまる,yếu đi,.,,easy,5
-弱める,よわめる,làm yếu đi,.,,easy,5
-広まる,ひろまる,rộng ra,.,,easy,5
-広める,ひろめる,làm rộng ra,.,,easy,5
-深まる,ふかまる,sâu hơn,.,,easy,5
-深める,ふかめる,làm sâu thêm,.,,easy,5
-世話,せわ,chăm sóc,.,,easy,5
-家庭,かてい,gia đình,.,,easy,5
-協力,きょうりょく,hiệp lực,.,,easy,5
-感謝,かんしゃ,cảm tạ,.,,easy,5
-お礼,おれい,đáp lễ,.,,easy,5
-お詫び,おわび,xin lỗi,.,,easy,5
-おじぎ,おじぎ,cúi chào,.,,easy,5
-握手,あくしゅ,bắt tay,.,,easy,5
-いじわる,いじわる,xấu bụng,.,,easy,5
-いたずら,いたずら,nghịch ngợm,.,,easy,5
-節約,せつやく,tiết kiệm,.,,easy,5
-経営,けいえい,quản lý,.,,easy,5
-反省,はんせい,tự kiểm tra,.,,easy,5
-実行,じっこう,thực hành,.,,easy,5
-進歩,しんぽ,tiến bộ,.,,easy,5
-変化,へんか,"thay đổi, biến hóa",.,,easy,5
-発達,はったつ,phát triển,.,,easy,5
-体力,たいりょく,thể lực,.,,easy,5
-出場,しゅつじょう,tham dự,.,,easy,5
-活躍,かつやく,hoạt động,.,,easy,5
-競争,きょうそう,cạnh tranh,.,,easy,5
-応援,おうえん,cổ vũ,.,,easy,5
-拍手,はくしゅ,vỗ tay,.,,easy,5
-人気,にんき,nổi tiếng,.,,easy,5
-うわさ,うわさ,tin đồn,.,,easy,5
-情報,じょうほう,thông tin,.,,easy,5
-交換,こうかん,trao đổi,.,,easy,5
-流行,りゅうこう,trào lưu,.,,easy,5
-宣伝,せんでん,tuyên truyền,.,,easy,5
-広告,こうこく,quảng cáo,.,,easy,5
-注目,ちゅうもく,chú trọng,.,,easy,5
-通訳,つうやく,thông dịch,.,,easy,5
-翻訳,ほにゃく,biên dịch,.,,easy,5
-伝言,でんごん,tin nhắn thoại,.,,easy,5
-報告,ほうこく,báo cáo,.,,easy,5
-録画,ろくが,ghi lại,.,,easy,5
-混雑,こんざつ,hỗn tạp,.,,easy,5
-渋滞,じゅうたい,tắc đường,.,,easy,5
-衝突,しょうとつ,xung đột,.,,easy,5
-被害,ひがい,thiệt hại,.,,easy,5
-事故,じこ,tai nạn,.,,easy,5
-事件,じけん,sự kiện,.,,easy,5
-故障,こしょう,hỏng,.,,easy,5
-修理,しゅうり,sửa chữa,.,,easy,5
-停電,ていでん,mất điện,.,,easy,5
-調子,ちょうし,trạng thái,.,,easy,5
-緊張,きんちょう,lo lắng,.,,easy,5
-自身,じしん,tự tin,.,,easy,5
-自慢,じまん,tự mãn,.,,easy,5
-感心,かんしん,quan tâm,.,,easy,5
-感動,かんどう,cảm động,.,,easy,5
-興奮,こうふん,hưng phấn,.,,easy,5
-感想,かんそう,cảm tưởng,.,,easy,5
-予想,よそう,dự đoán,.,,easy,5
-専門,せんもん,chuyên môn,.,,easy,5
-研究,けんきゅう,nghiên cứu,.,,easy,5
-調査,ちょうさ,điều tra,.,,easy,5
-原因,げんいん,nguyên nhân,.,,easy,5
-結果,けっか,kết quả,.,,easy,5
-解決,かいけつ,giải quyết,.,,easy,5
-確認,かくにん,xác nhận,.,,easy,5
-利用,りよう,sử dụng,.,,easy,5
-理解,りかい,lý giải,.,,easy,5
-発見,はっけん,phát kiến,.,,easy,5
-発明,はつめい,phát minh,.,,easy,5
-関係,かんけい,quan hệ,.,,easy,5
-団体,だんたい,đoàn thể,.,,easy,5
-選挙,せんきょ,bầu cử,.,,easy,5
-税金,ぜいきん,thuế,.,,easy,5
-責任,せきにん,trách nhiệm,.,,easy,5
-書類,しょるい,tài liệu,.,,easy,5
-題名,だいめい,tiêu đề,.,,easy,5
-条件,じょうけん,điều kiện,.,,easy,5
-締め切り,しめきり,hạn cuối,.,,easy,5
-期間,きかん,"thời gian, thời kỳ",.,,easy,5
-倍,ばい,lần,.,,easy,5
-くじ,くじ,"xổ số, rút thăm",.,,easy,5
-近道,ちかみち,đường tắt,.,,easy,5
-中心,ちゅうしん,trung tâm,.,,easy,5
-辺り,あたり,"gần, lân cận",.,,easy,5
-周り,まわり,"xung quanh, vòng quanh",.,,easy,5
-穴,あな,lỗ,.,,easy,5
-列,れつ,hàng,.,,easy,5
-幅,はば,chiều rộng,.,,easy,5
-範囲,はんい,phạm vi,.,,easy,5
-内容,ないよう,nội dung,.,,easy,5
-中身,なかみ,bên trong,.,,easy,5
-特徴,とくちょう,đặc trưng,.,,easy,5
-普通,ふつう,bình thường,.,,easy,5
-当たり前,あたりまえ,đương nhiên,.,,easy,5
-偽,にせ,giả,.,,easy,5
-別,べつ,khác,.,,easy,5
-国籍,こくせき,quốc tịch,.,,easy,5
-東洋,とうよう,phương đông,.,,easy,5
-西洋,せいよう,phương tây,.,,easy,5
-国際,こくさい,quốc tế,.,,easy,5
-自然,しぜん,tự nhiên,.,,easy,5
-景色,けしき,phong cảnh,.,,easy,5
-宗教,しゅうきょう,tôn giáo,.,,easy,5
-愛,あい,yêu,.,,easy,5
-届く,とどく,được giao đến,.,,easy,5
-届ける,とどける,giao đến,.,,easy,5
-かく,かく,gãi,.,,easy,5
-つかむ,つかむ,"tóm, chộp",.,,easy,5
-握る,にぎる,nắm chặt,.,,easy,5
-抑える,おさえる,giữ,.,,easy,5
-近づく,ちかづく,lại gần,.,,easy,5
-近づける,ちかづける,mang đến gần,.,,easy,5
-合う,あう,gặp,.,,easy,5
-合わせる,あわせる,"tập hợp, hiệp lực",.,,easy,5
-当たる,あたる,bị đánh,.,,easy,5
-当てる,あてる,đánh,.,,easy,5
-比べる,くらべる,so sánh,.,,easy,5
-似合う,にあう,hợp,.,,easy,5
-似る,にる,giống,.,,easy,5
-似せる,にせる,bắt chước,.,,easy,5
-分かれる,わかれる,được chia ra,.,,easy,5
-分ける,わける,chia,.,,easy,5
-足す,たす,"cộng, thêm vào",.,,easy,5
-引く,ひく,"kéo, trừ",.,,easy,5
-増える,ふえる,tăng lên,.,,easy,5
-増やす,ふやす,làm tăng lên,.,,easy,5
-減る,へる,giảm xuống,.,,easy,5
-減らす,へらす,làm giảm xuống,.,,easy,5
-変わる,かわる,thay đổi,.,,easy,5
-変える,かえる,làm thay đổi,.,,easy,5
-代わる・替わる・換わる,かわる,thay,.,,easy,5
-代える・替える・換える,かえる,đổi,.,,easy,5
-返る,かえる,được trả lại,.,,easy,5
-返す,かえす,trả lại,.,,easy,5
-譲る,ゆずる,nhường,.,,easy,5
-助かる,たすかる,được giúp,.,,easy,5
-助ける,たすける,giúp,.,,easy,5
-いじめる,いじめる,bắt nạt,.,,easy,5
-だまる,だまる,lừa,.,,easy,5
-盗む,ぬすむ,lấy cắp,.,,easy,5
-刺さる,ささる,bị đâm,.,,easy,5
-刺す,さす,đâm,.,,easy,5
-殺す,ころす,giết,.,,easy,5
-隠れる,かくれる,"ẩn náu, trốn",.,,easy,5
-隠す,かくす,che giấu,.,,easy,5
-埋まる,うまる,bị chôn,.,,easy,5
-埋める,うめる,chôn,.,,easy,5
-囲む,かこむ,vây quanh,.,,easy,5
-詰まる,つまる,"đầy, chặt",.,,easy,5
-詰める,つめる,đóng gói,.,,easy,5
-開く,ひらく,mở,.,,easy,5
-閉じる,とじる,dđóng,.,,easy,5
-飛ぶ,とぶ,bay,.,,easy,5
-飛ばす,とばす,cho bay,.,,easy,5
-振る,ふる,"rung, vẫy",.,,easy,5
-めくる,めくる,lật lên,.,,easy,5
-見かける,みかける,tình cờ thấy,.,,easy,5
-確かめる,たしかめる,kiểm tra lại,.,,easy,5
-試す,ためす,thử,.,,easy,5
-繰り返す,くりかえす,lặp lại,.,,easy,5
-訳す,やくす,dịch,.,,easy,5
-行う,おこなう,tổ chức,.,,easy,5
-間違う,まちがう,bị sai,.,,easy,5
-間違える,まちがえる,làm sai,.,,easy,5
-許す,ゆるす,"tha thứ, cho phép",.,,easy,5
-慣れる,なれる,quen,.,,easy,5
-慣らす,ならす,khởi động,.,,easy,5
-立つ,たつ,đứng,.,,easy,5
-立てる,たてる,dựng lên,.,,easy,5
-建つ,たつ,được xây,.,,easy,5
-建てる,たてる,xây,.,,easy,5
-育つ,そだつ,được nuôi dạy,.,,easy,5
-育てる,そだてる,"nuôi, dạy",.,,easy,5
-生える,はえる,mọc,.,,easy,5
-生やす,はやす,nuôi(râu),.,,easy,5
-汚れる,よごれる,bị bẩn,.,,easy,5
-汚す,よごす,làm bẩn,.,,easy,5
-壊れる,こわれる,bị hỏng,.,,easy,5
-壊す,こわす,làm hỏng,.,,easy,5
-割れる,われる,bị vỡ,.,,easy,5
-割る,わる,làm vỡ,.,,easy,5
-折れる,おれる,bị gãy,.,,easy,5
-折る,おる,làm gãy,.,,easy,5
-破れる,やぶれる,bị rách,.,,easy,5
-破る,やぶる,xé rách,.,,easy,5
-曲がる,まがる,"gập, cong",.,,easy,5
-曲げる,まげる,"bẻ, uốn",.,,easy,5
-外れる,はずれる,bị rời ra,.,,easy,5
-外す,はずす,tách ra,.,,easy,5
-揺れる,ゆれる,bị rung,.,,easy,5
-揺らす,ゆらす,đung đưa,.,,easy,5
-流れる,ながれる,chảy,.,,easy,5
-流す,ながす,cho chảy,.,,easy,5
-濡れる,ぬれる,bị ướt,.,,easy,5
-濡らす,ぬらす,làm ướt,.,,easy,5
-迷う,まよう,lạc đường,.,,easy,5
-悩む,なやむ,băn khoăn,.,,easy,5
-慌てる,あわてる,vội vàng,.,,easy,5
-覚める,さめる,thức dậy,.,,easy,5
-覚ます,さます,"mở mắt, tỉnh",.,,easy,5
-眠る,ねむる,ngủ,.,,easy,5
-祈る,いのる,"cầu, khấn",.,,easy,5
-祝う,いわう,ăn mừng,.,,easy,5
-感じる,かんじる,cảm thấy,.,,easy,5
-クラスメート,,bạn cùng lớp,.,,easy,5
-グループ,,nhóm,.,,easy,5
-チーム,,đội,.,,easy,5
-プロフェッショナル,,chuyên nghiệp,.,,easy,5
-アマチュア,,nghiệp dư,.,,easy,5
-トレーニング,,đào tạo,.,,easy,5
-マッサージ,,mát xa,.,,easy,5
-アドバイス,,khuyên,.,,easy,5
-アイデア・アイディア,,ý tưởng,.,,easy,5
-トップ,,top,.,,easy,5
-スピード,,tốc độ,.,,easy,5
-ラッシュ,,đông đúc,.,,easy,5
-バイク,,xe máy,.,,easy,5
-ヘルメット,,mũ bảo hiểm,.,,easy,5
-コンタクトレンズ,,kính áp tròng,.,,easy,5
-ガラス,,kính,.,,easy,5
-プラスチック,,nhựa,.,,easy,5
-ベランダ,,ban công,.,,easy,5
-ペット,,thú cưng,.,,easy,5
-ベンチ,,ghế bành,.,,easy,5
-デザイン,,thiết kế,.,,easy,5
-バーゲンセール,,sale,.,,easy,5
-パート,,làm thêm,.,,easy,5
-コンビニエンスストア,,cửa hàng tiện ích,.,,easy,5
-レジ,,máy tính tiền,.,,easy,5
-レシート,,hóa đơn,.,,easy,5
-インスタント,,ăn liền,.,,easy,5
-ファストフード,,đồ ăn nhanh,.,,easy,5
-フルーツ,,trái cây,.,,easy,5
-デザート,,tráng miệng,.,,easy,5
-インターネット,,internet,.,,easy,5
-チャイム,,chuông,.,,easy,5
-アナウンス,,thông báo,.,,easy,5
-メッセージ,,tin nhắn,.,,easy,5
-パンフレット,,tờ rơi,.,,easy,5
-カード,,card,.,,easy,5
-インタビュー,,phỏng vấn,.,,easy,5
-アンケート,,tờ câu hỏi,.,,easy,5
-データ,,dữ liệu,.,,easy,5
-パーセント,,phần trăm,.,,easy,5
-濃い,こい,"đậm, đặc",.,,easy,5
-薄い,うすい,"mỏng, nhạt",.,,easy,5
-酸っぱい,すっぱい,chua,.,,easy,5
-臭い,くさい,thối,.,,easy,5
-おかしい,おかしい,lạ,.,,easy,5
-かっこいい,かっこいい,bảnh bao,.,,easy,5
-うまい,うまい,ngon,.,,easy,5
-親しい,したしい,thân thiết,.,,easy,5
-詳しい,くわしい,chi tiết,.,,easy,5
-細かい,こまかい,"tiểu tiết, bé",.,,easy,5
-浅い,あさい,nông,.,,easy,5
-固い・硬い,かたい,cứng,.,,easy,5
-ぬるい,ぬるい,nguội,.,,easy,5
-まぶしい,まぶしい,chói,.,,easy,5
-蒸し暑い,むしあつい,nóng ẩm,.,,easy,5
-清潔な,せいけつな,sạch,.,,easy,5
-新鮮な,しんせんな,tươi,.,,easy,5
-豊かな,ゆたかな,giàu có,.,,easy,5
-立派な,りっぱな,siêu,.,,easy,5
-正確な,せいかくな,chính xác,.,,easy,5
-確かな,たしかな,đích thực,.,,easy,5
-重要な,じゅうような,quan trọng,.,,easy,5
-必要な,ひつような,cần thiết,.,,easy,5
-もったいない,もったいない,lãng phí,.,,easy,5
-すごい,すごい,"ghê, siêu",.,,easy,5
-ひどい,ひどい,tồi,.,,easy,5
-激しい,はげしい,mãnh liệt,.,,easy,5
-そっくりな,そっくりな,giống,.,,easy,5
-急な,きゅうな,đột nhiên,.,,easy,5
-敵とな,てきとな,phù hợp,.,,easy,5
-特別な,とくべつな,đặc biệt,.,,easy,5
-完全な,かんぜんな,toàn bộ,.,,easy,5
-盛んな,さかんな,thịnh vượng,.,,easy,5
-様々な,さまざまな,đa đạng,.,,easy,5
-可能な,かのうな,khả thi,.,,easy,5
-不可能な,ふかのうな,bất khả thi,.,,easy,5
-基本的な,きほんてきな,cơ bản,.,,easy,5
-国際的な,こくさいてきな,tính quốc tế,.,,easy,5
-ばらばらな,ばらばらな,"tung tóe, chia rẽ",.,,easy,5
-ぼろぼろな,ぼろぼろな,"rách nát, te tua",.,,easy,5
-非常に,ひじょうに,rất,.,,easy,5
-大変に,たいへんに,"khủng khiếp, rất nhiều",.,,easy,5
-ほとんど,ほとんど,gần như hoàn toàn,.,,easy,5
-大体,だいたい,"phần lớn, trong khoảng",.,,easy,5
-かなり,かなり,khá,.,,easy,5
-ずいぶん,ずいぶん,đáng kể,.,,easy,5
-けっこう,けっこう,rất,.,,easy,5
-大分,ずいぶん,"chủ yếu, khá",.,,easy,5
-もっと,もっと,"hơn, nữa",.,,easy,5
-しっかり,しっかり,toàn bộ,.,,easy,5
-いっぱい,いっぱい,đầy,.,,easy,5
-ぎりぎり,ぎりぎり,"gần, sát nút",.,,easy,5
-ぴったり,ぴったり,"vừa vặn, đúng",.,,easy,5
-たいてい,たいてい,"đại thể, thường",.,,easy,5
-同時に,どうじに,cùng lúc,.,,easy,5
-前もって,まえもって,trước,.,,easy,5
-すぐに,すぐに,ngay lập tức,.,,easy,5
-もうすぐ,もうすぐ,sắp,.,,easy,5
-突然,とつぜん,đột nhiên,.,,easy,5
-あっという間に,あっというまに,loáng một cái,.,,easy,5
-いつの間にか,いつのまにか,lúc nào không biết,.,,easy,5
-しばらく,しばらく,một chút,.,,easy,5
-ずっと,ずっと,"suốt, nhiều",.,,easy,5
-相変わらず,あいかわらず,như mọi khi,.,,easy,5
-次々に,つぎつぎに,lần lượt,.,,easy,5
-どんどん,どんどん,dần dần,.,,easy,5
-ますます,ますます,càng ngày càng,.,,easy,5
-やっと,やっと,"cuối cùng, vừa đủ",.,,easy,5
-とうとう,とうとう,"sau cùng, cuối cùng, sau tất cả",.,,easy,5
-ついに,ついに,"cuối cùng, sau cùng",.,,easy,5
-もちろん,もちろん,tất nhiên,.,,easy,5
-やはり,やはり,như dự tính,.,,easy,5
-きっと,きっと,nhất định,.,,easy,5
-ぜひ,ぜひ,"bằng mọi giá, rất (muốn)",.,,easy,5
-なるべく,なるべく,càng nhiều càng tốt,.,,easy,5
-案外,あんがい,không ngờ đến,.,,easy,5
-もしかすると・もしかしたら・もしかして,,có lẽ,.,,easy,5
-まさか,まさか,"không thể ngờ, không",.,,easy,5
-うっかり,うっかり,"ngơ ngác, không để ý",.,,easy,5
-つい,つい,"vô ý, buột",.,,easy,5
-思わず,おもわず,không ngờ đến,.,,easy,5
-ほっと,ほっと,yên tâm,.,,easy,5
-いらいら,いらいら,"khó chịu, nóng giận",.,,easy,5
-のんびり,のんびり,tận hưởng,.,,easy,5
-実は,じつは,thực tế là,.,,easy,5
-読書,どくしょ,đọc viết,.,,easy,5
-演奏,えんそう,biểu diễn,.,,easy,5
-芸術,げいじゅつ,nghệ thuật,.,,easy,5
-検査,けんさ,kiểm tra,.,,easy,5
-血液,けつえき,máu,.,,easy,5
-治療,ちりょう,trị liệu,.,,easy,5
-症状,しょうじょう,triệu chứng,.,,easy,5
-予防,よぼう,dự phòng,.,,easy,5
-栄養,えいよう,dinh dưỡng,.,,easy,5
-手術,しゅじゅつ,phẫu thuật,.,,easy,5
-死亡,しぼう,tử vong,.,,easy,5
-命,いのち,sinh mạng,.,,easy,5
-一生,いっしょう,suốt đời,.,,easy,5
-誤解,ごかい,hiểu nhầm,.,,easy,5
-後悔,こうかい,hối hận,.,,easy,5
-訳,わけ,lý do,.,,easy,5
-態度,たいど,thái độ,.,,easy,5
-癖,くせ,thói quen,.,,easy,5
-礼儀,れいぎ,lễ nghĩa,.,,easy,5
-文句,もんく,phàn nàn,.,,easy,5
-表情,ひょうじょう,"biểu lộ, biểu thị",.,,easy,5
-鏡面,ひょうめん,bề mặt,.,,easy,5
-禁煙,きんえん,cấm hút thuốc,.,,easy,5
-禁止,きんし,cấm,.,,easy,5
-完成,かんせい,hoàn thành,.,,easy,5
-課題,かだい,chủ đề,.,,easy,5
-例外,れいがい,ngoại lệ,.,,easy,5
-基本,きほん,cơ bản,.,,easy,5
-記録,きろく,ghi âm,.,,easy,5
-状態,じょうたい,trạng thái,.,,easy,5
-出来事,できごと,sự kiện,.,,easy,5
-場面,ばめん,"khung cảnh, tình huống, hiện trường",.,,easy,5
-機会,きかい,cơ hội,.,,easy,5
-距離,きょり,khoảng cách,.,,easy,5
-提案,ていあん,đề xuất,.,,easy,5
-やり取り,やりとり,"trao đổi, làm việc",.,,easy,5
-知識,ちしき,kiến thức,.,,easy,5
-実力,じつりょく,thực lực,.,,easy,5
-手段,しゅだん,cách thức,.,,easy,5
-代表,だいひょう,đại biểu,.,,easy,5
-影響,えいきょう,ảnh hưởng,.,,easy,5
-効果,こうか,hiệu quả,.,,easy,5
-印象,いんしょう,ấn tượng,.,,easy,5
-印,しるし,"dấu, dấu hiệu",.,,easy,5
-合図,あいず,ám hiệu,.,,easy,5
-共通,きょうつう,chung,.,,easy,5
-協調,きょうちょう,nhấn mạnh,.,,easy,5
-省略,しょうりゃく,lược bớt,.,,easy,5
-挑戦,ちょうせん,thử thách,.,,easy,5
-やる気,やるき,động lực,.,,easy,5
-勇気,ゆうき,"dũng cảm, dũng khí",.,,easy,5
-資格,しかく,"bằng cấp, tư cách",.,,easy,5
-申請,しんせい,"đăng ký, ứng tuyển",.,,easy,5
-本人,ほんにん,người được nói đến,.,,easy,5
-契約,けいやく,hợp đồng,.,,easy,5
-証明,しょうめい,"chứng minh, bằng chứng",.,,easy,5
-変更,へんこう,thay đổi,.,,easy,5
-保存,ほぞん,bảo tồn,.,,easy,5
-保護,ほご,bảo vệ,.,,easy,5
-環境,かんきょう,môi trường,.,,easy,5
-資源,しげん,tài nguyên,.,,easy,5
-不足,ふそく,thiếu,.,,easy,5
-平均,へいきん,trung bình,.,,easy,5
-割合,わりあい,tỷ lệ,.,,easy,5
-商売,しょうばい,"kinh doanh, buôn bán",.,,easy,5
-商品,しょうひん,sản phẩm,.,,easy,5
-質,しつ,chất lượng,.,,easy,5
-型,かた,mẫu,.,,easy,5
-生産,せいさん,sản xuất,.,,easy,5
-消費,しょうひ,"tiêu dùng, tiêu thụ",.,,easy,5
-物価,ぶっか,"giá cả, vật giá",.,,easy,5
-倒産,とうさん,phá sản,.,,easy,5
-携帯,けいたい,mang theo,.,,easy,5
-現代,げんだい,hiện tại,.,,easy,5
-世紀,せいき,thế kỷ,.,,easy,5
-文化,ぶんか,văn hóa,.,,easy,5
-都市,とし,thành phố,.,,easy,5
-地方,ちほう,địa phương,.,,easy,5
-戦争,せんそう,chiến tranh,.,,easy,5
-平和,へいわ,hòa bình,.,,easy,5
-上る,のぼる,leo lên,.,,easy,5
-下る,くだる,đi xuống,.,,easy,5
-進む,すすむ,tiến lên,.,,easy,5
-進める,すすめる,làm cho tiến lên,.,,easy,5
-通る,とおる,"thông qua, được chấp nhận, đi qua",.,,easy,5
-通す,とおす,"xuyên qua, thông qua",.,,easy,5
-超える・越える,こえる,vượt qua,.,,easy,5
-過ぎる,すぎる,"quá, đi qua",.,,easy,5
-過ごす,すごす,sử dụng(thời gian),.,,easy,5
-移る,うつる,được chuyển,.,,easy,5
-移す,うつす,chuyển,.,,easy,5
-連れる,つれる,dẫn đi,.,,easy,5
-寄る,よる,"ghé sát, lại gần",.,,easy,5
-寄せる,よせる,ghé vào,.,,easy,5
-与える,あたえる,"trao, cung cấp",.,,easy,5
-得る,える,"đạt được, có được",.,,easy,5
-向く,むく,"hướng, đối diện",.,,easy,5
-向ける,むける,"hướng đến, quay",.,,easy,5
-勧める,すすめる,"rủ, mời, gợi ý",.,,easy,5
-薦める,すすめる,"giới thiệu, gợi ý",.,,easy,5
-任せる,まかせる,"tin tưởng, để cho ai đó làm gì",.,,easy,5
-守る,まもる,"giữ, tuân thủ, bảo vệ",.,,easy,5
-争う,あらそう,"gây gổ, tranh giành",.,,easy,5
-臨む,のぞむ,ước,.,,easy,5
-信じる,しんじる,tin tưởng,.,,easy,5
-通じる,つうじる,"hiểu, thông qua",.,,easy,5
-飽きる,あきる,"chán, ngấy",.,,easy,5
-思いつく,おもいつく,nghĩ về,.,,easy,5
-思いやる,おもいやる,"quan tâm, thông cảm",.,,easy,5
-熱中する,ねっちゅうする,nghiện,.,,easy,5
-暮らす,くらす,sống,.,,easy,5
-巻く,まく,"quấn, quàng",.,,easy,5
-結ぶ,むすぶ,"buộc, cột, nối",.,,easy,5
-済む,すむ,kết thúc,.,,easy,5
-済ませる・済ます,すませる・済ます,hoàn tất,.,,easy,5
-出来る,できる,"có thể, được xây dựng",.,,easy,5
-切れる,きれる,"cắt, hết hạn",.,,easy,5
-切らす,きらす,hết,.,,easy,5
-伝わる,つたわる,"được truyền đi, được trải ra, được giới thiệu",.,,easy,5
-伝える,つたえる,"truyền đi, giới thiệu",.,,easy,5
-続く,つづく,"tiếp tục, xảy ra, lặp lại, theo sau",.,,easy,5
-続ける,つづける,"tiếp tục, xảy ra liên tiếp",.,,easy,5
-つながる,つながる,"được kết nối, được mở rộng, thông qua",.,,easy,5
-つなぐ,つなぐ,"kết nối, tham gia",.,,easy,5
-つなげる,つなげる,"kết nối, làm chặt thêm",.,,easy,5
-伸びる,のびる,"lớn lên, tăng thêm, dài ra",.,,easy,5
-伸ばす,のばす,"nuôi dài, căng ra",.,,easy,5
-延びる,のびる,"bị trì hoãn, bị kéo dài",.,,easy,5
-延ばす,のばす,"trì hoãn, kéo dài",.,,easy,5
-重なる,かさなる,"xung đột, xếp chồng",.,,easy,5
-重ねる,かさねる,"chồng lên, tích trữ",.,,easy,5
-広がる,ひろがる,"mở rộng, bùng phát, lan tràn, trải dài",.,,easy,5
-広げる,ひろげる,"mở thêm, mở rộng, nới rộng, mở ra",.,,easy,5
-載る,のる,"vừa, được công bố",.,,easy,5
-載せる,のせる,"cho vào, cho lên, công bố",.,,easy,5
-そろう,そろう,"thu thập, được thu thập",.,,easy,5
-そろえる,そろえる,"gom lại, chuẩn bị sẵn sàng",.,,easy,5
-まとまる,まとまる,"được thống nhất, được tổ chức, được sắp xếp",.,,easy,5
-まとめる,まとめる,"tập hợp, sàng lọc, hợp nhất, tổ chức",.,,easy,5
-付く,つく,"dính, gắn, đạt được, đi cùng với",.,,easy,5
-付ける,つける,"gắn, thêm vào",.,,easy,5
-たまる,たまる,được tiết kiệm,.,,easy,5
-ためる,ためる,tiết kiệm,.,,easy,5
-交じる・混じる,まじる,"giao vào, lẫn vào",.,,easy,5
-交ざる・混ざる,まざる,được trộn lẫn,.,,easy,5
-交ぜる・混ぜる,まぜる,trộn vào,.,,easy,5
-解ける・溶ける,とける,"được giải quyết, nóng chảy",.,,easy,5
-解く・溶く,とく,"giải quyết, nóng chảy",.,,easy,5
-含む,ふくむ,"chứa, bao gồm",.,,easy,5
-含める,ふくめる,bao gồm,.,,easy,5
-抜ける,ぬける,"tháo, tuột",.,,easy,5
-抜く,ぬく,lấy ra,.,,easy,5
-現れる,あらわれる,"xuất hiện, được thẻ hiện",.,,easy,5
-現す,あらわす,"xuất hiện, hiện ra",.,,easy,5
-表れる,あらわれる,biểu hiện (trên mặt),.,,easy,5
-表す,あらわす,"biểu thị, biểu lộ, đại diện",.,,easy,5
-散る,ちる,"bị tàn, rụng",.,,easy,5
-散らす,ちらす,tàn,.,,easy,5
-明ける,あける,"(đêm) đến, (năm mới) bắt đầu, (mùa mưa) kết thúc",.,,easy,5
-差す,さす,"(mặt trời) chiếu sáng, mở (ô), nhỏ (thuốc mắt)",.,,easy,5
-パートナ,パートナー,đối tác,.,,easy,5
-リーダー,リーダー,lãnh đạo,.,,easy,5
-ボランティア,ボランティア,tình nguyện,.,,easy,5
-コミュニケーション,コミュニケーション,giao tiếp,.,,easy,5
-ユーモア,ユーモア,"hài hước, đùa",.,,easy,5
-ショック,ショック,"shock, choáng",.,,easy,5
-ストレス,ストレス,"căng thẳng, stress",.,,easy,5
-バランス,バランス,cân bằng,.,,easy,5
-レベル,レベル,"trình độ, level",.,,easy,5
-アップ,アップ,tăng lên,.,,easy,5
-ダウン,ダウン,giảm xuống,.,,easy,5
-プラス,プラス,"phép cộng, tác động tích cực",.,,easy,5
-マイナス,マイナス,"phép trừ, tác động tiêu cực",.,,easy,5
-イメージ,イメージ,hình ảnh,.,,easy,5
-コンテスト,コンテスト,cuộc thi,.,,easy,5
-マスコミ,マスコミ,thông tin truyền thông,.,,easy,5
-プライバシー,プライバシー,"cá nhân, riêng tư",.,,easy,5
-オフィス,オフィス,văn phòng,.,,easy,5
-ルール,ルール,luật lệ,.,,easy,5
-マナー,マナー,"kiểu, thói",.,,easy,5
-ミス,ミス,lỗi,.,,easy,5
-スケジュール,スケジュール,"lịch, kế hoạch",.,,easy,5
-タイトル,タイトル,tiêu đề,.,,easy,5
-テーマ,テーマ,chủ đề,.,,easy,5
-ストーリー,ストーリー,câu chuyện,.,,easy,5
-ヒット,ヒット,nổi tiếng,.,,easy,5
-ブランド,ブランド,nhãn hiệu,.,,easy,5
-レンタル,レンタル,thuê,.,,easy,5
-リサイクル,リサイクル,tái chế,.,,easy,5
-ラベル,ラベル,nhãn,.,,easy,5
-タイプ,タイプ,loại,.,,easy,5
-スタイル,スタイル,kiểu dáng,.,,easy,5
-セット,セット,"cài đặt, set",.,,easy,5
-ウイルス,ウイルス,virus,.,,easy,5
-ロボット,ロボット,robot,.,,easy,5
-エネルギー,エネルギー,năng lượng,.,,easy,5
-デジタル,デジタル,kỹ thuật số,.,,easy,5
-マイク,マイク,"microphone, ghi âm",.,,easy,5
-ブレーキ,ブレーキ,phanh,.,,easy,5
-ペンキ,ペンキ,sơn,.,,easy,5
-炊ける,たける,được nấu,.,,easy,5
-炊く,たく,nấu,.,,easy,5
-煮える,にえる,"được nấu, được ninh",.,,easy,5
-煮る,にる,"nấu, ninh, luộc",.,,easy,5
-炒める,いためる,rán,.,,easy,5
-焼ける,やける,"được nấu, được nướng",.,,easy,5
-焼く,やく,"nướng, nấu",.,,easy,5
-ゆでる,ゆでる,luộc,.,,easy,5
-揚げる,あげる,rán ngập,.,,easy,5
-蒸す,むす,hấp,.,,easy,5
-ぐっすり,ぐっすり,say,.,,easy,5
-きちんと,きちんと,ngay ngắn,.,,easy,5
-しっかり,しっかり,"kiên quyết, chắc chắn, đáng tin cậy",.,,easy,5
-はっきり,はっきり,rõ ràng,.,,easy,5
-じっと,じっと,"kiên nhẫn, chăm chú, chằm chằm",.,,easy,5
-そっと,そっと,"nhẹ nhàng, yên lặng",.,,easy,5
-別々に,べつべつに,riêng biệt,.,,easy,5
-それぞれ,それぞれ,"lần lượt, tương ứng",.,,easy,5
-互いに,たがいに,lẫn nhau,.,,easy,5
-直接,ちょくせつ,trực tiếp,.,,easy,5
-本当に,ほんとうに,"thật lòng, kỳ thực",.,,easy,5
-必ず,かならず,chắc chắn,.,,easy,5
-絶対に,ぜったいに,chắc chắn rồi,.,,easy,5
-特に,とくに,đặc biệt là,.,,easy,5
-ただ,ただ,chỉ,.,,easy,5
-少なくとも,すくなくとも,ít nhất,.,,easy,5
-決して,けっして,không bao giờ,.,,easy,5
-少しも,すこしも,một chút,.,,easy,5
-ちっとも,ちっとも,(không) tí gì,.,,easy,5
-全く,まったく,hoàn toàn (không),.,,easy,5
-とても,とても,rất,.,,easy,5
-どんなに,どんなに,"thế nào, bao nhiêu",.,,easy,5
-どうしても,どうしても,kiểu gì cũng,.,,easy,5
-まるで,まるで,như là,.,,easy,5
-一体,いったい,cái quái gì,.,,easy,5
-別に,べつに,(không) có gì,.,,easy,5
-たった,たった,chỉ,.,,easy,5
-ほんの,ほんの,một chút,.,,easy,5
-それで,それで,thế thì,.,,easy,5
-そこで,そこで,tiếp theo,.,,easy,5
-そのうえ,そのうえ,hơn nữa,.,,easy,5
-また,また,nữa,.,,easy,5
-または,または,hoặc,.,,easy,5
-それとも,それとも,hoặc,.,,easy,5
-つまり,つまり,nói cách khác,.,,easy,5
+word,pronunciation,meaning,example,image_url,category,difficulty
+男性,だんせい,đàn ông,.,,,easy
+女性,じょせい,phụ nữ,.,,,easy
+高齢,こうれい,cao tuổi,.,,,easy
+年上,としうえ,hơn tuổi,.,,,easy
+目上,めうえ,bề trên,.,,,easy
+先輩,せんぱい,tiền bối,.,,,easy
+後輩,こうはい,hậu bối,.,,,easy
+上司,じょうし,cấp trên,.,,,easy
+相手,あいて,người đối diện,.,,,easy
+知り合い,しりあい,người quen,.,,,easy
+友人,ゆうじん,bạn bè,.,,,easy
+仲,なか,mối quan hệ,.,,,easy
+生年月日,せいねんがっぴ,ngày tháng năm sinh,.,,,easy
+誕生,たんじょう,ra đời,.,,,easy
+年,とし,năm,.,,,easy
+出身,しゅっしん,quê quán,.,,,easy
+故郷,こきょう,cố hương,.,,,easy
+成長,せいちょう,trưởng thành,.,,,easy
+成人,せいじん,người trưởng thành,.,,,easy
+合格,ごうかく,đỗ đại học,.,,,easy
+進学,しんがく,vào đại học,.,,,easy
+退学,たいがく,bỏ học,.,,,easy
+就職,しゅうしょく,có việc làm,.,,,easy
+退職,たいしょく,nghỉ việc,.,,,easy
+失業,しつぎょう,thất nghiệp,.,,,easy
+残業,ざんぎょう,làm thêm,.,,,easy
+生活,せいかつ,cuộc sống,.,,,easy
+通勤,つうきん,đi làm,.,,,easy
+学歴,がくれき,bằng cấp,.,,,easy
+給料,きゅうりょう,tiền lương,.,,,easy
+面接,めんせつ,phỏng vấn,.,,,easy
+休憩,きゅうけい,nghỉ ngơi,.,,,easy
+観光,かんこう,tham quan,.,,,easy
+帰国,きこく,về nước,.,,,easy
+帰省,きせい,về quê,.,,,easy
+帰宅,きたく,về nhà,.,,,easy
+参加,さんか,tham gia,.,,,easy
+出席,しゅっせき,có mặt,.,,,easy
+欠席,けっせき,vắng mặt,.,,,easy
+遅刻,ちこく,đến muộn,.,,,easy
+化粧,けしょう,trang điểm,.,,,easy
+計算,けいさん,tính toán,.,,,easy
+計画,けいかく,kế hoạch,.,,,easy
+成功,せいこう,thành công,.,,,easy
+失敗,しっぱい,thất bại,.,,,easy
+準備,じゅんび,chuẩn bị,.,,,easy
+整理,せいり,chỉnh sửa,.,,,easy
+注文,ちゅうもん,đặt hàng,.,,,easy
+貯金,ちょきん,tiết kiệm,.,,,easy
+徹夜,てつや,thức xuyên đêm,.,,,easy
+引っ越し,ひっこし,chuyển nhà,.,,,easy
+身長,しんちょう,chiều cao,.,,,easy
+体重,たいじゅう,cân nặng,.,,,easy
+けが,けが,vết thương,.,,,easy
+会,かい,"hội, tiệc",.,,,easy
+趣味,しゅみ,sở thích,.,,,easy
+興味,きょうみ,hứng thú,.,,,easy
+思い出,おもいで,nhớ lại,.,,,easy
+冗談,じょうだん,đùa cợt,.,,,easy
+目的,もくてき,mục đích,.,,,easy
+約束,やくそく,lời hứa,.,,,easy
+おしゃべり,おしゃべり,nói chuyện riêng,.,,,easy
+遠慮,えんりょ,ngại ngần,.,,,easy
+我慢,がまん,chịu đựng,.,,,easy
+迷惑,めわく,làm phiền,.,,,easy
+希望,きぼう,hi vọng,.,,,easy
+夢,ゆめ,giấc mơ,.,,,easy
+賛成,さんせい,đồng ý,.,,,easy
+反対,はんたい,đối lập,.,,,easy
+想像,そうぞう,tưởng tượng,.,,,easy
+努力,どりょく,nỗ lực,.,,,easy
+太陽,たいよう,mặt trời,.,,,easy
+地球,ちきゅう,trái đất,.,,,easy
+温度,おんど,nhiệt độ,.,,,easy
+湿度,しつど,độ ẩm,.,,,easy
+湿気,しっけ,hơi ẩm,.,,,easy
+梅雨,つゆ,mùa mưa,.,,,easy
+かび,かび,nấm mốc,.,,,easy
+暖房,だんぼう,điều hòa ấm,.,,,easy
+皮,かわ,da,.,,,easy
+缶,かん,đồ hộp,.,,,easy
+画面,がめん,màn hình,.,,,easy
+番組,ばんぐみ,chương trình,.,,,easy
+記事,きじ,ký sự,.,,,easy
+近所,きんじょ,xung quanh,.,,,easy
+警察,けいさつ,cảnh sát,.,,,easy
+犯人,はんにん,tội phạm,.,,,easy
+小銭,こぜに,tiền lẻ,.,,,easy
+ごちそう,ごちそう,chiêu đãi,.,,,easy
+作者,作者,tác giả,.,,,easy
+作品,さくひん,tác phẩm,.,,,easy
+制服,せいふく,đồng phục,.,,,easy
+洗剤,せんざい,bột giặt,.,,,easy
+底,そこ,đáy,.,,,easy
+地下,ちか,ngầm,.,,,easy
+寺,てら,chùa,.,,,easy
+道路,どうろ,đường,.,,,easy
+坂,さか,dốc,.,,,easy
+煙,けむり,khói,.,,,easy
+灰,はい,tàn,.,,,easy
+判,はん,con dấu,.,,,easy
+名刺,めいし,danh thiếp,.,,,easy
+免許,めんきょ,giấy phép,.,,,easy
+多く,おおく,nhiều,.,,,easy
+前半,ぜんはん,phần đầu,.,,,easy
+後半,こうはん,phần cuối,.,,,easy
+最高,さいこう,cao nhất,.,,,easy
+最低,さいてい,thấp nhất,.,,,easy
+最初,さいしょ,đầu tiên,.,,,easy
+最後,さいご,cuối cùng,.,,,easy
+自動,じどう,tự động,.,,,easy
+種類,しゅるい,loại,.,,,easy
+性格,せいかく,tính cách,.,,,easy
+性質,せいしつ,tính chất,.,,,easy
+順番,じゅんばん,thứ tự,.,,,easy
+番,ばん,lượt,.,,,easy
+方法,ほうほう,phương pháp,.,,,easy
+製品,せいひん,sản phẩm,.,,,easy
+値上がり,ねあがり,tăng giá,.,,,easy
+生,なま,tươi,.,,,easy
+渇く,かわく,khát,.,,,easy
+嗅ぐ,かぐ,ngửi,.,,,easy
+叩く,たたく,"đánh, vỗ",.,,,easy
+殴る,なぐる,đấm,.,,,easy
+ける,ける,đá,.,,,easy
+抱く,だく,ôm,.,,,easy
+倒れる,たおれる,đổ,.,,,easy
+倒す,たおす,làm đổ,.,,,easy
+起きる,おきる,thức dậy,.,,,easy
+起こす,おこす,đánh thức,.,,,easy
+尋ねる,たずねる,hỏi,.,,,easy
+呼ぶ,よぶ,gọi,.,,,easy
+叫ぶ,さけぶ,gào to,.,,,easy
+黙る,だまる,im lặng,.,,,easy
+飼う,かう,nuôi,.,,,easy
+数える,かぞえる,đếm,.,,,easy
+乾く,かわく,khô,.,,,easy
+乾かす,かわかす,làm khô,.,,,easy
+畳む,たたむ,gấp,.,,,easy
+誘う,さそう,"mời, rủ",.,,,easy
+おごる,おごる,chiêu đãi,.,,,easy
+預かる,あずかる,chăm sóc,.,,,easy
+預ける,あずける,gửi,.,,,easy
+決まる,きまる,được quyết định,.,,,easy
+決める,きめる,quyết định,.,,,easy
+写る,うつる,chụp được,.,,,easy
+写す,うつす,chụp,.,,,easy
+思い出す,おもいだす,nhớ lại,.,,,easy
+教わる,おそわる,được dạy,.,,,easy
+申し込む,もうしこむ,đăng ký,.,,,easy
+断る,ことわる,từ chối,.,,,easy
+見つかる,みつかる,được tìm thấy,.,,,easy
+見つける,みつける,tìm thấy,.,,,easy
+捕まる,つかまる,bị bắt,.,,,easy
+捕まえる,つかまえる,bắt,.,,,easy
+乗る,のる,leo lên,.,,,easy
+乗せる,のせる,cho lên,.,,,easy
+降りる,おりる,xuống,.,,,easy
+降ろす,おろす,cho xuống,.,,,easy
+直る,なおる,được sửa,.,,,easy
+直す,なおす,sửa,.,,,easy
+治る,なおる,hồi phục,.,,,easy
+治す,なおす,cứu chữa,.,,,easy
+亡くなる,なくなる,chết,.,,,easy
+亡くす,なくす,mất,.,,,easy
+生まれる,うまれる,được sinh ra,.,,,easy
+生む,うむ,sinh,.,,,easy
+出会う,であう,gặp (ngẫu nhiên),.,,,easy
+訪ねる,たずねる,thăm,.,,,easy
+付き合う,つきあう,"hẹn hò, giao tiếp",.,,,easy
+効く,きく,có hiệu quả,.,,,easy
+はやる,はやる,phổ biến,.,,,easy
+経つ,たつ,qua,.,,,easy
+間に合う,まにあう,làm cho kịp giờ,.,,,easy
+間に合わせる,まにあわせる,kịp giờ,.,,,easy
+通う,かよう,"đi làm, học",.,,,easy
+込む,こむ,đông,.,,,easy
+すれ違う,すれちあう,"vượt, lướt",.,,,easy
+掛かる,かかる,được bao phủ,.,,,easy
+掛ける,かける,bao phủ,.,,,easy
+動く,うごく,hoạt động,.,,,easy
+動かす,うごかす,di chuyển,.,,,easy
+離れる,はなれる,tránh xa,.,,,easy
+離す,はなす,tách ra,.,,,easy
+ぶつかる,ぶつかる,bị đâm,.,,,easy
+ぶつける,ぶつける,đâm,.,,,easy
+こぼれる,こぼれる,bị tràn,.,,,easy
+こぼす,こぼす,tràn,.,,,easy
+ふく,ふく,lau,.,,,easy
+片付く,かたづく,được dọn dẹp,.,,,easy
+片付ける,かたづける,dọn dẹp,.,,,easy
+包む,つつむ,bọc,.,,,easy
+張る,はる,dán,.,,,easy
+無くなる,なくなる,bị mất,.,,,easy
+無くす,なくす,mất,.,,,easy
+足りる,たりる,đủ,.,,,easy
+残る,のこる,bị thừa,.,,,easy
+残す,のこす,thừa,.,,,easy
+腐る,くさる,thối,.,,,easy
+むける,むける,bị lột,.,,,easy
+むく,むく,lột,.,,,easy
+滑る,すべる,trượt,.,,,easy
+積もる,つもる,được tích tụ,.,,,easy
+積む,つむ,"tích tụ, chất lại",.,,,easy
+空く,あく,bị thủng,.,,,easy
+空ける,あける,thủng,.,,,easy
+下がる,さがる,bị giảm,.,,,easy
+下げる,さげる,giảm,.,,,easy
+冷える,ひえる,bị lạnh,.,,,easy
+冷やす,ひやす,làm lạnh,.,,,easy
+冷める,さめる,bị nguội,.,,,easy
+冷ます,さます,làm nguội,.,,,easy
+燃える,もえる,cháy,.,,,easy
+燃やす,もやす,đốt,.,,,easy
+沸く,わく,sôi,.,,,easy
+沸かす,わかす,đun sôi,.,,,easy
+鳴る,なる,kêu,.,,,easy
+鳴らす,ならす,làm kêu,.,,,easy
+役立つ,やくだつ,hữu ích,.,,,easy
+役立てる,やくだてる,được sử dụng,.,,,easy
+飾り,かざり,trang trí,.,,,easy
+遊び,あそび,chơi,.,,,easy
+集まり,あつまり,tập hợp,.,,,easy
+教え,おしえ,dạy,.,,,easy
+踊り,おどり,nhảy,.,,,easy
+思い,おもい,"suy nghĩ, cảm giác",.,,,easy
+考え,かんがえ,"nghĩ, ý tưởng",.,,,easy
+片づけ,かたづけ,ngăn nắp,.,,,easy
+手伝い,てつだい,giúp đỡ,.,,,easy
+働き,はたらき,hoạt động,.,,,easy
+決まり,きまり,luật lệ,.,,,easy
+騒ぎ,さわぎ,"ồn ào, om xòm",.,,,easy
+知らせ,しらせ,"tin tức, thông báo",.,,,easy
+頼み,たのみ,yêu cầu,.,,,easy
+疲れ,つかれ,"vất vả, mệt mỏi",.,,,easy
+違い,ちがい,khác biệt,.,,,easy
+始め,はじめ,khởi đầu,.,,,easy
+続き,つづき,tiếp tục,.,,,easy
+暮れ,くれ,cuối năm,.,,,easy
+行き,いき,đi,.,,,easy
+帰り,かえり,trở về,.,,,easy
+急ぎ,いそぎ,"khẩn cấp, vội",.,,,easy
+遅れ,おくれ,gián đoạn,.,,,easy
+貸し,かし,cho mượn,.,,,easy
+借り,かり,mượn,.,,,easy
+勝ち,かち,thắng,.,,,easy
+負け,まけ,thua,.,,,easy
+迎え,むかえ,đón,.,,,easy
+始まり,はじまり,bắt đầu,.,,,easy
+終わり,おわり,kết thúc,.,,,easy
+戻り,もどり,"trở về, trả lại",.,,,easy
+別れ,わかれ,chia ly,.,,,easy
+喜び,よろこび,hớn hở,.,,,easy
+楽しみ,たのしみ,sung sướng,.,,,easy
+笑い,わらい,cười,.,,,easy
+驚き,おどろき,ngạc nhiên,.,,,easy
+怒り,いかり,giận dữ,.,,,easy
+悲しみ,かなしみ,buồn bã,.,,,easy
+幸せな,しあわせな,hạnh phúc,.,,,easy
+得意な,とくいな,"mạnh, giỏi",.,,,easy
+苦手な,にがてな,"yếu, kém",.,,,easy
+熱心な,ねっしんな,chăm chỉ,.,,,easy
+夢中な,むちゅうな,chú tâm,.,,,easy
+退屈な,たいくつな,chán,.,,,easy
+健康な,けんこうな,khỏe khoắn,.,,,easy
+苦しい,くるしい,cực khổ,.,,,easy
+平気な,へいきな,bình thản,.,,,easy
+悔しい,くやしい,cay cú,.,,,easy
+うらやましい,うらやましい,ghen tỵ,.,,,easy
+かゆい,かゆい,ngứa,.,,,easy
+おとなしい,おとなしい,trầm lặng,.,,,easy
+我慢強い,がまんづよい,chịu đựng giỏi,.,,,easy
+正直な,しょうじきな,trung thực,.,,,easy
+けちな,けちな,kẹt xỉ,.,,,easy
+我儘な,わがままな,ích kỷ,.,,,easy
+積極的な,せっきょくてきな,tích cực,.,,,easy
+消極的な,しょうきょくてきな,tiêu cực,.,,,easy
+満足な,まんぞくな,thỏa mãn,.,,,easy
+不満な,ふまんな,bất mãn,.,,,easy
+不安な,ふあんな,bất an,.,,,easy
+大変な,たいへんな,tồi tệ,.,,,easy
+無理な,むりな,vô lý,.,,,easy
+不注意な,ふちゅういな,không chú ý,.,,,easy
+楽な,らくな,thoải mái,.,,,easy
+面倒な,めんどうな,phiền phức,.,,,easy
+失礼な,しつれいな,thất lễ,.,,,easy
+当然な,とうぜんな,đương nhiên,.,,,easy
+意外な,いがいな,không ngờ đến,.,,,easy
+結構な,けっこうな,"tốt, đủ",.,,,easy
+派手な,はでな,lòe loẹt,.,,,easy
+地味な,じみな,giản dị,.,,,easy
+おしゃれな,おしゃれな,"thời trang, mốt",.,,,easy
+変な,へんな,lạ,.,,,easy
+不思議な,ふしぎな,thần bí,.,,,easy
+ましな,ましな,tốt lên,.,,,easy
+むだな,むだな,lãng phí,.,,,easy
+自由な,じゆうな,tự do,.,,,easy
+不自由な,ふじゆうな,"tàn tật, không tự do",.,,,easy
+温まる,あたたまる,trở nên ấm hơn,.,,,easy
+温める,あたためる,"ấm, nóng",.,,,easy
+高まる,たかまる,cao lên,.,,,easy
+高める,たかめる,làm cao lên,.,,,easy
+強まる,つよまる,mạnh lên,.,,,easy
+強める,つよめる,làm mạnh lên,.,,,easy
+弱まる,よわまる,yếu đi,.,,,easy
+弱める,よわめる,làm yếu đi,.,,,easy
+広まる,ひろまる,rộng ra,.,,,easy
+広める,ひろめる,làm rộng ra,.,,,easy
+深まる,ふかまる,sâu hơn,.,,,easy
+深める,ふかめる,làm sâu thêm,.,,,easy
+世話,せわ,chăm sóc,.,,,easy
+家庭,かてい,gia đình,.,,,easy
+協力,きょうりょく,hiệp lực,.,,,easy
+感謝,かんしゃ,cảm tạ,.,,,easy
+お礼,おれい,đáp lễ,.,,,easy
+お詫び,おわび,xin lỗi,.,,,easy
+おじぎ,おじぎ,cúi chào,.,,,easy
+握手,あくしゅ,bắt tay,.,,,easy
+いじわる,いじわる,xấu bụng,.,,,easy
+いたずら,いたずら,nghịch ngợm,.,,,easy
+節約,せつやく,tiết kiệm,.,,,easy
+経営,けいえい,quản lý,.,,,easy
+反省,はんせい,tự kiểm tra,.,,,easy
+実行,じっこう,thực hành,.,,,easy
+進歩,しんぽ,tiến bộ,.,,,easy
+変化,へんか,"thay đổi, biến hóa",.,,,easy
+発達,はったつ,phát triển,.,,,easy
+体力,たいりょく,thể lực,.,,,easy
+出場,しゅつじょう,tham dự,.,,,easy
+活躍,かつやく,hoạt động,.,,,easy
+競争,きょうそう,cạnh tranh,.,,,easy
+応援,おうえん,cổ vũ,.,,,easy
+拍手,はくしゅ,vỗ tay,.,,,easy
+人気,にんき,nổi tiếng,.,,,easy
+うわさ,うわさ,tin đồn,.,,,easy
+情報,じょうほう,thông tin,.,,,easy
+交換,こうかん,trao đổi,.,,,easy
+流行,りゅうこう,trào lưu,.,,,easy
+宣伝,せんでん,tuyên truyền,.,,,easy
+広告,こうこく,quảng cáo,.,,,easy
+注目,ちゅうもく,chú trọng,.,,,easy
+通訳,つうやく,thông dịch,.,,,easy
+翻訳,ほにゃく,biên dịch,.,,,easy
+伝言,でんごん,tin nhắn thoại,.,,,easy
+報告,ほうこく,báo cáo,.,,,easy
+録画,ろくが,ghi lại,.,,,easy
+混雑,こんざつ,hỗn tạp,.,,,easy
+渋滞,じゅうたい,tắc đường,.,,,easy
+衝突,しょうとつ,xung đột,.,,,easy
+被害,ひがい,thiệt hại,.,,,easy
+事故,じこ,tai nạn,.,,,easy
+事件,じけん,sự kiện,.,,,easy
+故障,こしょう,hỏng,.,,,easy
+修理,しゅうり,sửa chữa,.,,,easy
+停電,ていでん,mất điện,.,,,easy
+調子,ちょうし,trạng thái,.,,,easy
+緊張,きんちょう,lo lắng,.,,,easy
+自身,じしん,tự tin,.,,,easy
+自慢,じまん,tự mãn,.,,,easy
+感心,かんしん,quan tâm,.,,,easy
+感動,かんどう,cảm động,.,,,easy
+興奮,こうふん,hưng phấn,.,,,easy
+感想,かんそう,cảm tưởng,.,,,easy
+予想,よそう,dự đoán,.,,,easy
+専門,せんもん,chuyên môn,.,,,easy
+研究,けんきゅう,nghiên cứu,.,,,easy
+調査,ちょうさ,điều tra,.,,,easy
+原因,げんいん,nguyên nhân,.,,,easy
+結果,けっか,kết quả,.,,,easy
+解決,かいけつ,giải quyết,.,,,easy
+確認,かくにん,xác nhận,.,,,easy
+利用,りよう,sử dụng,.,,,easy
+理解,りかい,lý giải,.,,,easy
+発見,はっけん,phát kiến,.,,,easy
+発明,はつめい,phát minh,.,,,easy
+関係,かんけい,quan hệ,.,,,easy
+団体,だんたい,đoàn thể,.,,,easy
+選挙,せんきょ,bầu cử,.,,,easy
+税金,ぜいきん,thuế,.,,,easy
+責任,せきにん,trách nhiệm,.,,,easy
+書類,しょるい,tài liệu,.,,,easy
+題名,だいめい,tiêu đề,.,,,easy
+条件,じょうけん,điều kiện,.,,,easy
+締め切り,しめきり,hạn cuối,.,,,easy
+期間,きかん,"thời gian, thời kỳ",.,,,easy
+倍,ばい,lần,.,,,easy
+くじ,くじ,"xổ số, rút thăm",.,,,easy
+近道,ちかみち,đường tắt,.,,,easy
+中心,ちゅうしん,trung tâm,.,,,easy
+辺り,あたり,"gần, lân cận",.,,,easy
+周り,まわり,"xung quanh, vòng quanh",.,,,easy
+穴,あな,lỗ,.,,,easy
+列,れつ,hàng,.,,,easy
+幅,はば,chiều rộng,.,,,easy
+範囲,はんい,phạm vi,.,,,easy
+内容,ないよう,nội dung,.,,,easy
+中身,なかみ,bên trong,.,,,easy
+特徴,とくちょう,đặc trưng,.,,,easy
+普通,ふつう,bình thường,.,,,easy
+当たり前,あたりまえ,đương nhiên,.,,,easy
+偽,にせ,giả,.,,,easy
+別,べつ,khác,.,,,easy
+国籍,こくせき,quốc tịch,.,,,easy
+東洋,とうよう,phương đông,.,,,easy
+西洋,せいよう,phương tây,.,,,easy
+国際,こくさい,quốc tế,.,,,easy
+自然,しぜん,tự nhiên,.,,,easy
+景色,けしき,phong cảnh,.,,,easy
+宗教,しゅうきょう,tôn giáo,.,,,easy
+愛,あい,yêu,.,,,easy
+届く,とどく,được giao đến,.,,,easy
+届ける,とどける,giao đến,.,,,easy
+かく,かく,gãi,.,,,easy
+つかむ,つかむ,"tóm, chộp",.,,,easy
+握る,にぎる,nắm chặt,.,,,easy
+抑える,おさえる,giữ,.,,,easy
+近づく,ちかづく,lại gần,.,,,easy
+近づける,ちかづける,mang đến gần,.,,,easy
+合う,あう,gặp,.,,,easy
+合わせる,あわせる,"tập hợp, hiệp lực",.,,,easy
+当たる,あたる,bị đánh,.,,,easy
+当てる,あてる,đánh,.,,,easy
+比べる,くらべる,so sánh,.,,,easy
+似合う,にあう,hợp,.,,,easy
+似る,にる,giống,.,,,easy
+似せる,にせる,bắt chước,.,,,easy
+分かれる,わかれる,được chia ra,.,,,easy
+分ける,わける,chia,.,,,easy
+足す,たす,"cộng, thêm vào",.,,,easy
+引く,ひく,"kéo, trừ",.,,,easy
+増える,ふえる,tăng lên,.,,,easy
+増やす,ふやす,làm tăng lên,.,,,easy
+減る,へる,giảm xuống,.,,,easy
+減らす,へらす,làm giảm xuống,.,,,easy
+変わる,かわる,thay đổi,.,,,easy
+変える,かえる,làm thay đổi,.,,,easy
+代わる・替わる・換わる,かわる,thay,.,,,easy
+代える・替える・換える,かえる,đổi,.,,,easy
+返る,かえる,được trả lại,.,,,easy
+返す,かえす,trả lại,.,,,easy
+譲る,ゆずる,nhường,.,,,easy
+助かる,たすかる,được giúp,.,,,easy
+助ける,たすける,giúp,.,,,easy
+いじめる,いじめる,bắt nạt,.,,,easy
+だまる,だまる,lừa,.,,,easy
+盗む,ぬすむ,lấy cắp,.,,,easy
+刺さる,ささる,bị đâm,.,,,easy
+刺す,さす,đâm,.,,,easy
+殺す,ころす,giết,.,,,easy
+隠れる,かくれる,"ẩn náu, trốn",.,,,easy
+隠す,かくす,che giấu,.,,,easy
+埋まる,うまる,bị chôn,.,,,easy
+埋める,うめる,chôn,.,,,easy
+囲む,かこむ,vây quanh,.,,,easy
+詰まる,つまる,"đầy, chặt",.,,,easy
+詰める,つめる,đóng gói,.,,,easy
+開く,ひらく,mở,.,,,easy
+閉じる,とじる,dđóng,.,,,easy
+飛ぶ,とぶ,bay,.,,,easy
+飛ばす,とばす,cho bay,.,,,easy
+振る,ふる,"rung, vẫy",.,,,easy
+めくる,めくる,lật lên,.,,,easy
+見かける,みかける,tình cờ thấy,.,,,easy
+確かめる,たしかめる,kiểm tra lại,.,,,easy
+試す,ためす,thử,.,,,easy
+繰り返す,くりかえす,lặp lại,.,,,easy
+訳す,やくす,dịch,.,,,easy
+行う,おこなう,tổ chức,.,,,easy
+間違う,まちがう,bị sai,.,,,easy
+間違える,まちがえる,làm sai,.,,,easy
+許す,ゆるす,"tha thứ, cho phép",.,,,easy
+慣れる,なれる,quen,.,,,easy
+慣らす,ならす,khởi động,.,,,easy
+立つ,たつ,đứng,.,,,easy
+立てる,たてる,dựng lên,.,,,easy
+建つ,たつ,được xây,.,,,easy
+建てる,たてる,xây,.,,,easy
+育つ,そだつ,được nuôi dạy,.,,,easy
+育てる,そだてる,"nuôi, dạy",.,,,easy
+生える,はえる,mọc,.,,,easy
+生やす,はやす,nuôi(râu),.,,,easy
+汚れる,よごれる,bị bẩn,.,,,easy
+汚す,よごす,làm bẩn,.,,,easy
+壊れる,こわれる,bị hỏng,.,,,easy
+壊す,こわす,làm hỏng,.,,,easy
+割れる,われる,bị vỡ,.,,,easy
+割る,わる,làm vỡ,.,,,easy
+折れる,おれる,bị gãy,.,,,easy
+折る,おる,làm gãy,.,,,easy
+破れる,やぶれる,bị rách,.,,,easy
+破る,やぶる,xé rách,.,,,easy
+曲がる,まがる,"gập, cong",.,,,easy
+曲げる,まげる,"bẻ, uốn",.,,,easy
+外れる,はずれる,bị rời ra,.,,,easy
+外す,はずす,tách ra,.,,,easy
+揺れる,ゆれる,bị rung,.,,,easy
+揺らす,ゆらす,đung đưa,.,,,easy
+流れる,ながれる,chảy,.,,,easy
+流す,ながす,cho chảy,.,,,easy
+濡れる,ぬれる,bị ướt,.,,,easy
+濡らす,ぬらす,làm ướt,.,,,easy
+迷う,まよう,lạc đường,.,,,easy
+悩む,なやむ,băn khoăn,.,,,easy
+慌てる,あわてる,vội vàng,.,,,easy
+覚める,さめる,thức dậy,.,,,easy
+覚ます,さます,"mở mắt, tỉnh",.,,,easy
+眠る,ねむる,ngủ,.,,,easy
+祈る,いのる,"cầu, khấn",.,,,easy
+祝う,いわう,ăn mừng,.,,,easy
+感じる,かんじる,cảm thấy,.,,,easy
+クラスメート,,bạn cùng lớp,.,,,easy
+グループ,,nhóm,.,,,easy
+チーム,,đội,.,,,easy
+プロフェッショナル,,chuyên nghiệp,.,,,easy
+アマチュア,,nghiệp dư,.,,,easy
+トレーニング,,đào tạo,.,,,easy
+マッサージ,,mát xa,.,,,easy
+アドバイス,,khuyên,.,,,easy
+アイデア・アイディア,,ý tưởng,.,,,easy
+トップ,,top,.,,,easy
+スピード,,tốc độ,.,,,easy
+ラッシュ,,đông đúc,.,,,easy
+バイク,,xe máy,.,,,easy
+ヘルメット,,mũ bảo hiểm,.,,,easy
+コンタクトレンズ,,kính áp tròng,.,,,easy
+ガラス,,kính,.,,,easy
+プラスチック,,nhựa,.,,,easy
+ベランダ,,ban công,.,,,easy
+ペット,,thú cưng,.,,,easy
+ベンチ,,ghế bành,.,,,easy
+デザイン,,thiết kế,.,,,easy
+バーゲンセール,,sale,.,,,easy
+パート,,làm thêm,.,,,easy
+コンビニエンスストア,,cửa hàng tiện ích,.,,,easy
+レジ,,máy tính tiền,.,,,easy
+レシート,,hóa đơn,.,,,easy
+インスタント,,ăn liền,.,,,easy
+ファストフード,,đồ ăn nhanh,.,,,easy
+フルーツ,,trái cây,.,,,easy
+デザート,,tráng miệng,.,,,easy
+インターネット,,internet,.,,,easy
+チャイム,,chuông,.,,,easy
+アナウンス,,thông báo,.,,,easy
+メッセージ,,tin nhắn,.,,,easy
+パンフレット,,tờ rơi,.,,,easy
+カード,,card,.,,,easy
+インタビュー,,phỏng vấn,.,,,easy
+アンケート,,tờ câu hỏi,.,,,easy
+データ,,dữ liệu,.,,,easy
+パーセント,,phần trăm,.,,,easy
+濃い,こい,"đậm, đặc",.,,,easy
+薄い,うすい,"mỏng, nhạt",.,,,easy
+酸っぱい,すっぱい,chua,.,,,easy
+臭い,くさい,thối,.,,,easy
+おかしい,おかしい,lạ,.,,,easy
+かっこいい,かっこいい,bảnh bao,.,,,easy
+うまい,うまい,ngon,.,,,easy
+親しい,したしい,thân thiết,.,,,easy
+詳しい,くわしい,chi tiết,.,,,easy
+細かい,こまかい,"tiểu tiết, bé",.,,,easy
+浅い,あさい,nông,.,,,easy
+固い・硬い,かたい,cứng,.,,,easy
+ぬるい,ぬるい,nguội,.,,,easy
+まぶしい,まぶしい,chói,.,,,easy
+蒸し暑い,むしあつい,nóng ẩm,.,,,easy
+清潔な,せいけつな,sạch,.,,,easy
+新鮮な,しんせんな,tươi,.,,,easy
+豊かな,ゆたかな,giàu có,.,,,easy
+立派な,りっぱな,siêu,.,,,easy
+正確な,せいかくな,chính xác,.,,,easy
+確かな,たしかな,đích thực,.,,,easy
+重要な,じゅうような,quan trọng,.,,,easy
+必要な,ひつような,cần thiết,.,,,easy
+もったいない,もったいない,lãng phí,.,,,easy
+すごい,すごい,"ghê, siêu",.,,,easy
+ひどい,ひどい,tồi,.,,,easy
+激しい,はげしい,mãnh liệt,.,,,easy
+そっくりな,そっくりな,giống,.,,,easy
+急な,きゅうな,đột nhiên,.,,,easy
+敵とな,てきとな,phù hợp,.,,,easy
+特別な,とくべつな,đặc biệt,.,,,easy
+完全な,かんぜんな,toàn bộ,.,,,easy
+盛んな,さかんな,thịnh vượng,.,,,easy
+様々な,さまざまな,đa đạng,.,,,easy
+可能な,かのうな,khả thi,.,,,easy
+不可能な,ふかのうな,bất khả thi,.,,,easy
+基本的な,きほんてきな,cơ bản,.,,,easy
+国際的な,こくさいてきな,tính quốc tế,.,,,easy
+ばらばらな,ばらばらな,"tung tóe, chia rẽ",.,,,easy
+ぼろぼろな,ぼろぼろな,"rách nát, te tua",.,,,easy
+非常に,ひじょうに,rất,.,,,easy
+大変に,たいへんに,"khủng khiếp, rất nhiều",.,,,easy
+ほとんど,ほとんど,gần như hoàn toàn,.,,,easy
+大体,だいたい,"phần lớn, trong khoảng",.,,,easy
+かなり,かなり,khá,.,,,easy
+ずいぶん,ずいぶん,đáng kể,.,,,easy
+けっこう,けっこう,rất,.,,,easy
+大分,ずいぶん,"chủ yếu, khá",.,,,easy
+もっと,もっと,"hơn, nữa",.,,,easy
+しっかり,しっかり,toàn bộ,.,,,easy
+いっぱい,いっぱい,đầy,.,,,easy
+ぎりぎり,ぎりぎり,"gần, sát nút",.,,,easy
+ぴったり,ぴったり,"vừa vặn, đúng",.,,,easy
+たいてい,たいてい,"đại thể, thường",.,,,easy
+同時に,どうじに,cùng lúc,.,,,easy
+前もって,まえもって,trước,.,,,easy
+すぐに,すぐに,ngay lập tức,.,,,easy
+もうすぐ,もうすぐ,sắp,.,,,easy
+突然,とつぜん,đột nhiên,.,,,easy
+あっという間に,あっというまに,loáng một cái,.,,,easy
+いつの間にか,いつのまにか,lúc nào không biết,.,,,easy
+しばらく,しばらく,một chút,.,,,easy
+ずっと,ずっと,"suốt, nhiều",.,,,easy
+相変わらず,あいかわらず,như mọi khi,.,,,easy
+次々に,つぎつぎに,lần lượt,.,,,easy
+どんどん,どんどん,dần dần,.,,,easy
+ますます,ますます,càng ngày càng,.,,,easy
+やっと,やっと,"cuối cùng, vừa đủ",.,,,easy
+とうとう,とうとう,"sau cùng, cuối cùng, sau tất cả",.,,,easy
+ついに,ついに,"cuối cùng, sau cùng",.,,,easy
+もちろん,もちろん,tất nhiên,.,,,easy
+やはり,やはり,như dự tính,.,,,easy
+きっと,きっと,nhất định,.,,,easy
+ぜひ,ぜひ,"bằng mọi giá, rất (muốn)",.,,,easy
+なるべく,なるべく,càng nhiều càng tốt,.,,,easy
+案外,あんがい,không ngờ đến,.,,,easy
+もしかすると・もしかしたら・もしかして,,có lẽ,.,,,easy
+まさか,まさか,"không thể ngờ, không",.,,,easy
+うっかり,うっかり,"ngơ ngác, không để ý",.,,,easy
+つい,つい,"vô ý, buột",.,,,easy
+思わず,おもわず,không ngờ đến,.,,,easy
+ほっと,ほっと,yên tâm,.,,,easy
+いらいら,いらいら,"khó chịu, nóng giận",.,,,easy
+のんびり,のんびり,tận hưởng,.,,,easy
+実は,じつは,thực tế là,.,,,easy
+読書,どくしょ,đọc viết,.,,,easy
+演奏,えんそう,biểu diễn,.,,,easy
+芸術,げいじゅつ,nghệ thuật,.,,,easy
+検査,けんさ,kiểm tra,.,,,easy
+血液,けつえき,máu,.,,,easy
+治療,ちりょう,trị liệu,.,,,easy
+症状,しょうじょう,triệu chứng,.,,,easy
+予防,よぼう,dự phòng,.,,,easy
+栄養,えいよう,dinh dưỡng,.,,,easy
+手術,しゅじゅつ,phẫu thuật,.,,,easy
+死亡,しぼう,tử vong,.,,,easy
+命,いのち,sinh mạng,.,,,easy
+一生,いっしょう,suốt đời,.,,,easy
+誤解,ごかい,hiểu nhầm,.,,,easy
+後悔,こうかい,hối hận,.,,,easy
+訳,わけ,lý do,.,,,easy
+態度,たいど,thái độ,.,,,easy
+癖,くせ,thói quen,.,,,easy
+礼儀,れいぎ,lễ nghĩa,.,,,easy
+文句,もんく,phàn nàn,.,,,easy
+表情,ひょうじょう,"biểu lộ, biểu thị",.,,,easy
+鏡面,ひょうめん,bề mặt,.,,,easy
+禁煙,きんえん,cấm hút thuốc,.,,,easy
+禁止,きんし,cấm,.,,,easy
+完成,かんせい,hoàn thành,.,,,easy
+課題,かだい,chủ đề,.,,,easy
+例外,れいがい,ngoại lệ,.,,,easy
+基本,きほん,cơ bản,.,,,easy
+記録,きろく,ghi âm,.,,,easy
+状態,じょうたい,trạng thái,.,,,easy
+出来事,できごと,sự kiện,.,,,easy
+場面,ばめん,"khung cảnh, tình huống, hiện trường",.,,,easy
+機会,きかい,cơ hội,.,,,easy
+距離,きょり,khoảng cách,.,,,easy
+提案,ていあん,đề xuất,.,,,easy
+やり取り,やりとり,"trao đổi, làm việc",.,,,easy
+知識,ちしき,kiến thức,.,,,easy
+実力,じつりょく,thực lực,.,,,easy
+手段,しゅだん,cách thức,.,,,easy
+代表,だいひょう,đại biểu,.,,,easy
+影響,えいきょう,ảnh hưởng,.,,,easy
+効果,こうか,hiệu quả,.,,,easy
+印象,いんしょう,ấn tượng,.,,,easy
+印,しるし,"dấu, dấu hiệu",.,,,easy
+合図,あいず,ám hiệu,.,,,easy
+共通,きょうつう,chung,.,,,easy
+協調,きょうちょう,nhấn mạnh,.,,,easy
+省略,しょうりゃく,lược bớt,.,,,easy
+挑戦,ちょうせん,thử thách,.,,,easy
+やる気,やるき,động lực,.,,,easy
+勇気,ゆうき,"dũng cảm, dũng khí",.,,,easy
+資格,しかく,"bằng cấp, tư cách",.,,,easy
+申請,しんせい,"đăng ký, ứng tuyển",.,,,easy
+本人,ほんにん,người được nói đến,.,,,easy
+契約,けいやく,hợp đồng,.,,,easy
+証明,しょうめい,"chứng minh, bằng chứng",.,,,easy
+変更,へんこう,thay đổi,.,,,easy
+保存,ほぞん,bảo tồn,.,,,easy
+保護,ほご,bảo vệ,.,,,easy
+環境,かんきょう,môi trường,.,,,easy
+資源,しげん,tài nguyên,.,,,easy
+不足,ふそく,thiếu,.,,,easy
+平均,へいきん,trung bình,.,,,easy
+割合,わりあい,tỷ lệ,.,,,easy
+商売,しょうばい,"kinh doanh, buôn bán",.,,,easy
+商品,しょうひん,sản phẩm,.,,,easy
+質,しつ,chất lượng,.,,,easy
+型,かた,mẫu,.,,,easy
+生産,せいさん,sản xuất,.,,,easy
+消費,しょうひ,"tiêu dùng, tiêu thụ",.,,,easy
+物価,ぶっか,"giá cả, vật giá",.,,,easy
+倒産,とうさん,phá sản,.,,,easy
+携帯,けいたい,mang theo,.,,,easy
+現代,げんだい,hiện tại,.,,,easy
+世紀,せいき,thế kỷ,.,,,easy
+文化,ぶんか,văn hóa,.,,,easy
+都市,とし,thành phố,.,,,easy
+地方,ちほう,địa phương,.,,,easy
+戦争,せんそう,chiến tranh,.,,,easy
+平和,へいわ,hòa bình,.,,,easy
+上る,のぼる,leo lên,.,,,easy
+下る,くだる,đi xuống,.,,,easy
+進む,すすむ,tiến lên,.,,,easy
+進める,すすめる,làm cho tiến lên,.,,,easy
+通る,とおる,"thông qua, được chấp nhận, đi qua",.,,,easy
+通す,とおす,"xuyên qua, thông qua",.,,,easy
+超える・越える,こえる,vượt qua,.,,,easy
+過ぎる,すぎる,"quá, đi qua",.,,,easy
+過ごす,すごす,sử dụng(thời gian),.,,,easy
+移る,うつる,được chuyển,.,,,easy
+移す,うつす,chuyển,.,,,easy
+連れる,つれる,dẫn đi,.,,,easy
+寄る,よる,"ghé sát, lại gần",.,,,easy
+寄せる,よせる,ghé vào,.,,,easy
+与える,あたえる,"trao, cung cấp",.,,,easy
+得る,える,"đạt được, có được",.,,,easy
+向く,むく,"hướng, đối diện",.,,,easy
+向ける,むける,"hướng đến, quay",.,,,easy
+勧める,すすめる,"rủ, mời, gợi ý",.,,,easy
+薦める,すすめる,"giới thiệu, gợi ý",.,,,easy
+任せる,まかせる,"tin tưởng, để cho ai đó làm gì",.,,,easy
+守る,まもる,"giữ, tuân thủ, bảo vệ",.,,,easy
+争う,あらそう,"gây gổ, tranh giành",.,,,easy
+臨む,のぞむ,ước,.,,,easy
+信じる,しんじる,tin tưởng,.,,,easy
+通じる,つうじる,"hiểu, thông qua",.,,,easy
+飽きる,あきる,"chán, ngấy",.,,,easy
+思いつく,おもいつく,nghĩ về,.,,,easy
+思いやる,おもいやる,"quan tâm, thông cảm",.,,,easy
+熱中する,ねっちゅうする,nghiện,.,,,easy
+暮らす,くらす,sống,.,,,easy
+巻く,まく,"quấn, quàng",.,,,easy
+結ぶ,むすぶ,"buộc, cột, nối",.,,,easy
+済む,すむ,kết thúc,.,,,easy
+済ませる・済ます,すませる・済ます,hoàn tất,.,,,easy
+出来る,できる,"có thể, được xây dựng",.,,,easy
+切れる,きれる,"cắt, hết hạn",.,,,easy
+切らす,きらす,hết,.,,,easy
+伝わる,つたわる,"được truyền đi, được trải ra, được giới thiệu",.,,,easy
+伝える,つたえる,"truyền đi, giới thiệu",.,,,easy
+続く,つづく,"tiếp tục, xảy ra, lặp lại, theo sau",.,,,easy
+続ける,つづける,"tiếp tục, xảy ra liên tiếp",.,,,easy
+つながる,つながる,"được kết nối, được mở rộng, thông qua",.,,,easy
+つなぐ,つなぐ,"kết nối, tham gia",.,,,easy
+つなげる,つなげる,"kết nối, làm chặt thêm",.,,,easy
+伸びる,のびる,"lớn lên, tăng thêm, dài ra",.,,,easy
+伸ばす,のばす,"nuôi dài, căng ra",.,,,easy
+延びる,のびる,"bị trì hoãn, bị kéo dài",.,,,easy
+延ばす,のばす,"trì hoãn, kéo dài",.,,,easy
+重なる,かさなる,"xung đột, xếp chồng",.,,,easy
+重ねる,かさねる,"chồng lên, tích trữ",.,,,easy
+広がる,ひろがる,"mở rộng, bùng phát, lan tràn, trải dài",.,,,easy
+広げる,ひろげる,"mở thêm, mở rộng, nới rộng, mở ra",.,,,easy
+載る,のる,"vừa, được công bố",.,,,easy
+載せる,のせる,"cho vào, cho lên, công bố",.,,,easy
+そろう,そろう,"thu thập, được thu thập",.,,,easy
+そろえる,そろえる,"gom lại, chuẩn bị sẵn sàng",.,,,easy
+まとまる,まとまる,"được thống nhất, được tổ chức, được sắp xếp",.,,,easy
+まとめる,まとめる,"tập hợp, sàng lọc, hợp nhất, tổ chức",.,,,easy
+付く,つく,"dính, gắn, đạt được, đi cùng với",.,,,easy
+付ける,つける,"gắn, thêm vào",.,,,easy
+たまる,たまる,được tiết kiệm,.,,,easy
+ためる,ためる,tiết kiệm,.,,,easy
+交じる・混じる,まじる,"giao vào, lẫn vào",.,,,easy
+交ざる・混ざる,まざる,được trộn lẫn,.,,,easy
+交ぜる・混ぜる,まぜる,trộn vào,.,,,easy
+解ける・溶ける,とける,"được giải quyết, nóng chảy",.,,,easy
+解く・溶く,とく,"giải quyết, nóng chảy",.,,,easy
+含む,ふくむ,"chứa, bao gồm",.,,,easy
+含める,ふくめる,bao gồm,.,,,easy
+抜ける,ぬける,"tháo, tuột",.,,,easy
+抜く,ぬく,lấy ra,.,,,easy
+現れる,あらわれる,"xuất hiện, được thẻ hiện",.,,,easy
+現す,あらわす,"xuất hiện, hiện ra",.,,,easy
+表れる,あらわれる,biểu hiện (trên mặt),.,,,easy
+表す,あらわす,"biểu thị, biểu lộ, đại diện",.,,,easy
+散る,ちる,"bị tàn, rụng",.,,,easy
+散らす,ちらす,tàn,.,,,easy
+明ける,あける,"(đêm) đến, (năm mới) bắt đầu, (mùa mưa) kết thúc",.,,,easy
+差す,さす,"(mặt trời) chiếu sáng, mở (ô), nhỏ (thuốc mắt)",.,,,easy
+パートナ,パートナー,đối tác,.,,,easy
+リーダー,リーダー,lãnh đạo,.,,,easy
+ボランティア,ボランティア,tình nguyện,.,,,easy
+コミュニケーション,コミュニケーション,giao tiếp,.,,,easy
+ユーモア,ユーモア,"hài hước, đùa",.,,,easy
+ショック,ショック,"shock, choáng",.,,,easy
+ストレス,ストレス,"căng thẳng, stress",.,,,easy
+バランス,バランス,cân bằng,.,,,easy
+レベル,レベル,"trình độ, level",.,,,easy
+アップ,アップ,tăng lên,.,,,easy
+ダウン,ダウン,giảm xuống,.,,,easy
+プラス,プラス,"phép cộng, tác động tích cực",.,,,easy
+マイナス,マイナス,"phép trừ, tác động tiêu cực",.,,,easy
+イメージ,イメージ,hình ảnh,.,,,easy
+コンテスト,コンテスト,cuộc thi,.,,,easy
+マスコミ,マスコミ,thông tin truyền thông,.,,,easy
+プライバシー,プライバシー,"cá nhân, riêng tư",.,,,easy
+オフィス,オフィス,văn phòng,.,,,easy
+ルール,ルール,luật lệ,.,,,easy
+マナー,マナー,"kiểu, thói",.,,,easy
+ミス,ミス,lỗi,.,,,easy
+スケジュール,スケジュール,"lịch, kế hoạch",.,,,easy
+タイトル,タイトル,tiêu đề,.,,,easy
+テーマ,テーマ,chủ đề,.,,,easy
+ストーリー,ストーリー,câu chuyện,.,,,easy
+ヒット,ヒット,nổi tiếng,.,,,easy
+ブランド,ブランド,nhãn hiệu,.,,,easy
+レンタル,レンタル,thuê,.,,,easy
+リサイクル,リサイクル,tái chế,.,,,easy
+ラベル,ラベル,nhãn,.,,,easy
+タイプ,タイプ,loại,.,,,easy
+スタイル,スタイル,kiểu dáng,.,,,easy
+セット,セット,"cài đặt, set",.,,,easy
+ウイルス,ウイルス,virus,.,,,easy
+ロボット,ロボット,robot,.,,,easy
+エネルギー,エネルギー,năng lượng,.,,,easy
+デジタル,デジタル,kỹ thuật số,.,,,easy
+マイク,マイク,"microphone, ghi âm",.,,,easy
+ブレーキ,ブレーキ,phanh,.,,,easy
+ペンキ,ペンキ,sơn,.,,,easy
+炊ける,たける,được nấu,.,,,easy
+炊く,たく,nấu,.,,,easy
+煮える,にえる,"được nấu, được ninh",.,,,easy
+煮る,にる,"nấu, ninh, luộc",.,,,easy
+炒める,いためる,rán,.,,,easy
+焼ける,やける,"được nấu, được nướng",.,,,easy
+焼く,やく,"nướng, nấu",.,,,easy
+ゆでる,ゆでる,luộc,.,,,easy
+揚げる,あげる,rán ngập,.,,,easy
+蒸す,むす,hấp,.,,,easy
+ぐっすり,ぐっすり,say,.,,,easy
+きちんと,きちんと,ngay ngắn,.,,,easy
+しっかり,しっかり,"kiên quyết, chắc chắn, đáng tin cậy",.,,,easy
+はっきり,はっきり,rõ ràng,.,,,easy
+じっと,じっと,"kiên nhẫn, chăm chú, chằm chằm",.,,,easy
+そっと,そっと,"nhẹ nhàng, yên lặng",.,,,easy
+別々に,べつべつに,riêng biệt,.,,,easy
+それぞれ,それぞれ,"lần lượt, tương ứng",.,,,easy
+互いに,たがいに,lẫn nhau,.,,,easy
+直接,ちょくせつ,trực tiếp,.,,,easy
+本当に,ほんとうに,"thật lòng, kỳ thực",.,,,easy
+必ず,かならず,chắc chắn,.,,,easy
+絶対に,ぜったいに,chắc chắn rồi,.,,,easy
+特に,とくに,đặc biệt là,.,,,easy
+ただ,ただ,chỉ,.,,,easy
+少なくとも,すくなくとも,ít nhất,.,,,easy
+決して,けっして,không bao giờ,.,,,easy
+少しも,すこしも,một chút,.,,,easy
+ちっとも,ちっとも,(không) tí gì,.,,,easy
+全く,まったく,hoàn toàn (không),.,,,easy
+とても,とても,rất,.,,,easy
+どんなに,どんなに,"thế nào, bao nhiêu",.,,,easy
+どうしても,どうしても,kiểu gì cũng,.,,,easy
+まるで,まるで,như là,.,,,easy
+一体,いったい,cái quái gì,.,,,easy
+別に,べつに,(không) có gì,.,,,easy
+たった,たった,chỉ,.,,,easy
+ほんの,ほんの,một chút,.,,,easy
+それで,それで,thế thì,.,,,easy
+そこで,そこで,tiếp theo,.,,,easy
+そのうえ,そのうえ,hơn nữa,.,,,easy
+また,また,nữa,.,,,easy
+または,または,hoặc,.,,,easy
+それとも,それとも,hoặc,.,,,easy
+つまり,つまり,nói cách khác,.,,,easy
