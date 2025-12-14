@@ -4,12 +4,13 @@ import { initializeDatabase } from '@/lib/init-db';
 
 export async function GET(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     await initializeDatabase();
 
-    const folderId = params.id;
+    const { id } = await params;
+    const folderId = id;
     
     const result = await pool.query(
       'SELECT * FROM folders WHERE id = $1',
@@ -35,12 +36,13 @@ export async function GET(
 
 export async function PUT(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     await initializeDatabase();
 
-    const folderId = params.id;
+    const { id } = await params;
+    const folderId = id;
     const body = await request.json();
     const { name, description, color } = body;
 
@@ -75,12 +77,13 @@ export async function PUT(
 
 export async function DELETE(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     await initializeDatabase();
 
-    const folderId = params.id;
+    const { id } = await params;
+    const folderId = id;
     
     // Start a transaction to ensure data consistency
     const client = await pool.connect();
