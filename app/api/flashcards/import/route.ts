@@ -8,6 +8,7 @@ interface CSVRow {
   pronunciation?: string;
   meaning: string;
   example: string;
+  image_url?: string;
   category?: string;
   difficulty?: 'easy' | 'medium' | 'hard';
 }
@@ -105,6 +106,7 @@ export async function POST(request: NextRequest) {
         const flashcardData = {
           word: row.word,
           pronunciation: row.pronunciation || null,
+          imageUrl: row.image_url || null,
           meaning: row.meaning,
           example: row.example,
           category: row.category || null,

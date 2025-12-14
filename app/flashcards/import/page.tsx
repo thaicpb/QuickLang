@@ -93,11 +93,11 @@ export default function ImportFlashcardsPage() {
   };
 
   const downloadTemplate = () => {
-    const csvContent = `word,pronunciation,meaning,example,category,difficulty
-hello,/həˈləʊ/,\"Hello, how are you?\",greetings,easy
-goodbye,/ˌɡʊdˈbaɪ/,\"Goodbye, see you later!\",greetings,easy
-book,book,\"I love reading books\",objects,medium
-beautiful,/ˈbjuːtɪfəl/,\"She is very beautiful\",adjectives,medium`;
+    const csvContent = `word,pronunciation,meaning,example,image_url,category,difficulty
+hello,/həˈləʊ/,\"Hello, how are you?\",This is a greeting.,https://example.com/hello.jpg,greetings,easy
+goodbye,/ˌɡʊdˈbaɪ/,\"Goodbye, see you later!\",See you again.,https://example.com/goodbye.jpg,greetings,easy
+book,book,\"I love reading books\",Reading is fun.,https://example.com/book.jpg,objects,medium
+beautiful,/ˈbjuːtɪfəl/,\"She is very beautiful\",Complimenting someone.,https://example.com/beautiful.jpg,adjectives,medium`;
 
     const blob = new Blob([csvContent], { type: 'text/csv' });
     const url = window.URL.createObjectURL(blob);
@@ -128,7 +128,7 @@ beautiful,/ˈbjuːtɪfəl/,\"She is very beautiful\",adjectives,medium`;
           <h2 className="text-xl font-semibold text-gray-900 mb-4">Yêu cầu Định dạng CSV</h2>
           <div className="space-y-3 text-sm text-gray-600 mb-4">
             <p><strong>Cột bắt buộc:</strong> word, meaning, example</p>
-            <p><strong>Cột tùy chọn:</strong> pronunciation, category, difficulty (easy/medium/hard)</p>
+            <p><strong>Cột tùy chọn:</strong> pronunciation, image_url, category, difficulty (easy/medium/hard)</p>
             <p><strong>Lưu ý:</strong> Hàng đầu tiên phải chứa tiêu đề cột</p>
           </div>
           
