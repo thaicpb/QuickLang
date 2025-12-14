@@ -21,7 +21,7 @@ function generateWrongAnswers(correctAnswer: string, allCards: any[], count: num
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
-    const count = parseInt(searchParams.get('count') || '10');
+    const count = parseInt(searchParams.get('count') || '50');
     const category = searchParams.get('category') || undefined;
     const difficulty = searchParams.get('difficulty') || undefined;
     const folderId = searchParams.get('folder_id') || undefined;
@@ -64,7 +64,7 @@ export async function GET(request: Request) {
 
       return {
         id: `quiz-${index + 1}`,
-        question: `What does "${card.word}" mean?`,
+        question: `"${card.word}" nghĩa là gì?`,
         word: card.word,
         imageUrl: card.imageUrl,
         example: card.example,

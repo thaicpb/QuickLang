@@ -38,18 +38,19 @@ export default function QuizPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [showFinalResult, setShowFinalResult] = useState(false);
+  const [questionCount, setQuestionCount] = useState(50);
 
   useEffect(() => {
-    fetchQuiz();
-  }, []);
+    fetchQuiz(questionCount);
+  }, [questionCount]);
 
-  const fetchQuiz = async () => {
+  const fetchQuiz = async (count: number) => {
     try {
       setLoading(true);
       const urlParams = new URLSearchParams(window.location.search);
       const folderId = urlParams.get('folder_id');
       const folderParam = folderId ? `&folder_id=${folderId}` : '';
-      const response = await fetch(`/api/quiz?count=10${folderParam}`);
+      const response = await fetch(`/api/quiz?count=${count}${folderParam}`);
       if (!response.ok) {
         throw new Error('Không thể tải bài kiểm tra');
       }
@@ -105,7 +106,7 @@ export default function QuizPage() {
     setScore(0);
     setAnswers([]);
     setShowFinalResult(false);
-    fetchQuiz();
+    fetchQuiz(questionCount);
   };
 
 
@@ -124,7 +125,7 @@ export default function QuizPage() {
           <h2 className="text-2xl font-bold text-red-600 mb-4">Lỗi</h2>
           <p className="text-gray-700 mb-4">{error || 'Không thể tải bài kiểm tra'}</p>
           <button
-            onClick={fetchQuiz}
+            onClick={() => fetchQuiz(questionCount)}
             className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700"
           >
             Thử lại
@@ -222,13 +223,26 @@ export default function QuizPage() {
       <div className="max-w-3xl mx-auto">
         <div className="mb-6">
           <div className="flex justify-between items-center mb-2">
-            <h1 className="text-2xl font-bold">Bài kiểm tra Ngôn ngữ</h1>
-            <Link
-              href="/flashcards"
-              className="text-blue-600 hover:text-blue-800"
-            >
-              Quay lại Thẻ học
-            </Link>
+          <h1 className="text-2xl font-bold">Bài kiểm tra Ngôn ngữ</h1>
+            <div className="flex items-center gap-3">
+              <label className="text-sm text-gray-600">Số câu hỏi:</label>
+              <select
+                value={questionCount}
+                onChange={(e) => setQuestionCount(parseInt(e.target.value, 10))}
+                className="rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border"
+              >
+                <option value={10}>10</option>
+                <option value={20}>20</option>
+                <option value={50}>50</option>
+                <option value={100}>100</option>
+              </select>
+              <Link
+                href="/flashcards"
+                className="text-blue-600 hover:text-blue-800"
+              >
+                Quay lại Thẻ học
+              </Link>
+            </div>
           </div>
           <div className="bg-white rounded-full h-4 overflow-hidden">
             <div 
