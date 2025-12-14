@@ -1,4 +1,4 @@
-.PHONY: setup
+.PHONY: setup fix-async-api
 
 setup:
 	npm install
@@ -13,3 +13,6 @@ setup:
 
 start:
 	docker compose start
+
+fix-async-api:
+	npx @next/codemod@canary next-async-request-api .
