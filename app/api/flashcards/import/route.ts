@@ -8,9 +8,9 @@ interface CSVRow {
   pronunciation?: string;
   meaning: string;
   example: string;
+  image_url?: string;
   category?: string;
   difficulty?: 'easy' | 'medium' | 'hard';
-  folder_id?: string;
 }
 
 export async function POST(request: NextRequest) {
@@ -18,6 +18,13 @@ export async function POST(request: NextRequest) {
     const formData = await request.formData();
     const file = formData.get('file') as File;
     const defaultFolderId = formData.get('folderId') as string;
+
+    if (!defaultFolderId) {
+      return NextResponse.json(
+        { error: 'Vui lòng chọn thư mục import' },
+        { status: 400 }
+      );
+    }
 
     if (!file) {
       return NextResponse.json(
@@ -92,17 +99,19 @@ export async function POST(request: NextRequest) {
     // Import flashcards
     const imported: FlashCard[] = [];
     const importErrors: string[] = [];
+    const targetFolderId = parseInt(defaultFolderId);
 
     for (const [index, row] of validRows.entries()) {
       try {
         const flashcardData = {
           word: row.word,
           pronunciation: row.pronunciation || null,
+          imageUrl: row.image_url || null,
           meaning: row.meaning,
           example: row.example,
           category: row.category || null,
           difficulty: row.difficulty || 'medium' as const,
-          folderId: row.folder_id ? parseInt(row.folder_id) : (defaultFolderId ? parseInt(defaultFolderId) : 1)
+          folderId: targetFolderId
         };
 
         const flashcard = await flashCardsDB.create(flashcardData);

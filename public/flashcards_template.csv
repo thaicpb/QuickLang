@@ -1,5 +1,5 @@
-word,meaning,example,category,difficulty,folder_id
-hello,xin chào,"Hello, how are you?",greetings,easy,
-goodbye,tạm biệt,"Goodbye, see you later!",greetings,easy,
-book,sách,"I love reading books",objects,medium,
-beautiful,đẹp,"She is very beautiful",adjectives,medium,
+word,pronunciation,meaning,example,image_url,category,difficulty
+男性,だんせい,Đàn ông,Aさんは男性ですよ。,,,easy
+女性,じょせい,Đàn bà,Bさんは男性ですよ。,,,easy
+本,ほん,Sách,本を読むことが好きです。,,,easy
+車,くるま,Xe ô tô,来年、車を買いますよ。,,,easy

@@ -54,6 +54,10 @@ export default function ImportFlashcardsPage() {
       setError('Vui lòng chọn một tệp CSV');
       return;
     }
+    if (!folderId) {
+      setError('Vui lòng chọn thư mục import');
+      return;
+    }
 
     setIsUploading(true);
     setError('');
@@ -62,9 +66,7 @@ export default function ImportFlashcardsPage() {
     try {
       const formData = new FormData();
       formData.append('file', file);
-      if (folderId) {
-        formData.append('folderId', folderId);
-      }
+      formData.append('folderId', folderId);
 
       const response = await fetch('/api/flashcards/import', {
         method: 'POST',
@@ -91,19 +93,12 @@ export default function ImportFlashcardsPage() {
   };
 
   const downloadTemplate = () => {
-    const csvContent = `word,pronunciation,meaning,example,category,difficulty,folder_id
-hello,/həˈləʊ/,\"Hello, how are you?\",greetings,easy,
-goodbye,/ˌɡʊdˈbaɪ/,\"Goodbye, see you later!\",greetings,easy,
-book,book,\"I love reading books\",objects,medium,
-beautiful,/ˈbjuːtɪfəl/,\"She is very beautiful\",adjectives,medium,`;
-
-    const blob = new Blob([csvContent], { type: 'text/csv' });
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'flashcards_template.csv';
-    a.click();
-    window.URL.revokeObjectURL(url);
+    const link = document.createElement('a');
+    link.href = '/flashcards_template.csv';
+    link.download = 'flashcards_template.csv';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -126,7 +121,7 @@ beautiful,/ˈbjuːtɪfəl/,\"She is very beautiful\",adjectives,medium,`;
           <h2 className="text-xl font-semibold text-gray-900 mb-4">Yêu cầu Định dạng CSV</h2>
           <div className="space-y-3 text-sm text-gray-600 mb-4">
             <p><strong>Cột bắt buộc:</strong> word, meaning, example</p>
-            <p><strong>Cột tùy chọn:</strong> pronunciation, category, difficulty (easy/medium/hard), folder_id</p>
+            <p><strong>Cột tùy chọn:</strong> pronunciation, image_url, category, difficulty (easy/medium/hard)</p>
             <p><strong>Lưu ý:</strong> Hàng đầu tiên phải chứa tiêu đề cột</p>
           </div>
           
@@ -170,7 +165,7 @@ beautiful,/ˈbjuːtɪfəl/,\"She is very beautiful\",adjectives,medium,`;
                 onChange={(e) => setFolderId(e.target.value)}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
               >
-                <option value="">Không có thư mục (hoặc sử dụng folder_id từ CSV)</option>
+                <option value="">Chọn thư mục để import vào</option>
                 {folders.map(folder => (
                   <option key={folder.id} value={folder.id}>
                     {folder.name}
@@ -178,7 +173,7 @@ beautiful,/ˈbjuːtɪfəl/,\"She is very beautiful\",adjectives,medium,`;
                 ))}
               </select>
               <p className="text-xs text-gray-500 mt-1">
-                Thư mục này sẽ được sử dụng cho các thẻ không có folder_id trong CSV
+                Bắt buộc chọn thư mục; tất cả thẻ sẽ được import vào thư mục này.
               </p>
             </div>
 
