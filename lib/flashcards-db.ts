@@ -5,8 +5,36 @@ import prisma from './prisma';
 export const flashCardsDB = {
   getAll: async (): Promise<FlashCard[]> => {
     return prisma.flashCard.findMany({
-      orderBy: { createdAt: 'asc' },
+      orderBy: { id: 'asc' },
     });
+  },
+
+  getPaged: async (options: { limit: number; offset: number; folderId?: number }) => {
+    const { limit, offset, folderId } = options;
+    const where = folderId ? { folderId } : undefined;
+
+    const [items, total, easyCount, mediumCount, hardCount] = await Promise.all([
+      prisma.flashCard.findMany({
+        where,
+        orderBy: { id: 'asc' },
+        skip: offset,
+        take: limit,
+      }),
+      prisma.flashCard.count({ where }),
+      prisma.flashCard.count({ where: { ...where, difficulty: 'easy' } }),
+      prisma.flashCard.count({ where: { ...where, difficulty: 'medium' } }),
+      prisma.flashCard.count({ where: { ...where, difficulty: 'hard' } }),
+    ]);
+
+    return { 
+      items, 
+      total,
+      counts: {
+        easy: easyCount,
+        medium: mediumCount,
+        hard: hardCount,
+      }
+    };
   },
 
   getById: async (id: number | string): Promise<FlashCard | null> => {

@@ -7,6 +7,10 @@ import { FlashCard as FlashCardType, Folder } from '@/lib/types';
 
 export default function FlashCardsPage() {
   const [flashCards, setFlashCards] = useState<FlashCardType[]>([]);
+  const [total, setTotal] = useState(0);
+  const [counts, setCounts] = useState<{ easy: number; medium: number; hard: number }>({ easy: 0, medium: 0, hard: 0 });
+  const [offset, setOffset] = useState(0);
+  const [loadingMore, setLoadingMore] = useState(false);
   const [currentFolder, setCurrentFolder] = useState<Folder | null>(null);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState<'all' | 'easy' | 'medium' | 'hard'>('all');
@@ -14,24 +18,65 @@ export default function FlashCardsPage() {
   const folderId = searchParams.get('folder_id');
 
   useEffect(() => {
-    fetchFlashCards();
+    resetAndFetch();
     if (folderId) {
       fetchFolder();
+    } else {
+      setCurrentFolder(null);
     }
   }, [folderId]);
 
-  const fetchFlashCards = async () => {
+  const resetAndFetch = () => {
+    setFlashCards([]);
+    setOffset(0);
+    setTotal(0);
+    setCounts({ easy: 0, medium: 0, hard: 0 });
+    fetchFlashCards(0, true);
+  };
+
+  const fetchFlashCards = async (startOffset: number, initial = false) => {
+    if (loadingMore) return;
+    if (!initial && flashCards.length >= total && total !== 0) return;
     try {
-      const url = folderId 
-        ? `/api/flashcards?folder_id=${folderId}` 
-        : '/api/flashcards';
-      const response = await fetch(url);
-      const data = await response.json();
-      setFlashCards(data);
+      if (initial) setLoading(true);
+      setLoadingMore(true);
+      const limit = 30;
+      try {
+        const url = folderId 
+          ? `/api/flashcards?folder_id=${folderId}&limit=${limit}&offset=${startOffset}` 
+          : `/api/flashcards?limit=${limit}&offset=${startOffset}`;
+        const response = await fetch(url);
+        const data = await response.json();
+        if (response.ok && data.items) {
+          setFlashCards(prev => [...prev, ...data.items]);
+          setTotal(data.total || 0);
+          if (data.counts) {
+            setCounts({
+              easy: data.counts.easy || 0,
+              medium: data.counts.medium || 0,
+              hard: data.counts.hard || 0,
+            });
+          }
+          setOffset(startOffset + limit);
+        } else if (response.ok && Array.isArray(data)) {
+          // fallback if API returns full array
+          setFlashCards(data);
+          setTotal(data.length);
+          const easyCount = data.filter((c: FlashCardType) => c.difficulty === 'easy').length;
+          const mediumCount = data.filter((c: FlashCardType) => c.difficulty === 'medium').length;
+          const hardCount = data.filter((c: FlashCardType) => c.difficulty === 'hard').length;
+          setCounts({ easy: easyCount, medium: mediumCount, hard: hardCount });
+        }
+      } catch (error) {
+        console.error('Failed to fetch flashcards:', error);
+      } finally {
+        setLoading(false);
+        setLoadingMore(false);
+      }
     } catch (error) {
       console.error('Failed to fetch flashcards:', error);
-    } finally {
       setLoading(false);
+      setLoadingMore(false);
     }
   };
 
@@ -65,6 +110,14 @@ export default function FlashCardsPage() {
   const filteredCards = filter === 'all' 
     ? flashCards 
     : flashCards.filter(card => card.difficulty === filter);
+
+  const totalForDisplay = filter === 'all'
+    ? total
+    : filter === 'easy'
+      ? total // filtered count for difficulty not available from server; fallback to loaded subset length
+      : filter === 'medium'
+        ? total
+        : total;
 
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
@@ -138,25 +191,25 @@ export default function FlashCardsPage() {
               onClick={() => setFilter('all')}
               className={`px-4 py-2 rounded-md ${filter === 'all' ? 'bg-indigo-600 text-white' : 'bg-white text-gray-700 border'}`}
             >
-              Tất cả ({flashCards.length})
+              Tất cả ({total})
             </button>
             <button
               onClick={() => setFilter('easy')}
               className={`px-4 py-2 rounded-md ${filter === 'easy' ? 'bg-green-600 text-white' : 'bg-white text-gray-700 border'}`}
             >
-              Dễ ({flashCards.filter(c => c.difficulty === 'easy').length})
+              Dễ ({counts.easy})
             </button>
             <button
               onClick={() => setFilter('medium')}
               className={`px-4 py-2 rounded-md ${filter === 'medium' ? 'bg-yellow-600 text-white' : 'bg-white text-gray-700 border'}`}
             >
-              Trung bình ({flashCards.filter(c => c.difficulty === 'medium').length})
+              Trung bình ({counts.medium})
             </button>
             <button
               onClick={() => setFilter('hard')}
               className={`px-4 py-2 rounded-md ${filter === 'hard' ? 'bg-red-600 text-white' : 'bg-white text-gray-700 border'}`}
             >
-              Khó ({flashCards.filter(c => c.difficulty === 'hard').length})
+              Khó ({counts.hard})
             </button>
           </div>
         </div>
@@ -172,57 +225,70 @@ export default function FlashCardsPage() {
             </Link>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredCards.map(card => (
-              <div key={card.id} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-                <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-900">{card.word}</h3>
-                    {card.pronunciation && (
-                      <p className="text-sm text-gray-500 mt-1">{card.pronunciation}</p>
-                    )}
+          <>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filteredCards.map(card => (
+                <div key={card.id} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                  <div className="flex justify-between items-start mb-4">
+                    <div>
+                      <h3 className="text-xl font-semibold text-gray-900">{card.word}</h3>
+                      {card.pronunciation && (
+                        <p className="text-sm text-gray-500 mt-1">{card.pronunciation}</p>
+                      )}
+                    </div>
+                    <span className={`px-2 py-1 rounded-full text-xs font-medium ${getDifficultyColor(card.difficulty)}`}>
+                      {card.difficulty}
+                    </span>
                   </div>
-                  <span className={`px-2 py-1 rounded-full text-xs font-medium ${getDifficultyColor(card.difficulty)}`}>
-                    {card.difficulty}
-                  </span>
-                </div>
-                
-                {card.imageUrl && (
-                  <img
-                    src={card.imageUrl}
-                    alt={card.word}
-                    className="w-full h-32 object-cover rounded mb-4"
-                  />
-                )}
-                
-                <p className="text-gray-600 mb-4 line-clamp-2">{card.meaning}</p>
-                
-                {card.category && (
-                  <p className="text-sm text-gray-500 mb-4">Danh mục: {card.category}</p>
-                )}
-                
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-500">
-                    Ôn tập: {card.reviewCount}
-                  </span>
-                  <div className="flex gap-2">
-                    <Link
-                      href={`/flashcards/${card.id}/edit`}
-                      className="text-indigo-600 hover:text-indigo-500 text-sm"
-                    >
-                      Sửa
-                    </Link>
-                    <button
-                      onClick={() => handleDelete(card.id)}
-                      className="text-red-600 hover:text-red-500 text-sm"
-                    >
-                      Xóa
-                    </button>
+                  
+                  {card.imageUrl && (
+                    <img
+                      src={card.imageUrl}
+                      alt={card.word}
+                      className="w-full h-32 object-cover rounded mb-4"
+                    />
+                  )}
+                  
+                  <p className="text-gray-600 mb-4 line-clamp-2">{card.meaning}</p>
+                  
+                  {card.category && (
+                    <p className="text-sm text-gray-500 mb-4">Danh mục: {card.category}</p>
+                  )}
+                  
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-gray-500">
+                      Ôn tập: {card.reviewCount}
+                    </span>
+                    <div className="flex gap-2">
+                      <Link
+                        href={`/flashcards/${card.id}/edit`}
+                        className="text-indigo-600 hover:text-indigo-500 text-sm"
+                      >
+                        Sửa
+                      </Link>
+                      <button
+                        onClick={() => handleDelete(card.id)}
+                        className="text-red-600 hover:text-red-500 text-sm"
+                      >
+                        Xóa
+                      </button>
+                    </div>
                   </div>
                 </div>
+              ))}
+            </div>
+            {flashCards.length < total && (
+              <div className="flex justify-center mt-8">
+                <button
+                  onClick={() => fetchFlashCards(offset)}
+                  disabled={loadingMore}
+                  className="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 disabled:opacity-50"
+                >
+                  {loadingMore ? 'Đang tải...' : 'Tải thêm'}
+                </button>
               </div>
-            ))}
-          </div>
+            )}
+          </>
         )}
       </div>
     </div>

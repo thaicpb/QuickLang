@@ -5,14 +5,25 @@ export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
     const folderId = searchParams.get('folder_id');
+    const limitParam = searchParams.get('limit');
+    const offsetParam = searchParams.get('offset');
     
+    // If limit is provided, use paginated response to avoid loading too many records
+    if (limitParam !== null || offsetParam !== null) {
+      const limit = Math.max(1, parseInt(limitParam || '30', 10));
+      const offset = Math.max(0, parseInt(offsetParam || '0', 10));
+      const { items, total, counts } = await flashCardsDB.getPaged({
+        limit,
+        offset,
+        folderId: folderId ? parseInt(folderId) : undefined,
+      });
+      return NextResponse.json({ items, total, counts });
+    }
+
     const flashCards = await flashCardsDB.getAll();
-    
-    // Filter by folder_id if specified
-    const filteredCards = folderId 
+    const filteredCards = folderId
       ? flashCards.filter(card => card.folderId === parseInt(folderId))
       : flashCards;
-    
     return NextResponse.json(filteredCards);
   } catch (error) {
     return NextResponse.json(
