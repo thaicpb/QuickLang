@@ -93,19 +93,12 @@ export default function ImportFlashcardsPage() {
   };
 
   const downloadTemplate = () => {
-    const csvContent = `word,pronunciation,meaning,example,image_url,category,difficulty
-hello,/həˈləʊ/,\"Hello, how are you?\",This is a greeting.,https://example.com/hello.jpg,greetings,easy
-goodbye,/ˌɡʊdˈbaɪ/,\"Goodbye, see you later!\",See you again.,https://example.com/goodbye.jpg,greetings,easy
-book,book,\"I love reading books\",Reading is fun.,https://example.com/book.jpg,objects,medium
-beautiful,/ˈbjuːtɪfəl/,\"She is very beautiful\",Complimenting someone.,https://example.com/beautiful.jpg,adjectives,medium`;
-
-    const blob = new Blob([csvContent], { type: 'text/csv' });
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'flashcards_template.csv';
-    a.click();
-    window.URL.revokeObjectURL(url);
+    const link = document.createElement('a');
+    link.href = '/flashcards_template.csv';
+    link.download = 'flashcards_template.csv';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
