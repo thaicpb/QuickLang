@@ -26,6 +26,7 @@ export async function GET(request: Request) {
       : flashCards;
     return NextResponse.json(filteredCards);
   } catch (error) {
+    console.error(error);
     return NextResponse.json(
       { error: 'Không thể lấy danh sách thẻ ghi nhớ' },
       { status: 500 }
@@ -59,6 +60,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json(newCard, { status: 201 });
   } catch (error) {
+    console.error(error);
     return NextResponse.json(
       { error: 'Không thể tạo thẻ ghi nhớ' },
       { status: 500 }

@@ -108,6 +108,7 @@ export default function FlashCardForm({ existingCard }: FlashCardFormProps) {
         />
         {formData.imageUrl && (
           <div className="mt-2">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={formData.imageUrl} alt="Preview" className="h-32 w-32 object-cover rounded" />
           </div>
         )}

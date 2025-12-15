@@ -18,6 +18,7 @@ export async function GET(
 
     return NextResponse.json(card);
   } catch (error) {
+    console.error(error);
     return NextResponse.json(
       { error: 'Không thể lấy thẻ ghi nhớ' },
       { status: 500 }
@@ -43,6 +44,7 @@ export async function PUT(
 
     return NextResponse.json(updatedCard);
   } catch (error) {
+    console.error(error);
     return NextResponse.json(
       { error: 'Không thể cập nhật thẻ ghi nhớ' },
       { status: 500 }
@@ -67,6 +69,7 @@ export async function DELETE(
 
     return NextResponse.json({ success: true });
   } catch (error) {
+    console.error(error);
     return NextResponse.json(
       { error: 'Không thể xóa thẻ ghi nhớ' },
       { status: 500 }

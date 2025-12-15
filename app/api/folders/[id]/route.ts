@@ -54,6 +54,7 @@ export async function PUT(
       });
       return NextResponse.json(result);
     } catch (error) {
+      console.error('Folder update not found:', error);
       return NextResponse.json(
         { error: 'Thư mục không tìm thấy' },
         { status: 404 }

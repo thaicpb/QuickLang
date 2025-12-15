@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { flashCardsDB } from '@/lib/flashcards-db';
+import { FlashCard } from '@/lib/types';
 
 function shuffleArray<T>(array: T[]): T[] {
   const shuffled = [...array];
@@ -10,7 +11,7 @@ function shuffleArray<T>(array: T[]): T[] {
   return shuffled;
 }
 
-function generateWrongAnswers(correctAnswer: string, allCards: any[], count: number = 3): string[] {
+function generateWrongAnswers(correctAnswer: string, allCards: FlashCard[], count: number = 3): string[] {
   const wrongAnswers = allCards
     .filter(card => card.meaning !== correctAnswer)
     .map(card => card.meaning);

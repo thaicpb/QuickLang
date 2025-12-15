@@ -24,6 +24,7 @@ export default function FlashCardsPage() {
     } else {
       setCurrentFolder(null);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [folderId]);
 
   const resetAndFetch = () => {
@@ -110,14 +111,6 @@ export default function FlashCardsPage() {
   const filteredCards = filter === 'all' 
     ? flashCards 
     : flashCards.filter(card => card.difficulty === filter);
-
-  const totalForDisplay = filter === 'all'
-    ? total
-    : filter === 'easy'
-      ? total // filtered count for difficulty not available from server; fallback to loaded subset length
-      : filter === 'medium'
-        ? total
-        : total;
 
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
@@ -241,13 +234,14 @@ export default function FlashCardsPage() {
                     </span>
                   </div>
                   
-                  {card.imageUrl && (
-                    <img
-                      src={card.imageUrl}
-                      alt={card.word}
-                      className="w-full h-32 object-cover rounded mb-4"
-                    />
-                  )}
+                {card.imageUrl && (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={card.imageUrl}
+                    alt={card.word}
+                    className="w-full h-32 object-cover rounded mb-4"
+                  />
+                )}
                   
                   <p className="text-gray-600 mb-4 line-clamp-2">{card.meaning}</p>
                   
