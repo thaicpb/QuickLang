@@ -1,3 +1,6 @@
+-- Create enum for difficulty
+CREATE TYPE "Difficulty" AS ENUM ('easy', 'medium', 'hard');
+
 -- Folders table
 CREATE TABLE IF NOT EXISTS folders (
     id SERIAL PRIMARY KEY,
@@ -17,7 +20,7 @@ CREATE TABLE IF NOT EXISTS flashcards (
     example TEXT NOT NULL,
     category VARCHAR(100),
     language VARCHAR(50) DEFAULT 'english',
-    difficulty VARCHAR(20) CHECK (difficulty IN ('easy', 'medium', 'hard')),
+    difficulty "Difficulty" DEFAULT 'medium',
     folder_id INTEGER REFERENCES folders(id),
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     last_reviewed TIMESTAMP WITH TIME ZONE,
