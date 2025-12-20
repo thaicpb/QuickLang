@@ -32,35 +32,44 @@ export default function FlashCardsPage() {
     setOffset(0);
     setTotal(0);
     setCounts({ easy: 0, medium: 0, hard: 0 });
+    setLoading(true);
     fetchFlashCards(0, true);
   };
 
   const fetchFlashCards = async (startOffset: number, initial = false) => {
-    if (loadingMore) return;
+    if (loadingMore && !initial) return;
     if (!initial && flashCards.length >= total && total !== 0) return;
+    
     try {
       if (initial) setLoading(true);
       setLoadingMore(true);
       const limit = 30;
-      try {
-        const url = folderId 
-          ? `/api/flashcards?folder_id=${folderId}&limit=${limit}&offset=${startOffset}` 
-          : `/api/flashcards?limit=${limit}&offset=${startOffset}`;
-        const response = await fetch(url);
-        const data = await response.json();
-        if (response.ok && data.items) {
+      
+      const url = folderId 
+        ? `/api/flashcards?folder_id=${folderId}&limit=${limit}&offset=${startOffset}` 
+        : `/api/flashcards?limit=${limit}&offset=${startOffset}`;
+      const response = await fetch(url);
+      const data = await response.json();
+      
+      if (response.ok && data.items) {
+        // Paginated response
+        if (initial) {
+          setFlashCards(data.items);
+        } else {
           setFlashCards(prev => [...prev, ...data.items]);
-          setTotal(data.total || 0);
-          if (data.counts) {
-            setCounts({
-              easy: data.counts.easy || 0,
-              medium: data.counts.medium || 0,
-              hard: data.counts.hard || 0,
-            });
-          }
-          setOffset(startOffset + limit);
-        } else if (response.ok && Array.isArray(data)) {
-          // fallback if API returns full array
+        }
+        setTotal(data.total || 0);
+        if (data.counts) {
+          setCounts({
+            easy: data.counts.easy || 0,
+            medium: data.counts.medium || 0,
+            hard: data.counts.hard || 0,
+          });
+        }
+        setOffset(startOffset + limit);
+      } else if (response.ok && Array.isArray(data)) {
+        // Fallback for non-paginated response - only on initial load
+        if (initial) {
           setFlashCards(data);
           setTotal(data.length);
           const easyCount = data.filter((c: FlashCardType) => c.difficulty === 'easy').length;
@@ -68,14 +77,10 @@ export default function FlashCardsPage() {
           const hardCount = data.filter((c: FlashCardType) => c.difficulty === 'hard').length;
           setCounts({ easy: easyCount, medium: mediumCount, hard: hardCount });
         }
-      } catch (error) {
-        console.error('Failed to fetch flashcards:', error);
-      } finally {
-        setLoading(false);
-        setLoadingMore(false);
       }
     } catch (error) {
       console.error('Failed to fetch flashcards:', error);
+    } finally {
       setLoading(false);
       setLoadingMore(false);
     }
@@ -92,7 +97,7 @@ export default function FlashCardsPage() {
     }
   };
 
-  const handleDelete = async (id: string) => {
+  const handleDelete = async (id: number | string) => {
     if (!confirm('Bạn có chắc chắn muốn xóa thẻ học này không?')) return;
 
     try {
@@ -101,7 +106,7 @@ export default function FlashCardsPage() {
       });
 
       if (response.ok) {
-        setFlashCards(flashCards.filter(card => card.id !== id));
+        setFlashCards(flashCards.filter(card => card.id !== Number(id)));
       }
     } catch (error) {
       console.error('Failed to delete flashcard:', error);
