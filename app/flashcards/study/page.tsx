@@ -1,24 +1,34 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import FlashCard from '@/components/FlashCard';
 import { FlashCard as FlashCardType } from '@/lib/types';
 
 export default function StudyPage() {
+  const searchParams = useSearchParams();
+  const folderId = searchParams.get('folder_id');
   const [flashCards, setFlashCards] = useState<FlashCardType[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loading, setLoading] = useState(true);
   const [studyMode, setStudyMode] = useState<'sequential' | 'random'>('sequential');
+  const [folderName, setFolderName] = useState<string>('');
 
   useEffect(() => {
     fetchFlashCards();
+    if (folderId) {
+      fetchFolderName();
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [folderId]);
 
   const fetchFlashCards = async () => {
     try {
-      const response = await fetch('/api/flashcards');
+      const url = folderId 
+        ? `/api/flashcards?folder_id=${folderId}` 
+        : '/api/flashcards';
+      const response = await fetch(url);
       const data = await response.json();
       setFlashCards(data);
       
@@ -29,6 +39,19 @@ export default function StudyPage() {
       console.error('Failed to fetch flashcards:', error);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const fetchFolderName = async () => {
+    if (!folderId) return;
+    try {
+      const response = await fetch(`/api/folders/${folderId}`);
+      if (response.ok) {
+        const folder = await response.json();
+        setFolderName(folder.name);
+      }
+    } catch (error) {
+      console.error('Failed to fetch folder name:', error);
     }
   };
 
@@ -74,12 +97,20 @@ export default function StudyPage() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <p className="text-gray-500 mb-4">Không có thẻ học nào để học.</p>
+          <p className="text-gray-500 mb-4">
+            {folderId 
+              ? `Không có thẻ học nào trong thư mục${folderName ? ` "${folderName}"` : ''} này.`
+              : 'Không có thẻ học nào để học.'
+            }
+          </p>
           <Link
-            href="/flashcards/new"
+            href={folderId ? `/flashcards?folder_id=${folderId}` : "/flashcards/new"}
             className="text-indigo-600 hover:text-indigo-500"
           >
-            Tạo thẻ học đầu tiên của bạn
+            {folderId 
+              ? 'Thêm thẻ học vào thư mục này' 
+              : 'Tạo thẻ học đầu tiên của bạn'
+            }
           </Link>
         </div>
       </div>
@@ -92,12 +123,20 @@ export default function StudyPage() {
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-purple-50 py-8">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-8 flex justify-between items-center">
-          <Link
-            href="/flashcards"
-            className="text-indigo-600 hover:text-indigo-500"
-          >
-            ← Quay lại Thẻ học
-          </Link>
+          <div>
+            <Link
+              href={folderId ? `/folders` : "/flashcards"}
+              className="text-indigo-600 hover:text-indigo-500"
+            >
+              ← {folderId ? 'Quay lại Thư mục' : 'Quay lại Thẻ học'}
+            </Link>
+            {folderId && folderName && (
+              <div className="mt-2">
+                <span className="text-sm text-gray-600">Đang học thư mục: </span>
+                <span className="text-sm font-medium text-gray-800">{folderName}</span>
+              </div>
+            )}
+          </div>
           
           <div className="flex items-center gap-4">
             <span className="text-gray-600">
