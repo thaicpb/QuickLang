@@ -247,6 +247,13 @@ export default function FoldersPage() {
                       Xem Thẻ
                     </Link>
                     <Link
+                      href={`/flashcards/study?folder_id=${folder.id}`}
+                      className="bg-blue-600 text-white px-3 py-2 rounded-md hover:bg-blue-700 text-sm whitespace-nowrap"
+                      title="Chế độ học"
+                    >
+                      Học
+                    </Link>
+                    <Link
                       href={`/quiz?folder_id=${folder.id}`}
                       className="bg-green-600 text-white px-3 py-2 rounded-md hover:bg-green-700 text-sm"
                     >
