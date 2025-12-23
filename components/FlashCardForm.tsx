@@ -44,7 +44,13 @@ export default function FlashCardForm({ existingCard }: FlashCardFormProps) {
         throw new Error(data.error || `Failed to ${existingCard ? 'update' : 'create'} flashcard`);
       }
 
-      router.push('/flashcards');
+      // For existing cards (update), go back to previous page
+      // For new cards, still go to flashcards list
+      if (existingCard) {
+        router.back();
+      } else {
+        router.push('/flashcards');
+      }
       router.refresh();
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Có lỗi xảy ra');
