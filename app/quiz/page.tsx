@@ -6,6 +6,16 @@ import Link from 'next/link';
 interface QuizOption {
   label: string;
   text: string;
+  fullCard?: {
+    id: number;
+    word: string;
+    pronunciation?: string;
+    meaning: string;
+    example: string;
+    category?: string;
+    difficulty?: string;
+    imageUrl?: string;
+  };
 }
 
 interface QuizQuestion {
@@ -256,22 +266,6 @@ export default function QuizPage() {
         <div className="bg-white rounded-xl shadow-lg p-8">
           <div className="mb-6">
             <h2 className="text-xl font-semibold mb-4">{currentQuestion.question}</h2>
-            
-            {currentQuestion.imageUrl && (
-              <div className="mb-4">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img 
-                  src={currentQuestion.imageUrl} 
-                  alt={currentQuestion.word}
-                  className="w-full h-48 object-cover rounded-lg"
-                />
-              </div>
-            )}
-
-            <div className="bg-gray-50 rounded-lg p-4 mb-6">
-              <p className="text-sm text-gray-600 mb-1">Ví dụ:</p>
-              <p className="italic">{currentQuestion.example}</p>
-            </div>
 
             {currentQuestion.category && (
               <div className="flex gap-2 mb-4">
@@ -328,19 +322,83 @@ export default function QuizPage() {
           </div>
 
           {showResult && (
-            <div className={`p-4 rounded-lg mb-6 ${
+            <div className={`p-6 rounded-lg mb-6 ${
               selectedAnswer === currentQuestion.correctAnswer 
-                ? 'bg-green-100 text-green-800' 
-                : 'bg-red-100 text-red-800'
+                ? 'bg-green-50 border border-green-200' 
+                : 'bg-red-50 border border-red-200'
             }`}>
               {selectedAnswer === currentQuestion.correctAnswer ? (
-                <p className="font-semibold">Đúng rồi! Làm tốt! 🎉</p>
+                <div>
+                  <p className="font-semibold text-green-800 mb-4 text-lg">Đúng rồi! Làm tốt! 🎉</p>
+                </div>
               ) : (
                 <div>
-                  <p className="font-semibold mb-2">Chưa chính xác lắm.</p>
-                  <p>Câu trả lời đúng là: <strong>{currentQuestion.correctAnswer}</strong> - {currentQuestion.correctMeaning}</p>
+                  <p className="font-semibold mb-2 text-red-800 text-lg">Chưa chính xác lắm.</p>
+                  <p className="text-red-700 mb-4">Câu trả lời đúng là: <strong>{currentQuestion.correctAnswer}</strong> - {currentQuestion.correctMeaning}</p>
                 </div>
               )}
+              
+              {/* Detailed information for all options */}
+              <div className="mt-4 border-t pt-4">
+                <h4 className="font-semibold text-gray-800 mb-3">📚 Ôn tập tất cả các từ trong câu hỏi này:</h4>
+                <div className="grid gap-3">
+                  {currentQuestion.options.map((option) => {
+                    const card = option.fullCard;
+                    if (!card) return null;
+                    
+                    const isCorrect = option.label === currentQuestion.correctAnswer;
+                    const isSelected = option.label === selectedAnswer;
+                    
+                    return (
+                      <div key={option.label} className={`p-3 rounded-lg border-l-4 ${
+                        isCorrect ? 'border-green-500 bg-green-50' :
+                        isSelected ? 'border-red-500 bg-red-50' :
+                        'border-gray-300 bg-gray-50'
+                      }`}>
+                        <div className="flex items-start gap-3">
+                          <div className={`w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-sm ${
+                            isCorrect ? 'bg-green-500' :
+                            isSelected ? 'bg-red-500' :
+                            'bg-gray-400'
+                          }`}>
+                            {option.label}
+                          </div>
+                          <div className="flex-1">
+                            <div className="flex items-center gap-2 mb-1">
+                              <span className="font-bold text-lg">{card.word}</span>
+                              {card.pronunciation && (
+                                <span className="text-sm text-gray-600 italic">({card.pronunciation})</span>
+                              )}
+                              {isCorrect && <span className="text-green-600">✓</span>}
+                              {isSelected && !isCorrect && <span className="text-red-600">✗</span>}
+                            </div>
+                            <p className="text-gray-800 mb-1"><strong>Nghĩa:</strong> {card.meaning}</p>
+                            {card.example && (
+                              <p className="text-gray-700 text-sm italic"><strong>Ví dụ:</strong> {card.example}</p>
+                            )}
+                            {(card.category || card.difficulty) && (
+                              <div className="flex gap-2 mt-2">
+                                {card.category && (
+                                  <span className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">{card.category}</span>
+                                )}
+                                {card.difficulty && (
+                                  <span className={`px-2 py-1 text-xs rounded ${
+                                    card.difficulty === 'easy' ? 'bg-green-100 text-green-800' :
+                                    card.difficulty === 'medium' ? 'bg-yellow-100 text-yellow-800' :
+                                    'bg-red-100 text-red-800'
+                                  }`}>
+                                    {card.difficulty === 'easy' ? 'Dễ' : card.difficulty === 'medium' ? 'Trung bình' : 'Khó'}
+                                  </span>
+                                )}
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
             </div>
           )}
 

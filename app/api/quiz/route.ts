@@ -11,12 +11,12 @@ function shuffleArray<T>(array: T[]): T[] {
   return shuffled;
 }
 
-function generateWrongAnswers(correctAnswer: string, allCards: FlashCard[], count: number = 3): string[] {
-  const wrongAnswers = allCards
-    .filter(card => card.meaning !== correctAnswer)
-    .map(card => card.meaning);
+function generateWrongAnswers(correctCard: FlashCard, allCards: FlashCard[], count: number = 3): FlashCard[] {
+  const wrongCards = allCards
+    .filter(card => card.id !== correctCard.id)
+    .filter(card => card.meaning !== correctCard.meaning);
   
-  return shuffleArray(wrongAnswers).slice(0, count);
+  return shuffleArray(wrongCards).slice(0, count);
 }
 
 export async function GET(request: Request) {
@@ -52,13 +52,23 @@ export async function GET(request: Request) {
     const selectedCards = shuffledCards.slice(0, Math.min(count, shuffledCards.length));
 
     const quizQuestions = selectedCards.map((card, index) => {
-      const wrongAnswers = generateWrongAnswers(card.meaning, allCards, 3);
-      const allAnswers = shuffleArray([card.meaning, ...wrongAnswers]);
+      const wrongCards = generateWrongAnswers(card, allCards, 3);
+      const allCards_answers = shuffleArray([card, ...wrongCards]);
       
       const options = ['A', 'B', 'C', 'D'];
-      const answersWithLabels = allAnswers.map((answer, i) => ({
+      const answersWithLabels = allCards_answers.map((answerCard, i) => ({
         label: options[i],
-        text: answer
+        text: answerCard.meaning,
+        fullCard: {
+          id: answerCard.id,
+          word: answerCard.word,
+          pronunciation: answerCard.pronunciation,
+          meaning: answerCard.meaning,
+          example: answerCard.example,
+          category: answerCard.category,
+          difficulty: answerCard.difficulty,
+          imageUrl: answerCard.imageUrl
+        }
       }));
 
       const correctAnswerLabel = answersWithLabels.find(a => a.text === card.meaning)?.label || 'A';
