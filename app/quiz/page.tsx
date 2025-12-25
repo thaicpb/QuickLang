@@ -346,7 +346,7 @@ export default function QuizPage() {
 
           <div className="flex justify-between items-center">
             <div className="text-lg font-medium">
-              Điểm: {score}/{currentQuestionIndex + (showResult ? 1 : 0)}
+              Điểm: {score}/{quizData.total}
             </div>
             
             {!showResult ? (
