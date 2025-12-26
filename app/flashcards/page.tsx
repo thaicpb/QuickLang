@@ -113,6 +113,52 @@ export default function FlashCardsPage() {
     }
   };
 
+  const handleExportCSV = async () => {
+    try {
+      const url = folderId 
+        ? `/api/flashcards/export?folder_id=${folderId}`
+        : '/api/flashcards/export';
+      
+      const response = await fetch(url);
+      
+      if (!response.ok) {
+        throw new Error('Failed to export CSV');
+      }
+      
+      // Get the filename from the response header or create a default one
+      const contentDisposition = response.headers.get('Content-Disposition');
+      let filename = 'flashcards.csv';
+      
+      if (contentDisposition) {
+        const filenameMatch = contentDisposition.match(/filename="(.+)"/);
+        if (filenameMatch) {
+          filename = filenameMatch[1];
+        }
+      }
+      
+      // Get the CSV content
+      const csvContent = await response.text();
+      
+      // Create blob and download
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      const link = document.createElement('a');
+      
+      if (link.download !== undefined) {
+        const url = URL.createObjectURL(blob);
+        link.setAttribute('href', url);
+        link.setAttribute('download', filename);
+        link.style.visibility = 'hidden';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+      }
+    } catch (error) {
+      console.error('Export CSV error:', error);
+      alert('Có lỗi xảy ra khi tải xuống file CSV. Vui lòng thử lại.');
+    }
+  };
+
   const filteredCards = filter === 'all' 
     ? flashCards 
     : flashCards.filter(card => card.difficulty === filter);
@@ -155,6 +201,15 @@ export default function FlashCardsPage() {
             )}
           </div>
           <div className="flex gap-4">
+            <button
+              onClick={handleExportCSV}
+              className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 flex items-center gap-2"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              Tải xuống CSV
+            </button>
             <Link
               href="/flashcards/import"
               className="bg-orange-600 text-white px-4 py-2 rounded-md hover:bg-orange-700"
