@@ -43,7 +43,7 @@ export default function FlashCardsPage() {
     try {
       if (initial) setLoading(true);
       setLoadingMore(true);
-      const limit = 30;
+      const limit = 200;
       
       const url = folderId 
         ? `/api/flashcards?folder_id=${folderId}&limit=${limit}&offset=${startOffset}` 
