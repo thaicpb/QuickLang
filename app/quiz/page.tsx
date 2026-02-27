@@ -47,18 +47,20 @@ export default function QuizPage() {
   const [error, setError] = useState<string | null>(null);
   const [showFinalResult, setShowFinalResult] = useState(false);
   const [questionCount, setQuestionCount] = useState(50);
+  const [aiMode, setAiMode] = useState(false);
 
   useEffect(() => {
-    fetchQuiz(questionCount);
-  }, [questionCount]);
+    fetchQuiz(questionCount, aiMode);
+  }, [questionCount, aiMode]);
 
-  const fetchQuiz = async (count: number) => {
+  const fetchQuiz = async (count: number, useAI: boolean) => {
     try {
       setLoading(true);
       const urlParams = new URLSearchParams(window.location.search);
       const folderId = urlParams.get('folder_id');
       const folderParam = folderId ? `&folder_id=${folderId}` : '';
-      const response = await fetch(`/api/quiz?count=${count}${folderParam}`);
+      const endpoint = useAI ? '/api/quiz/ai' : '/api/quiz';
+      const response = await fetch(`${endpoint}?count=${count}${folderParam}`);
       if (!response.ok) {
         throw new Error('Không thể tải bài kiểm tra');
       }
@@ -114,14 +116,21 @@ export default function QuizPage() {
     setScore(0);
     setAnswers([]);
     setShowFinalResult(false);
-    fetchQuiz(questionCount);
+    fetchQuiz(questionCount, aiMode);
   };
 
 
   if (loading) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-        <div className="text-xl">Đang tải bài kiểm tra...</div>
+        <div className="text-center">
+          <div className="text-xl mb-3">
+            {aiMode ? '🤖 Đang tạo quiz thông minh với AI...' : 'Đang tải bài kiểm tra...'}
+          </div>
+          {aiMode && (
+            <div className="text-sm text-gray-500">Có thể mất 10–30 giây, vui lòng chờ</div>
+          )}
+        </div>
       </div>
     );
   }
@@ -231,7 +240,20 @@ export default function QuizPage() {
       <div className="max-w-3xl mx-auto">
         <div className="mb-6">
           <div className="flex justify-between items-center mb-2">
-          <h1 className="text-2xl font-bold">Bài kiểm tra Ngôn ngữ</h1>
+            <div className="flex items-center gap-3">
+              <h1 className="text-2xl font-bold">Bài kiểm tra</h1>
+              {/* AI mode toggle */}
+              <button
+                onClick={() => setAiMode(!aiMode)}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium border transition-colors ${
+                  aiMode
+                    ? 'bg-purple-600 text-white border-purple-600'
+                    : 'bg-white text-gray-600 border-gray-300 hover:border-purple-400 hover:text-purple-600'
+                }`}
+              >
+                🤖 {aiMode ? 'Quiz AI' : 'Thường'}
+              </button>
+            </div>
             <div className="flex items-center gap-3">
               <label className="text-sm text-gray-600">Số câu hỏi:</label>
               <select
