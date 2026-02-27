@@ -1,4 +1,4 @@
-.PHONY: setup fix-async-api
+.PHONY: setup setup-ai fix-async-api
 
 setup:
 	npm install
@@ -14,6 +14,9 @@ setup:
 
 start:
 	docker compose start
+
+setup-ai:
+	@bash scripts/setup-ai-llm.sh
 
 fix-async-api:
 	npx @next/codemod@canary next-async-request-api .
