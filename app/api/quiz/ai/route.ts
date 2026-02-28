@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { flashCardsDB } from '@/lib/flashcards-db';
 import { FlashCard } from '@/lib/types';
 import {
-  generateJLPTMeaningOptions,
+  generateJLPTReadingDistractors,
   generateJLPTFillBlankQuestion,
   OLLAMA_MODEL,
 } from '@/lib/ollama';
@@ -35,7 +35,7 @@ interface AIQuizOption {
 
 interface AIQuizQuestion {
   id: string;
-  type: 'meaning' | 'fill_blank';
+  type: 'reading' | 'fill_blank';
   question: string;
   word: string;
   imageUrl?: string;
@@ -49,37 +49,84 @@ interface AIQuizQuestion {
 }
 
 /**
- * JLPT 言葉の意味問題
- * Câu hỏi: 「word」の意味として、最も適切なものを選んでください。
- * Tất cả đáp án bằng tiếng Nhật. Nghĩa tiếng Việt chỉ hiện sau khi trả lời.
+ * Chèn đáp án đúng vào vị trí ngẫu nhiên trong mảng 3 distractor.
+ * Trả về mảng 4 phần tử và index của đáp án đúng.
  */
-async function buildMeaningQuestion(
+function insertCorrectAtRandom(
+  distractors: string[],
+  correct: string
+): { options: string[]; correctIndex: number } {
+  const options = [...distractors.slice(0, 3)];
+  const correctIndex = Math.floor(Math.random() * 4);
+  options.splice(correctIndex, 0, correct);
+  return { options, correctIndex };
+}
+
+/**
+ * JLPT N2 読み方問題
+ * Câu hỏi: ＿＿{kanji}＿＿の読み方として正しいものを選んでください。
+ * Đáp án đúng = card.pronunciation từ DB.
+ * AI chỉ tạo câu ví dụ + 3 distractor hiragana.
+ */
+async function buildReadingQuestion(
   card: FlashCard,
   allCards: FlashCard[],
   index: number
 ): Promise<AIQuizQuestion> {
-  const result = await generateJLPTMeaningOptions(card.word, card.meaning);
+  // Fallback sang fill-blank nếu thẻ không có pronunciation
+  if (!card.pronunciation) {
+    return buildFillBlankQuestion(card, allCards, index);
+  }
 
-  let optionTexts: string[];
-  let correctText: string;
+  const correctReading = card.pronunciation;
+  const result = await generateJLPTReadingDistractors(card.word, correctReading);
+
+  let distractors: string[];
+  let sentenceDisplay: string;
 
   if (result && result.distractors.length >= 3) {
-    correctText = result.correctJP;
-    optionTexts = shuffleArray([result.correctJP, ...result.distractors.slice(0, 3)]);
+    distractors = result.distractors;
+    sentenceDisplay = result.sentence;
   } else {
-    // Fallback: dùng nghĩa tiếng Việt từ DB (không lý tưởng nhưng không crash)
-    correctText = card.meaning;
-    const fallbackMeanings = shuffleArray(
-      allCards.filter((c) => c.id !== card.id).map((c) => c.meaning)
+    // Fallback: lấy pronunciation từ các thẻ khác trong DB
+    const fallbackReadings = shuffleArray(
+      allCards
+        .filter(
+          (c) =>
+            c.id !== card.id &&
+            c.pronunciation &&
+            c.pronunciation.trim() !== correctReading.trim()
+        )
+        .map((c) => c.pronunciation!)
     ).slice(0, 3);
-    optionTexts = shuffleArray([card.meaning, ...fallbackMeanings]);
+
+    if (fallbackReadings.length < 3) {
+      return buildFillBlankQuestion(card, allCards, index);
+    }
+
+    distractors = fallbackReadings;
+    sentenceDisplay = `＿＿${card.word}＿＿`;
   }
+
+  // Safety dedup: loại bất kỳ distractor nào trùng đáp án đúng
+  const safeDistractors = distractors
+    .filter((d) => d.trim() !== correctReading.trim())
+    .slice(0, 3);
+
+  if (safeDistractors.length < 3) {
+    return buildFillBlankQuestion(card, allCards, index);
+  }
+
+  // Chèn đáp án đúng vào vị trí ngẫu nhiên
+  const { options: optionTexts, correctIndex } = insertCorrectAtRandom(
+    safeDistractors,
+    correctReading
+  );
 
   const options: AIQuizOption[] = optionTexts.map((text, i) => ({
     label: LABELS[i],
     text,
-    // fullCard chỉ gán cho đáp án đúng — review sẽ hiện nghĩa tiếng Việt từ đây
-    ...(text === correctText && {
+    ...(i === correctIndex && {
       fullCard: {
         id: card.id,
         word: card.word,
@@ -93,12 +140,17 @@ async function buildMeaningQuestion(
     }),
   }));
 
-  const correctAnswer = options.find((o) => o.text === correctText)!.label;
+  const correctAnswer = LABELS[correctIndex];
+
+  const question =
+    sentenceDisplay === `＿＿${card.word}＿＿`
+      ? `「＿＿${card.word}＿＿」の読み方として正しいものを選んでください。`
+      : `${sentenceDisplay}\n＿＿${card.word}＿＿の読み方として正しいものを、１・２・３・４から一つ選びなさい。`;
 
   return {
     id: `ai-quiz-${index + 1}`,
-    type: 'meaning',
-    question: `「${card.word}」の意味として、最も適切なものを選んでください。`,
+    type: 'reading',
+    question,
     word: card.word,
     imageUrl: card.imageUrl,
     example: card.example,
@@ -112,8 +164,9 @@ async function buildMeaningQuestion(
 
 /**
  * JLPT 穴埋め問題
- * Câu hỏi: （　）に入る最も適切な言葉を選んでください。「sentence with ___」
- * Tất cả đáp án bằng tiếng Nhật. Nghĩa tiếng Việt chỉ hiện sau khi trả lời.
+ * Câu hỏi: （　）に入る最も適切な言葉を選んでください。
+ * Đáp án đúng = card.word từ DB.
+ * AI chỉ tạo câu có blank + 3 distractor.
  */
 async function buildFillBlankQuestion(
   card: FlashCard,
@@ -127,7 +180,8 @@ async function buildFillBlankQuestion(
   );
 
   if (!result) {
-    return buildMeaningQuestion(card, allCards, index);
+    // Hard fallback: không dùng AI, tạo câu hỏi đơn giản từ DB
+    return buildSimpleFallbackQuestion(card, allCards, index);
   }
 
   const { sentence, distractors } = result;
@@ -169,13 +223,59 @@ async function buildFillBlankQuestion(
     (o) => o.text.toLowerCase() === card.word.toLowerCase()
   )!.label;
 
-  // Hiển thị dấu ___ dạng （　）cho gần với format JLPT thật
   const displaySentence = sentence.replace(/___/g, '（　）');
 
   return {
     id: `ai-quiz-${index + 1}`,
     type: 'fill_blank',
     question: `（　）に入る最も適切な言葉を選んでください。\n「${displaySentence}」`,
+    word: card.word,
+    imageUrl: card.imageUrl,
+    example: card.example,
+    options,
+    correctAnswer,
+    correctMeaning: card.meaning,
+    category: card.category,
+    difficulty: card.difficulty,
+  };
+}
+
+/**
+ * Hard fallback khi cả AI và fill-blank đều thất bại.
+ * Tạo câu hỏi nghĩa tiếng Việt thuần DB.
+ */
+function buildSimpleFallbackQuestion(
+  card: FlashCard,
+  allCards: FlashCard[],
+  index: number
+): AIQuizQuestion {
+  const wrongCards = shuffleArray(
+    allCards.filter((c) => c.id !== card.id && c.meaning !== card.meaning)
+  ).slice(0, 3);
+
+  const allOptions = shuffleArray([card, ...wrongCards]);
+
+  const options: AIQuizOption[] = allOptions.map((c, i) => ({
+    label: LABELS[i],
+    text: c.meaning,
+    fullCard: {
+      id: c.id,
+      word: c.word,
+      pronunciation: c.pronunciation,
+      meaning: c.meaning,
+      example: c.example,
+      category: c.category,
+      difficulty: c.difficulty,
+      imageUrl: c.imageUrl,
+    },
+  }));
+
+  const correctAnswer = options.find((o) => o.text === card.meaning)!.label;
+
+  return {
+    id: `ai-quiz-${index + 1}`,
+    type: 'fill_blank',
+    question: `「${card.word}」の意味として、最も適切なものを選んでください。`,
     word: card.word,
     imageUrl: card.imageUrl,
     example: card.example,
@@ -210,10 +310,10 @@ export async function GET(request: Request) {
 
     const selectedCards = shuffleArray(allCards).slice(0, count);
 
-    // Xen kẽ: chẵn → 言葉の意味, lẻ → 穴埋め
+    // Xen kẽ: chẵn → 読み方 (reading), lẻ → 穴埋め (fill-blank)
     const questionPromises = selectedCards.map((card, i) =>
       i % 2 === 0
-        ? buildMeaningQuestion(card, allCards, i)
+        ? buildReadingQuestion(card, allCards, i)
         : buildFillBlankQuestion(card, allCards, i)
     );
 

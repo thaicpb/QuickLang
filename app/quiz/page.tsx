@@ -56,6 +56,12 @@ export default function QuizPage() {
   const fetchQuiz = async (count: number, useAI: boolean) => {
     try {
       setLoading(true);
+      setCurrentQuestionIndex(0);
+      setSelectedAnswer(null);
+      setShowResult(false);
+      setScore(0);
+      setAnswers([]);
+      setShowFinalResult(false);
       const urlParams = new URLSearchParams(window.location.search);
       const folderId = urlParams.get('folder_id');
       const folderParam = folderId ? `&folder_id=${folderId}` : '';
@@ -142,7 +148,7 @@ export default function QuizPage() {
           <h2 className="text-2xl font-bold text-red-600 mb-4">Lỗi</h2>
           <p className="text-gray-700 mb-4">{error || 'Không thể tải bài kiểm tra'}</p>
           <button
-            onClick={() => fetchQuiz(questionCount)}
+            onClick={() => fetchQuiz(questionCount, aiMode)}
             className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700"
           >
             Thử lại
